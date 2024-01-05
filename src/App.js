@@ -21,6 +21,8 @@ function App() {
       <Route path="/contentscomplete" element={<pages.ContentsComplete />} />
       {/* <공지사항/> */}
       <Route path="/notice" element={<pages.Notice />} />
+      {/* <공지사항/> */}
+      <Route path="/faq" element={<pages.FAQ />} />
     </Routes>
   )
 }

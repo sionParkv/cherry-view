@@ -17,7 +17,7 @@ import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
 
 import { components } from '../component/index'
-import '../assets/Notice.scss'
+import '../assets/FAQ.scss'
 
 const posts = [
   {
@@ -58,7 +58,7 @@ const PostTable = ({ rows }) => {
   )
 }
 
-const Notice = () => {
+const FAQ = () => {
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(5) // 페이지당 행 수
   const [searchTerm, setSearchTerm] = useState('')
@@ -87,7 +87,7 @@ const Notice = () => {
     <Container className="NoticeContainer">
       <components.Header />
       <Box className="NoticeBox">
-        <T className="MainText">NOTICE</T>
+        <T className="MainText">FAQ!!!</T>
         <Box className="SearchBox">
           <T>공지사항</T>
           <TextField
@@ -118,4 +118,4 @@ const Notice = () => {
   )
 }
 
-export default Notice
+export default FAQ

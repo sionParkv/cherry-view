@@ -4,6 +4,7 @@ import SubmitPage from './SubmitPage'
 import SubmitComplete from './SubmitComplete'
 import SubmitContents from './SubmitContents'
 import ContentsComplete from './ContentsComplete'
+import FAQ from './FAQ'
 import Notice from './Notice'
 
 const pages = {
@@ -13,6 +14,7 @@ const pages = {
   SubmitComplete,
   SubmitContents,
   ContentsComplete,
+  FAQ,
   Notice,
 }
 

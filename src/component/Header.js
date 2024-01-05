@@ -24,6 +24,9 @@ const Header = () => {
   const goToNotice = () => {
     navigate('/notice')
   }
+  const goToFAQ = () => {
+    navigate('/faq')
+  }
   const goToMain = () => {
     navigate('/')
   }
@@ -52,7 +55,7 @@ const Header = () => {
                 <T>기자단 캠페인</T>
                 <T>프리미어</T>
                 <T onClick={goToNotice}>공지사항</T>
-                <T>FAQ</T>
+                <T onClick={goToFAQ}>FAQ</T>
               </Box>
             </Box>
             {/* 우측 로그인 박스 */}
