@@ -1,0 +1,85 @@
+@import 'common';
+
+.Header {
+  background-color: white !important;
+  box-shadow: none !important;
+
+  .MuiContainer-root {
+    width: max-content;
+  }
+
+  .GridContainer {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .LeftBox {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .Logo {
+        color: #5e4f42;
+        font-size: 40px;
+        font-weight: 500;
+        padding: 0 0 0 15%;
+        line-height: 1.1;
+      }
+
+      .IconMenu {
+        padding: 0 1% 0 2%;
+        svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .Menu {
+        display: flex;
+        text-align: center;
+
+        p {
+          width: 134px;
+          height: 24px;
+          color: black;
+          font-family: Pretendard;
+          font-size: 19px;
+          letter-spacing: -0.48px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .LoginBox {
+      padding: 0 0 0 30%;
+      display: flex;
+      justify-content: flex-end;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 25%;
+
+        button {
+          width: 36px;
+          height: 36px;
+          svg {
+            width: 36px;
+            height: 36px;
+            color: black;
+          }
+        }
+
+        p {
+          font-family: Pretendard;
+          font-size: 10px;
+          letter-spacing: -0.25px;
+          font-weight: 500;
+          color: black;
+        }
+      }
+    }
+  }
+}

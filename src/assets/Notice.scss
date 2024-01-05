@@ -1,0 +1,21 @@
+@import 'common';
+
+.NoticeContainer {
+  width: max-content;
+
+  .NoticeBox {
+    width: 1920px;
+    height: 100%;
+    padding: 15% 0 0 240px;
+    display: flex;
+    flex-direction: column;
+
+    .MainText {
+      font-family: Pretendard;
+      font-size: 56px;
+      font-weight: bold;
+      line-height: 0.63;
+      color: #202020;
+    }
+  }
+}
