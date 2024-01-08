@@ -27,6 +27,9 @@ const Header = () => {
   const goToFAQ = () => {
     navigate('/faq')
   }
+  const goToLogin = () => {
+    navigate('/login')
+  }
   const goToMain = () => {
     navigate('/')
   }
@@ -66,7 +69,7 @@ const Header = () => {
                 </IconButton>
                 <T>검색</T>
               </Box>
-              <Box>
+              <Box onClick={goToLogin}>
                 <IconButton>
                   <LoginRoundedIcon />
                 </IconButton>

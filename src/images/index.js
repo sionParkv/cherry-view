@@ -24,6 +24,11 @@ import video from './video.png'
 import picture from './picture.png'
 import instaGuide from './intsaGuide.png'
 import complete from './complete.png'
+import kakaoIco from './kakaoIco.png'
+import appleIco from './appleIco.png'
+import googleIco from './googleIco.png'
+import naverIco from './naverIco.png'
+import facebookIco from './facebookIco.png'
 
 const images = {
   tea,
@@ -52,6 +57,11 @@ const images = {
   picture,
   instaGuide,
   complete,
+  kakaoIco,
+  appleIco,
+  googleIco,
+  naverIco,
+  facebookIco,
 }
 
 export { images }

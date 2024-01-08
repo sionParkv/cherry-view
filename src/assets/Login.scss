@@ -1,0 +1,44 @@
+@import 'common';
+
+.LoginContainer {
+  width: 1920px;
+  .LoginBox {
+    width: max-content;
+    margin: 15% 0 0 50%;
+
+    .TopBox {
+      width: 680px;
+      height: 580px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      border: solid 1.5px #e4e4e4;
+
+      .Logo {
+        padding: 80px 0 56px 0;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.1;
+        color: #5e4f42;
+      }
+
+      .MuiFormControl-root {
+        width: 80%;
+        margin-bottom: 16px;
+      }
+
+      .SearchBox {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .BottomBox {
+      width: 680px;
+      height: 112px;
+      border-radius: 8px;
+      border: solid 1.5px #e4e4e4;
+    }
+  }
+}

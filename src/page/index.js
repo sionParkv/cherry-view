@@ -6,6 +6,7 @@ import SubmitContents from './SubmitContents'
 import ContentsComplete from './ContentsComplete'
 import FAQ from './FAQ'
 import Notice from './Notice'
+import Login from './Login'
 
 const pages = {
   MainPage,
@@ -16,6 +17,7 @@ const pages = {
   ContentsComplete,
   FAQ,
   Notice,
+  Login,
 }
 
 export { pages }

@@ -23,6 +23,8 @@ function App() {
       <Route path="/notice" element={<pages.Notice />} />
       {/* <공지사항/> */}
       <Route path="/faq" element={<pages.FAQ />} />
+      {/* <로그인/> */}
+      <Route path="/login" element={<pages.Login />} />
     </Routes>
   )
 }
