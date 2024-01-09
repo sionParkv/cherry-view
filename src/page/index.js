@@ -7,6 +7,9 @@ import ContentsComplete from './ContentsComplete'
 import FAQ from './FAQ'
 import Notice from './Notice'
 import Login from './Login'
+import Join from './Join'
+import SearchID from './SearchID'
+import SubmitID from './SubmitID'
 
 const pages = {
   MainPage,
@@ -18,6 +21,9 @@ const pages = {
   FAQ,
   Notice,
   Login,
+  Join,
+  SearchID,
+  SubmitID,
 }
 
 export { pages }

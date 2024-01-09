@@ -1,0 +1,90 @@
+@import 'common';
+
+.SubmitID {
+  .BasicBox {
+    width: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .SearchBox {
+      p,
+      span {
+        font-family: Pretendard;
+      }
+
+      margin: 10% 0 124px 0;
+      padding: 80px 0 80px 0;
+      width: 680px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      border: solid 1.5px #e4e4e4;
+
+      :nth-child(1) {
+        font-family: Pretendard;
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 0.75;
+        color: #373948;
+      }
+
+      :nth-child(2) {
+        padding: 16px 0 31px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #202020;
+      }
+
+      :nth-child(3) {
+        width: 60%;
+        height: 1px;
+        margin-bottom: 30px;
+        background-color: #373948;
+      }
+
+      :nth-child(4) {
+        font-size: 24px;
+        line-height: 1.67;
+        color: #202020;
+      }
+
+      .InfoBox {
+        display: flex;
+
+        .Info {
+          font-size: 32px;
+          font-weight: 600;
+          color: #ffc043;
+        }
+
+        .Text {
+          font-size: 24px;
+          line-height: 1.67;
+          color: #202020;
+        }
+      }
+
+      .LoginButton {
+        width: 60%;
+        height: 48px;
+        margin: 30px 0 16px 0;
+        font-family: Pretendard;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 8px;
+        background-color: #202020;
+        color: white;
+      }
+
+      .FindPass {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.86;
+        color: #989898;
+      }
+    }
+  }
+}

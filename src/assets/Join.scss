@@ -1,0 +1,136 @@
+@import 'common';
+
+.JoinContainer {
+  // 탭
+  .MuiTabs-indicator {
+    background-color: #ffc043;
+  }
+  // 체크박스
+  .Mui-checked {
+    color: #ffc032 !important;
+  }
+
+  .BasicBox {
+    width: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .JoinBox {
+      p,
+      span {
+        font-family: Pretendard;
+      }
+
+      margin: 10% 0 124px 0;
+      width: 680px;
+      height: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      border: solid 1.5px #e4e4e4;
+
+      .MuiTabs-root {
+        width: 80%;
+        margin: 80px 0 40px 0;
+
+        button {
+          font-size: 24px;
+          font-family: Pretendard;
+          font-weight: bold;
+          color: #202020;
+        }
+      }
+      // 텍스트 필드
+      .TabPanel {
+        width: 80%;
+
+        .MuiFormControl-root {
+          width: 100%;
+        }
+        .One {
+          margin-bottom: 8px;
+        }
+
+        .DupleCheck {
+          position: absolute;
+          margin: 15px 0 0 24%;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 2.13;
+          color: #202020;
+        }
+
+        .Condition {
+          font-size: 14px;
+          line-height: 2.29;
+          color: #9999a6;
+        }
+      }
+      // 동의 체크 박스
+      .AgreeBox {
+        width: 100%;
+        margin: 56px 0 40px 0;
+
+        :nth-child(1) {
+          .MuiTypography-root {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.63;
+            color: #000;
+          }
+        }
+
+        .Section {
+          width: 100%;
+          height: 1px;
+          border: solid 1.5px #ededed;
+          background-color: #ededed;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.86;
+          color: #989898;
+        }
+      }
+      // 회원가입 버튼
+      .JoinButton {
+        width: 100%;
+        height: 48px;
+        font-family: Pretendard;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 8px;
+        background-color: #202020;
+        color: white;
+      }
+      // 하단 텍스트 및 아이콘
+      .TextBox {
+        width: 80%;
+        text-align: start;
+        margin: 40px 0 16px 0;
+
+        :nth-child(1) {
+          font-family: Pretendard;
+          font-size: 14px;
+          line-height: 1.86;
+          color: #404040;
+        }
+        :nth-child(2) {
+          font-family: Pretendard;
+          font-size: 20px;
+          font-weight: 600;
+          color: #1a1311;
+        }
+      }
+      .IcoBox {
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

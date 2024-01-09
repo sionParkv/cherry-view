@@ -25,6 +25,12 @@ function App() {
       <Route path="/faq" element={<pages.FAQ />} />
       {/* <로그인/> */}
       <Route path="/login" element={<pages.Login />} />
+      {/* <회원가입/> */}
+      <Route path="/join" element={<pages.Join />} />
+      {/* <아이디 찾기/> */}
+      <Route path="/searchid" element={<pages.SearchID />} />
+      {/* <아이디 정보/> */}
+      <Route path="/submitid" element={<pages.SubmitID />} />
     </Routes>
   )
 }

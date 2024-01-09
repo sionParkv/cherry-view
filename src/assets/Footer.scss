@@ -1,82 +1,84 @@
 @import 'common';
 
-.Footer {
-  display: flex;
-  flex-direction: row;
-
-  .TopInfo {
-    width: 1920px;
-    height: 64px;
+@media (max-width: 2600px) {
+  .Footer {
     display: flex;
-    align-items: center;
-    padding: 0 0 0 240px;
-    border: solid 1px #e4e4e4;
+    flex-direction: row;
 
-    p {
-      font-family: Pretendard;
-      font-size: 13px;
-      font-weight: bold;
-      text-align: left;
-      color: #303030;
-    }
-
-    div {
-      width: 0.5px;
-      height: 8px;
-      margin: 3px 15px 4px 16px;
+    .TopInfo {
+      width: 2600px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 240px;
       border: solid 1px #e4e4e4;
-    }
 
-    .LastText {
-      padding-left: 47%;
-    }
-  }
-  .BottomInfo {
-    width: 1920px;
-    height: 164px;
-    display: flex;
-    align-items: center;
-    padding: 0 0 0 240px;
-    border: solid 1px #e4e4e4;
-
-    .Logo {
-      :nth-child(1) {
-        font-size: 40px;
-        font-weight: 500;
-        color: #5e4f42;
-      }
-      :nth-child(2) {
-        font-family: Pretendard;
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 1.5;
-        text-align: left;
-        color: #303030;
-      }
-    }
-
-    .Number {
-      padding: 0 0 0 62%;
-      :nth-child(1) {
+      p {
         font-family: Pretendard;
         font-size: 13px;
         font-weight: bold;
-        text-align: right;
+        text-align: left;
         color: #303030;
       }
-      :nth-child(2) {
-        font-family: Pretendard;
-        font-size: 32px;
-        font-weight: bold;
-        text-align: right;
-        color: #303030;
+
+      div {
+        width: 0.5px;
+        height: 8px;
+        margin: 3px 15px 4px 16px;
+        border: solid 1px #e4e4e4;
       }
-      :nth-child(3) {
-        font-family: Pretendard;
-        font-size: 12px;
-        font-weight: 300;
-        text-align: right;
-        color: #303030;
+
+      .LastText {
+        padding-left: 47%;
+      }
+    }
+    .BottomInfo {
+      width: 2600px;
+      height: 164px;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 240px;
+      border: solid 1px #e4e4e4;
+
+      .Logo {
+        :nth-child(1) {
+          font-size: 40px;
+          font-weight: 500;
+          color: #5e4f42;
+        }
+        :nth-child(2) {
+          font-family: Pretendard;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 1.5;
+          text-align: left;
+          color: #303030;
+        }
+      }
+
+      .Number {
+        padding: 0 0 0 62%;
+        :nth-child(1) {
+          font-family: Pretendard;
+          font-size: 13px;
+          font-weight: bold;
+          text-align: right;
+          color: #303030;
+        }
+        :nth-child(2) {
+          font-family: Pretendard;
+          font-size: 32px;
+          font-weight: bold;
+          text-align: right;
+          color: #303030;
+        }
+        :nth-child(3) {
+          font-family: Pretendard;
+          font-size: 12px;
+          font-weight: 300;
+          text-align: right;
+          color: #303030;
+        }
       }
     }
   }

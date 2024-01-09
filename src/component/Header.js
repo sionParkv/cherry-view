@@ -30,6 +30,9 @@ const Header = () => {
   const goToLogin = () => {
     navigate('/login')
   }
+  const goToJoin = () => {
+    navigate('/join')
+  }
   const goToMain = () => {
     navigate('/')
   }
@@ -75,7 +78,7 @@ const Header = () => {
                 </IconButton>
                 <T>로그인</T>
               </Box>
-              <Box>
+              <Box onClick={goToJoin}>
                 <IconButton>
                   <PersonAddAltRoundedIcon />
                 </IconButton>
