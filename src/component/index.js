@@ -10,6 +10,7 @@ import OptionBox from './OptionBox'
 import AddressSearch from './AddressSearch'
 import TextBox from './TextBox'
 import Footer from './Footer'
+import Pagination from './Pagination'
 
 const components = {
   Header,
@@ -24,6 +25,7 @@ const components = {
   AddressSearch,
   TextBox,
   Footer,
+  Pagination,
 }
 
 export { components }

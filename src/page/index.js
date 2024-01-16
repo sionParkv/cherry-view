@@ -13,6 +13,9 @@ import SubmitID from './SubmitID'
 import CertifiNumber from './CertifiNumber'
 import SearchPass from './SearchPass'
 import ChangePass from './ChangePass'
+import MyPage from './MyPage'
+import AlarmPage from './Alarm'
+import Premier from './Premier'
 
 const pages = {
   MainPage,
@@ -30,6 +33,9 @@ const pages = {
   CertifiNumber,
   SearchPass,
   ChangePass,
+  MyPage,
+  AlarmPage,
+  Premier,
 }
 
 export { pages }

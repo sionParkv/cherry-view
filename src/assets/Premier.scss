@@ -1,0 +1,35 @@
+@import 'common';
+
+.css-1oqqzyl-MuiContainer-root {
+  max-width: 100% !important;
+}
+
+.PremierContainer {
+  .BasicBox {
+    width: 100%;
+    margin: 10% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p,
+    span {
+      font-family: Pretendard;
+    }
+
+    .MainText {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.41;
+      color: #303030;
+    }
+
+    .SubText {
+      padding: 32px 0 73px 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #303030;
+    }
+  }
+}

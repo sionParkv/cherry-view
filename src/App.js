@@ -37,6 +37,12 @@ function App() {
       <Route path="/searchpass" element={<pages.SearchPass />} />
       {/* <비밀번호 변경/> */}
       <Route path="/changepass" element={<pages.ChangePass />} />
+      {/* <마이페이지/> */}
+      <Route path="/mypage" element={<pages.MyPage />} />
+      {/* <알림페이지/> */}
+      <Route path="/alarmpage" element={<pages.AlarmPage />} />
+      {/* <알림페이지/> */}
+      <Route path="/premier" element={<pages.Premier />} />
     </Routes>
   )
 }

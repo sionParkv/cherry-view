@@ -29,6 +29,14 @@ import appleIco from './appleIco.png'
 import googleIco from './googleIco.png'
 import naverIco from './naverIco.png'
 import facebookIco from './facebookIco.png'
+import userPictuer from './userPicture.png'
+import mypage1 from './mypage1.png'
+import mypage3 from './mypage3.png'
+import premier1 from './premier1.png'
+import premier2 from './premier2.png'
+import premier3 from './premier3.png'
+import premier4 from './premier4.png'
+import premier5 from './premier5.png'
 
 const images = {
   tea,
@@ -62,6 +70,14 @@ const images = {
   googleIco,
   naverIco,
   facebookIco,
+  userPictuer,
+  mypage1,
+  mypage3,
+  premier1,
+  premier2,
+  premier3,
+  premier4,
+  premier5,
 }
 
 export { images }
