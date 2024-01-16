@@ -1,0 +1,77 @@
+@import 'common';
+
+.CertifiNumber {
+  .BasicBox {
+    width: 200%;
+    padding: 30% 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .CertifiBox {
+      p {
+        font-family: Pretendard;
+      }
+
+      width: 678px;
+      height: 473px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 16px;
+      background-color: #fafafa;
+
+      .Logo {
+        margin: 56px 0 32px 0;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.1;
+        color: #5e4f42;
+      }
+
+      .Info {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 0.75;
+        color: #373948;
+      }
+
+      .DetailInfo {
+        margin: 32px 0 56px 0;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #202020;
+      }
+
+      .NumberBox {
+        width: 440px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: solid 1.5px #ededed;
+        background-color: white;
+
+        :nth-child(1) {
+          font-size: 20px;
+          font-weight: 500;
+          color: #202020;
+        }
+        :nth-child(2) {
+          font-size: 20px;
+          font-weight: bold;
+          color: #4876ef;
+        }
+      }
+
+      .EndText {
+        margin-top: 56px;
+        font-size: 12px;
+        line-height: 1.33;
+        color: #303030;
+      }
+    }
+  }
+}

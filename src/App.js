@@ -31,6 +31,12 @@ function App() {
       <Route path="/searchid" element={<pages.SearchID />} />
       {/* <아이디 정보/> */}
       <Route path="/submitid" element={<pages.SubmitID />} />
+      {/* <인증번호 안내/> */}
+      <Route path="/certifinumber" element={<pages.CertifiNumber />} />
+      {/* <비밀번호 찾기/> */}
+      <Route path="/searchpass" element={<pages.SearchPass />} />
+      {/* <비밀번호 변경/> */}
+      <Route path="/changepass" element={<pages.ChangePass />} />
     </Routes>
   )
 }

@@ -10,6 +10,9 @@ import Login from './Login'
 import Join from './Join'
 import SearchID from './SearchID'
 import SubmitID from './SubmitID'
+import CertifiNumber from './CertifiNumber'
+import SearchPass from './SearchPass'
+import ChangePass from './ChangePass'
 
 const pages = {
   MainPage,
@@ -24,6 +27,9 @@ const pages = {
   Join,
   SearchID,
   SubmitID,
+  CertifiNumber,
+  SearchPass,
+  ChangePass,
 }
 
 export { pages }
