@@ -31,5 +31,188 @@
       line-height: 1.5;
       color: #303030;
     }
+
+    .ImgBox {
+      display: flex;
+      gap: 50px;
+
+      .Premier1 {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: #ebcdbf;
+      }
+      .Premier2 {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: #f69f88;
+      }
+      .Premier3 {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: #ffced4;
+      }
+      .Premier4 {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: #f1e49e;
+      }
+      .Premier5 {
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: #69d9e5;
+      }
+
+      .TextBox {
+        width: 200px;
+        height: 180px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.12);
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        background-color: #fff;
+
+        .ImgMainText {
+          margin-top: 25px;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 2.5;
+          color: #303030;
+        }
+
+        .ImgSection {
+          margin-bottom: 13px;
+          width: 16px;
+          height: 2px;
+          background-color: #e4e4e4;
+        }
+
+        .ImgSubText {
+          font-size: 15px;
+          line-height: 1.33;
+          color: #303030;
+        }
+      }
+    }
+
+    .BottomSection {
+      width: 100%;
+      margin-top: 160px;
+      padding: 64px 0 100px 0;
+      text-align: center;
+      display: flex;
+      gap: 65px;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f6f6f6;
+
+      .BottomText {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      .AllBox {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .AllContents {
+        display: flex;
+
+        .LeftContents {
+          width: 540px;
+          display: flex;
+          gap: 36px;
+          padding: 46px 70px 45px 39px;
+          align-items: center;
+          border-bottom-left-radius: 100px;
+          border-top-left-radius: 100px;
+          box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.12);
+          background-color: #f6f6f6;
+
+          img {
+            width: 82px;
+            height: 82px;
+          }
+
+          .LeftTextBox {
+            text-align: start;
+            :nth-child(1) {
+              font-size: 24px;
+              font-weight: bold;
+              line-height: 1.33;
+              color: #222d3a;
+            }
+
+            :nth-child(2) {
+              margin: 16px 0 12px 0;
+              font-size: 14px;
+              font-weight: bold;
+              line-height: 1.71;
+              color: #222;
+            }
+
+            :nth-child(3) {
+              font-size: 14px;
+              line-height: 1.43;
+              color: #666;
+            }
+          }
+        }
+
+        .RightContents {
+          width: 660px;
+          padding: 58px 55px 60px 0;
+          display: flex;
+          gap: 94px;
+          justify-content: center;
+          align-items: center;
+          border-bottom-right-radius: 100px;
+          border-top-right-radius: 100px;
+          box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.12);
+          background-color: #fff;
+
+          .RightTextBox {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: start;
+
+            :nth-child(1) {
+              font-size: 20px;
+              font-weight: bold;
+              line-height: 1.2;
+              color: #222;
+            }
+
+            :nth-child(2) {
+              font-size: 14px;
+              line-height: 1.71;
+              color: #666;
+            }
+          }
+
+          .Submit {
+            width: 83px;
+            height: 83px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 41.5px;
+            background-color: #e4e4e4;
+            font-family: Pretendard;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: #222;
+          }
+        }
+      }
+    }
   }
 }

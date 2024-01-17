@@ -20,7 +20,8 @@
     justify-content: center;
     align-items: center;
     p,
-    span {
+    span,
+    div {
       font-family: Pretendard;
     }
     // 탭
@@ -35,6 +36,14 @@
         font-weight: bold;
         color: #202020;
       }
+    }
+
+    .ProfileText {
+      width: 20%;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.82;
+      color: #303030;
     }
 
     .Section {
@@ -271,6 +280,386 @@
         font-size: 16px;
         font-weight: 500;
         color: #000;
+      }
+    }
+
+    // 내정보 탭
+    // 기본 정보
+    .MyInfoContainer {
+      width: 100%;
+
+      .MyInfoSection {
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #000;
+      }
+      .Profile {
+        width: 100%;
+        padding: 16px 0 16px 0;
+        display: flex;
+
+        .ProfileBox {
+          display: flex;
+          gap: 32px;
+          align-items: center;
+
+          :nth-child(1) {
+            width: 184px;
+            height: 184px;
+            background-color: #f5f5f5;
+          }
+          :nth-child(2) {
+            width: 136px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #202020;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+          }
+        }
+      }
+
+      .BasicInfo {
+        width: 100%;
+        padding: 16px 0 16px 0;
+        display: flex;
+
+        .InputBox {
+          width: 100%;
+          padding: 0 15% 0 0;
+
+          .BasicBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: solid 1px #e4e4e4;
+            padding: 12px 0 12px 0;
+
+            .BasicText {
+              width: 30%;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 3.56;
+              color: #303030;
+            }
+
+            .MuiFormControl-root {
+              width: 70%;
+            }
+
+            .Gender {
+              width: 70%;
+              display: flex;
+              gap: 15px;
+
+              div {
+                width: 50%;
+                height: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 17px;
+                font-weight: bold;
+                border: solid 1.5px #ededed;
+                line-height: 1.88;
+              }
+            }
+          }
+        }
+      }
+
+      .DeliveryBox {
+        width: 100%;
+        padding: 16px 0 0 0;
+        display: flex;
+
+        .RightBox {
+          width: 100%;
+
+          .Scroll {
+            max-width: 700px;
+            max-height: 100%;
+            overflow-x: auto;
+            display: flex;
+          }
+
+          .DeliveryInfoBox {
+            padding: 16px 20px 16px 20px;
+            background-color: #f5f5f5;
+
+            .InfoBox {
+              width: 180px;
+              padding: 15px 20px 15px 20px;
+              border-radius: 8px;
+              border: solid 1.5px #ededed;
+              background-color: #fff;
+
+              .InfoTitle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p {
+                  font-size: 18px;
+                  font-weight: bold;
+                  color: #303030;
+                }
+
+                .IcoBox {
+                  display: flex;
+                  gap: 2px;
+
+                  svg {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 5px;
+                    border: solid 1px #e4e4e4;
+                    color: #9999a6;
+                  }
+                }
+              }
+
+              .Name {
+                font-size: 14px;
+                line-height: 2.29;
+                color: #9999a6;
+              }
+
+              .OptionBox {
+                display: flex;
+                gap: 5px;
+                :nth-child(1) {
+                  font-size: 14px;
+                  color: #9999a6;
+                }
+
+                :nth-child(2) {
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: #ffc043;
+                }
+              }
+
+              .Address {
+                font-size: 14px;
+                color: #303030;
+              }
+            }
+          }
+
+          .BasicBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: solid 1px #e4e4e4;
+            padding: 12px 0 12px 0;
+
+            .BasicText {
+              width: 24%;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 3.56;
+              color: #303030;
+            }
+
+            .MuiFormControl-root {
+              width: 60%;
+            }
+          }
+
+          .AddressBox {
+            display: flex;
+            padding: 12px 0 32px 0;
+
+            .BasicText {
+              width: 24%;
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 3.56;
+              color: #303030;
+            }
+
+            .AnotherBox {
+              width: 75%;
+              display: flex;
+              gap: 12px;
+              flex-direction: column;
+
+              .AddressOne {
+                display: flex;
+                gap: 12px;
+
+                :nth-child(1) {
+                  width: 60%;
+                  height: 48px;
+                  border-radius: 8px;
+                  background-color: #ebebeb;
+                }
+                :nth-child(2) {
+                  width: 96px;
+                  height: 48px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 8px;
+                  border: solid 1.5px #303030;
+                  font-size: 16px;
+                  font-weight: bold;
+                  line-height: 4;
+                  color: #303030;
+                }
+              }
+
+              .AddressTwo {
+                width: 80%;
+                height: 48px;
+                border-radius: 8px;
+                background-color: #ebebeb;
+              }
+
+              .MuiFormControl-root {
+                width: 80%;
+              }
+
+              .Mui-checked {
+                color: #ffc032;
+              }
+
+              .MuiTypography-root {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.63;
+                color: #202020;
+              }
+
+              .SaveButton {
+                width: 80%;
+                height: 56px;
+                border-radius: 8px;
+                background-color: #202020;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 추가 정보
+    .AdditionalSection {
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #000;
+    }
+    .AdditionalBox {
+      display: flex;
+      padding: 16px 0 16px 0;
+
+      .RightContent {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .OneContent {
+        display: flex;
+        padding: 12px 15% 12px 0;
+        align-items: center;
+        border-bottom: solid 1px #e4e4e4;
+
+        p {
+          width: 40%;
+          font-family: Pretendard;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .MuiInputBase-root {
+          width: 100%;
+        }
+        .TwoContent {
+          display: flex;
+          gap: 15px;
+          width: 100%;
+
+          div {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: solid 1.5px #ededed;
+            font-size: 17px;
+            font-weight: bold;
+          }
+        }
+        .ThreeContent {
+          display: flex;
+          width: 100%;
+          gap: 15px;
+          text-align: center;
+
+          div {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #ffc032;
+            border: solid 1.5px #ededed;
+            font-size: 17px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .AgainContainer {
+      display: flex;
+      align-items: center;
+      padding: 24px 0 24px 0;
+
+      .AgainBox {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        :nth-child(1) {
+          font-size: 18px;
+          font-weight: bold;
+          color: #303030;
+        }
+
+        :nth-child(2) {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .ButtonBox {
+      padding: 40px 0 120px 0;
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 60%;
+        height: 64px;
+        border-radius: 8px;
+        background-color: #ffc032;
+        font-family: Pretendard;
+        font-size: 20px;
+        font-weight: bold;
+        color: #202020;
       }
     }
   }

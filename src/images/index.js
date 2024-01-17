@@ -37,6 +37,7 @@ import premier2 from './premier2.png'
 import premier3 from './premier3.png'
 import premier4 from './premier4.png'
 import premier5 from './premier5.png'
+import naverMain from './naverMain.png'
 
 const images = {
   tea,
@@ -78,6 +79,7 @@ const images = {
   premier3,
   premier4,
   premier5,
+  naverMain,
 }
 
 export { images }
