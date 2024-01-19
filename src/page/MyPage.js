@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
   Box,
   Button,
@@ -5,9 +6,20 @@ import {
   Container,
   FormControlLabel,
   FormGroup,
+  IconButton,
+  Pagination,
+  Paper,
   Select,
+  Stack,
+  Switch,
   Typography as T,
   Tab,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Tabs,
   TextField,
 } from '@mui/material'
@@ -24,6 +36,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import MainCard from '../component/Card'
 import CreateIcon from '@mui/icons-material/Create'
 import CloseIcon from '@mui/icons-material/Close'
+import EventAvailableIcon from '@mui/icons-material/EventAvailable'
+import SyncIcon from '@mui/icons-material/Sync'
 
 const cardData = [
   {
@@ -104,7 +118,6 @@ const infoBoxesData = [
     options: ['03375', '기본배송지'],
     address: '서울특별시 은평구 진흥로 182 풍안빌딩 4층',
   },
-  // Add more data objects for each InfoBox
 ]
 
 // 4개 버튼 컨트롤 스타일
@@ -171,7 +184,102 @@ function CustomTabPanel(props) {
   const { value, index, ...other } = props
   // 내정보 탭
   const [selectedTab, setSelectedTab] = useState('basic') // 초기 탭 설정
+  // 포인트 탭
+  const [selectedPoint, setSelectedPoint] = useState('accumulate') // 초기 탭 설정
 
+  // 스위치 컨트롤
+  const [checked1, setChecked1] = useState(false)
+
+  const switchChange1 = () => {
+    setChecked1(!checked1)
+  }
+  const [checked2, setChecked2] = useState(false)
+
+  const switchChange2 = () => {
+    setChecked2(!checked2)
+  }
+  const [checked3, setChecked3] = useState(false)
+
+  const switchChange3 = () => {
+    setChecked3(!checked3)
+  }
+  const [checked4, setChecked4] = useState(false)
+
+  const switchChange4 = () => {
+    setChecked4(!checked4)
+  }
+  const [checked5, setChecked5] = useState(false)
+
+  const switchChange5 = () => {
+    setChecked5(!checked5)
+  }
+
+  // 적립 내역 테이블
+  function createData(id, date, reason, point) {
+    return { id, date, reason, point }
+  }
+
+  const rows = [
+    createData(1, '2023.12.13', '수제한방 모란꽃차 캠페인 참여', '200,000P'),
+    createData(2, '2023.12.13', '수제한방 모란꽃차 캠페인 참여', '200,000P'),
+    createData(3, '2023.12.13', '수제한방 모란꽃차 캠페인 참여', '200,000P'),
+    createData(4, '2023.12.13', '수제한방 모란꽃차 캠페인 참여', '200,000P'),
+    createData(5, '2023.12.13', '수제한방 모란꽃차 캠페인 참여', '200,000P'),
+  ]
+  // 출금 내역 테이블
+  function createData2(id, bank, name, amount, info, submit, process) {
+    return { id, bank, name, amount, info, submit, process }
+  }
+
+  const rows2 = [
+    createData2(
+      1,
+      '신한 000-0000-0000',
+      '김체리',
+      '200,000원',
+      '수제한방 모란꽃차 캠페인 참여',
+      '2023.12.16',
+      '2023.12.18'
+    ),
+    createData2(
+      1,
+      '신한 000-0000-0000',
+      '김체리',
+      '200,000원',
+      '수제한방 모란꽃차 캠페인 참여',
+      '2023.12.16',
+      '2023.12.18'
+    ),
+    createData2(
+      1,
+      '신한 000-0000-0000',
+      '김체리',
+      '200,000원',
+      '수제한방 모란꽃차 캠페인 참여',
+      '2023.12.16',
+      '2023.12.18'
+    ),
+    createData2(
+      1,
+      '신한 000-0000-0000',
+      '김체리',
+      '200,000원',
+      '수제한방 모란꽃차 캠페인 참여',
+      '2023.12.16',
+      '2023.12.18'
+    ),
+    createData2(
+      1,
+      '신한 000-0000-0000',
+      '김체리',
+      '200,000원',
+      '수제한방 모란꽃차 캠페인 참여',
+      '2023.12.16',
+      '2023.12.18'
+    ),
+  ]
+
+  // 내정보 탭 컨텐츠
   const tabContents = {
     basic: (
       <Box className="MyInfoContainer">
@@ -486,22 +594,375 @@ function CustomTabPanel(props) {
         </Box>
       </Box>
     ),
+    // 비밀번호 변경
     password: (
-      // 등록한 캠페인에 대한 컨텐츠
-      <div>등록한 캠페인 내용</div>
+      <Box>
+        <Box className="AdditionalSection"></Box>
+        <Box className="PasswordContainer">
+          <T className="PasswordText">비밀번호 변경</T>
+          <Box className="PasswordBox">
+            <Box className="DetailBox">
+              <T>현재 비밀번호</T>
+              <TextField placeholder="현재 사용중이신 비밀번호를 입력해주세요" />
+            </Box>
+            <Box className="DetailBox">
+              <T>새 비밀번호</T>
+              <TextField placeholder="새로 사용하실 비밀번호를 입력해주세요" />
+            </Box>
+            <Box className="DetailBox">
+              <T>새 비밀번호 확인</T>
+              <TextField placeholder="새 비밀번호를 한번 더 입력해주세요" />
+            </Box>
+          </Box>
+        </Box>
+        <Box className="AdditionalSection"></Box>
+        <Box className="ButtonBox">
+          <Button>저장하기</Button>
+        </Box>
+      </Box>
     ),
+    // 간편 로그인
     login: (
-      // 종료된 캠페인에 대한 컨텐츠
-      <div>종료된 캠페인 내용</div>
+      <Box className="MaxBox">
+        <Box className="AdditionalSection"></Box>
+        <Box className="LoginContainer">
+          <T className="LoginText">간편 로그인</T>
+          <Box className="LogindBox">
+            <Box className="DetailBox">
+              <T>카카오 로그인</T>
+              <Switch
+                checked={checked1}
+                onChange={switchChange1}
+                sx={{
+                  '& .MuiSwitch-thumb': {
+                    backgroundImage: `url(${
+                      checked1 ? images.onKakao : images.offKakao
+                    })`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+              />
+            </Box>
+            <Box className="DetailBox">
+              <T>네이버 로그인</T>
+              <Switch
+                checked={checked2}
+                onChange={switchChange2}
+                sx={{
+                  '& .MuiSwitch-thumb': {
+                    backgroundImage: `url(${
+                      checked2 ? images.onNaver : images.offNaver
+                    })`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+              />
+            </Box>
+            <Box className="DetailBox">
+              <T>페이스북 로그인</T>
+              <Switch
+                checked={checked3}
+                onChange={switchChange3}
+                sx={{
+                  '& .MuiSwitch-thumb': {
+                    backgroundImage: `url(${
+                      checked3 ? images.onFacebook : images.offFacebook
+                    })`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+              />
+            </Box>
+            <Box className="DetailBox">
+              <T>애플 로그인</T>
+              <Switch
+                checked={checked4}
+                onChange={switchChange4}
+                sx={{
+                  '& .MuiSwitch-thumb': {
+                    backgroundImage: `url(${
+                      checked4 ? images.onApple : images.offApple
+                    })`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+              />
+            </Box>
+            <Box className="DetailBox">
+              <T>구글 로그인</T>
+              <Switch
+                checked={checked5}
+                onChange={switchChange5}
+                sx={{
+                  '& .MuiSwitch-thumb': {
+                    backgroundImage: `url(${
+                      checked5 ? images.onGoogle : images.offGoogle
+                    })`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+              />
+            </Box>
+          </Box>
+        </Box>
+        <Box className="AdditionalSection"></Box>
+      </Box>
     ),
+    // 미디어 연결
     media: (
-      // 등록 콘텐츠에 대한 컨텐츠
-      <div>등록 콘텐츠 내용</div>
+      <Box className="MaxBox">
+        <Box className="AdditionalSection" />
+        <Box className="MediaContainer">
+          <T className="MediaText">미디어</T>
+          <Box className="ContentsBoxes">
+            <Box className="MediaBox">
+              <T className="BigText">미디어 연결</T>
+              <Box className="DetailBox">
+                <img src={images.naver} />
+                <T>블로그를 연결해주세요</T>
+                <ArrowForwardIosIcon />
+              </Box>
+            </Box>
+            <Box className="MediaBox">
+              <T className="BigText">미디어 연결</T>
+              <Box className="DetailBox">
+                <img src={images.insta} />
+                <T>인스타그램을 연결해주세요</T>
+                <ArrowForwardIosIcon />
+              </Box>
+            </Box>
+            <Box className="MediaBox">
+              <T className="BigText">미디어 연결</T>
+              <Box className="DetailBox">
+                <img src={images.youtube} />
+                <T>유튜브를 연결해주세요</T>
+                <ArrowForwardIosIcon />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+        <Box className="AdditionalSection" />
+      </Box>
     ),
+    // 패널티
     panulty: (
-      // 등록 콘텐츠에 대한 컨텐츠
-      <div>등록 콘텐츠 내용??</div>
+      <Box className="MaxBox">
+        <Box className="AdditionalSection" />
+        <Box className="PanultyBox">
+          <Box className="BarContainer">
+            <Box className="BarBox">
+              <Box className="BarSection1">
+                <Box className="Circle" />
+              </Box>
+              <Box className="TextBox">
+                <T>패널티1</T>
+                <T>경고 단계</T>
+              </Box>
+            </Box>
+            <Box className="BarBox">
+              <Box className="BarSection2"></Box>
+              <Box className="TextBox">
+                <T>패널티2</T>
+                <T>일주일 이용제한</T>
+              </Box>
+            </Box>
+            <Box className="BarBox">
+              <Box className="BarSection2"></Box>
+              <Box className="TextBox">
+                <T>패널티3</T>
+                <T>15일 이용제한</T>
+              </Box>
+            </Box>
+            <Box className="BarBox">
+              <Box className="BarSection2"></Box>
+              <Box className="TextBox">
+                <T>패널티4</T>
+                <T>한달 이용제한</T>
+              </Box>
+            </Box>
+            <Box className="BarBox">
+              <Box className="BarSection3"></Box>
+              <Box className="TextBox">
+                <T>패널티5</T>
+                <T>영구 이용제한</T>
+              </Box>
+            </Box>
+          </Box>
+          <Box className="PanultyTextBox">
+            <Box className="TextBox">
+              <T>현재 패널티</T>
+              <T>경고 단계</T>
+              <T>2023.11.21일 까지 서비스 제한중</T>
+            </Box>
+            <T className="Text">
+              페널티 5회 부여시 계정 영구적으로 캠페인 신청, 포인트 출금,
+              커뮤니티 활동 불가
+            </T>
+          </Box>
+          <Box className="TextContainer">
+            <Box className="InfoText1">
+              <T>발생일</T>
+              <T>사유</T>
+              <T>단계</T>
+            </Box>
+            <Box className="InfoText2">
+              <T>2023.12.13</T>
+              <T>'수제한방 모란꽃차' 캠페인 선정 후 미 참여</T>
+              <T>패널티 1</T>
+            </Box>
+          </Box>
+        </Box>
+        <Box className="AdditionalSection" />
+      </Box>
     ),
+  }
+  // 포인트 컨텐츠
+  const potintContents = {
+    // 적립내역
+    accumulate: (
+      <Box>
+        <Box className="AdditionalSection" />
+        <Box className="SearchBox">
+          <Box className="Year">1년</Box>
+          <Box className="Year">1주일</Box>
+          <Box className="Year">1개월</Box>
+          <Box className="Year">3개월</Box>
+          <Box className="CalendarBox">
+            <EventAvailableIcon />
+            <T>연 - 월 - 일</T>
+          </Box>
+          <Box className="CalendarSection" />
+          <Box className="CalendarBox">
+            <EventAvailableIcon />
+            <T>연 - 월 - 일</T>
+          </Box>
+          <Box className="Search">조회하기</Box>
+          <IconButton className="SearchButton">
+            <SyncIcon />
+          </IconButton>
+        </Box>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>적립일</TableCell>
+                <TableCell>적립 사유</TableCell>
+                <TableCell>포인트</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell>{row.date}</TableCell>
+                  <TableCell>{row.reason}</TableCell>
+                  <TableCell>{row.point}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
+        <Box className="BottomText">
+          · 포인트가 10,000원 이상 모이면 출금 신청을 할 수 있습니다.
+          <br />
+          · 포인트는 한 달에 3번 신청이 가능하며, 신청 마감일 5일 후 지급됩니다.
+          (지급일이 공휴일인 경우, 다음 영업일에 지급됩니다.)
+          <br />
+          · 신청 기간 및 지급일 안내 (1일 ~ 10일, 당월 15일 지급), (11일 ~ 20일,
+          당월 25일 지급), (21일 ~ 말일, 익월 5일 지급)
+          <br />
+          · 출금 금액을 지정하여 신청이 불가하며, 신청 정보와 금액 수정을 원하실
+          경우, 앞선 신청을 취소하시고 다시 신청해 주세요.
+          <br />
+          · 입금계좌의 예금주와 회원 정보의 이름이 동일해야 하며, 실명이어야
+          포인트가 지급됩니다.
+          <br />· 입금액은 관련 법상 사업소득에 따른 세금 3.3%를 공제하고
+          입금되며 입금된 날짜를 기준으로 소득이 발생한 것으로 신고됩니다.
+        </Box>
+      </Box>
+    ),
+    withdraw: (
+      <Box>
+        <Box className="AdditionalSection" />
+        <Box className="SearchBox">
+          <Box className="Year">1년</Box>
+          <Box className="Year">1주일</Box>
+          <Box className="Year">1개월</Box>
+          <Box className="Year">3개월</Box>
+          <Box className="CalendarBox">
+            <EventAvailableIcon />
+            <T>연 - 월 - 일</T>
+          </Box>
+          <Box className="CalendarSection" />
+          <Box className="CalendarBox">
+            <EventAvailableIcon />
+            <T>연 - 월 - 일</T>
+          </Box>
+          <Box className="Search">조회하기</Box>
+          <IconButton className="SearchButton">
+            <SyncIcon />
+          </IconButton>
+        </Box>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>계좌 정보</TableCell>
+                <TableCell>출금 신청액</TableCell>
+                <TableCell>상태</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows2.map((row) => (
+                <TableRow
+                  key={row.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell>
+                    {row.bank}
+                    {row.name}
+                  </TableCell>
+                  <TableCell>
+                    {row.amount}
+                    {row.info}
+                  </TableCell>
+                  <TableCell>
+                    {row.submit}
+                    {row.process}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
+        <Box className="BottomText">
+          · 포인트가 10,000원 이상 모이면 출금 신청을 할 수 있습니다.
+          <br />
+          · 포인트는 한 달에 3번 신청이 가능하며, 신청 마감일 5일 후 지급됩니다.
+          (지급일이 공휴일인 경우, 다음 영업일에 지급됩니다.)
+          <br />
+          · 신청 기간 및 지급일 안내 (1일 ~ 10일, 당월 15일 지급), (11일 ~ 20일,
+          당월 25일 지급), (21일 ~ 말일, 익월 5일 지급)
+          <br />
+          · 출금 금액을 지정하여 신청이 불가하며, 신청 정보와 금액 수정을 원하실
+          경우, 앞선 신청을 취소하시고 다시 신청해 주세요.
+          <br />
+          · 입금계좌의 예금주와 회원 정보의 이름이 동일해야 하며, 실명이어야
+          포인트가 지급됩니다.
+          <br />· 입금액은 관련 법상 사업소득에 따른 세금 3.3%를 공제하고
+          입금되며 입금된 날짜를 기준으로 소득이 발생한 것으로 신고됩니다.
+        </Box>
+      </Box>
+    ),
+    application: <Box>333</Box>,
   }
 
   return (
@@ -693,7 +1154,47 @@ function CustomTabPanel(props) {
           {tabContents[selectedTab]}
         </Box>
       )}
-      {value === 3 && <Box></Box>}
+      {value === 3 && (
+        <Box>
+          <Box className="PointContainer">
+            <Box>
+              <T>보유 포인트</T>
+              <T className="YellowPoint">300,000 P</T>
+            </Box>
+            <Box>
+              <T>누적 포인트</T>
+              <T className="BlackPoint">300,000 P</T>
+            </Box>
+          </Box>
+          <Box className="CampaignList">
+            <Box
+              className={`tab ${
+                selectedPoint === 'accumulate' ? 'SelectedTab' : 'NoSelect'
+              }`}
+              onClick={() => setSelectedPoint('accumulate')}
+            >
+              적립 내역
+            </Box>
+            <Box
+              className={`tab ${
+                selectedPoint === 'withdraw' ? 'SelectedTab' : 'NoSelect'
+              }`}
+              onClick={() => setSelectedPoint('withdraw')}
+            >
+              출금 내역
+            </Box>
+            <Box
+              className={`tab ${
+                selectedPoint === 'application' ? 'SelectedTab' : 'NoSelect'
+              }`}
+              onClick={() => setSelectedPoint('application')}
+            >
+              출금 신청
+            </Box>
+          </Box>
+          {potintContents[selectedPoint]}
+        </Box>
+      )}
       {value === 4 && <Box></Box>}
     </Box>
   )
@@ -721,25 +1222,28 @@ const MyPage = () => {
   return (
     <Container className="MyPageContainer">
       <components.Header />
-      <Box className="MyPageBox">
-        <Box className="TabBox">
-          <Tabs value={value} onChange={handleChange}>
-            <Tab label="마이" {...a11yProps(0)} />
-            <Tab label="캠페인" {...a11yProps(1)} />
-            <Tab label="내 정보" {...a11yProps(2)} />
-            <Tab label="포인트" {...a11yProps(3)} />
-            <Tab label="고객센터" {...a11yProps(4)} />
-          </Tabs>
-        </Box>
-        <Box className="Section" />
-        <Box className="ContentsBox">
-          <CustomTabPanel value={value} index={0}></CustomTabPanel>
-          <CustomTabPanel value={value} index={1}></CustomTabPanel>
-          <CustomTabPanel value={value} index={2}></CustomTabPanel>
-          <CustomTabPanel value={value} index={3}></CustomTabPanel>
-          <CustomTabPanel value={value} index={4}></CustomTabPanel>
+      <Box className="LastContainer">
+        <Box className="MyPageBox">
+          <Box className="TabBox">
+            <Tabs value={value} onChange={handleChange}>
+              <Tab label="마이" {...a11yProps(0)} />
+              <Tab label="캠페인" {...a11yProps(1)} />
+              <Tab label="내 정보" {...a11yProps(2)} />
+              <Tab label="포인트" {...a11yProps(3)} />
+              <Tab label="고객센터" {...a11yProps(4)} />
+            </Tabs>
+            <Box className="Section" />
+          </Box>
+          <Box className="ContentsBox">
+            <CustomTabPanel value={value} index={0}></CustomTabPanel>
+            <CustomTabPanel value={value} index={1}></CustomTabPanel>
+            <CustomTabPanel value={value} index={2}></CustomTabPanel>
+            <CustomTabPanel value={value} index={3}></CustomTabPanel>
+            <CustomTabPanel value={value} index={4}></CustomTabPanel>
+          </Box>
         </Box>
       </Box>
+
       <components.Footer />
     </Container>
   )

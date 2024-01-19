@@ -8,17 +8,20 @@
   display: none !important;
 }
 
-.MyPageContainer {
+.LastContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .MuiTabs-indicator {
     background-color: #ffc043;
   }
+
   .MyPageBox {
-    width: 100%;
     margin: 10% 0 0 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     p,
     span,
     div {
@@ -26,15 +29,25 @@
     }
     // 탭
     .TabBox {
-      margin: 0 23% 0 0;
+      width: 100%;
+      margin: 0 0 0 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
 
       .MuiButtonBase-root {
         font-family: Pretendard;
         font-size: 24px;
         font-weight: bold;
         color: #202020;
+      }
+
+      .Section {
+        width: 100%;
+        height: 2px;
+        margin: 0 0 0 0;
+        border-radius: 1px;
+        background-color: #e4e4e4;
       }
     }
 
@@ -46,18 +59,11 @@
       color: #303030;
     }
 
-    .Section {
-      width: 959px;
-      height: 2px;
-      border-radius: 1px;
-      background-color: #e4e4e4;
-    }
     // 컨텐츠
     .ContentsBox {
       width: 100%;
       margin: 0 0 0 0;
       display: flex;
-      justify-content: center;
     }
     // 마이
     .MyTopContent {
@@ -661,6 +667,435 @@
         font-weight: bold;
         color: #202020;
       }
+    }
+    // 비밀번호 변경
+    .PasswordContainer {
+      display: flex;
+      padding: 16px 0 16px 0;
+
+      .PasswordText {
+        width: 30%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.82;
+        color: #303030;
+      }
+
+      .PasswordBox {
+        width: 100%;
+        padding-right: 15%;
+        .DetailBox {
+          width: 100%;
+          padding: 16px 0 16px 0;
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #e4e4e4;
+
+          p {
+            width: 30%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          .MuiFormControl-root {
+            width: 70%;
+          }
+        }
+      }
+    }
+    // 간편 로그인
+    .MaxBox {
+      margin-bottom: 140px;
+    }
+
+    .LoginContainer {
+      width: 100%;
+      display: flex;
+      padding: 16px 0 16px 0;
+
+      .LoginText {
+        width: 40%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.82;
+        color: #303030;
+      }
+
+      .LogindBox {
+        width: 100%;
+        padding-right: 15%;
+        .DetailBox {
+          width: 100%;
+          padding: 16px 0 16px 0;
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #e4e4e4;
+
+          p {
+            width: 30%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+        }
+      }
+    }
+
+    // 미디어 연결
+    .MediaContainer {
+      width: 100%;
+      display: flex;
+      padding: 16px 0 16px 0;
+
+      .MediaText {
+        width: 30%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.82;
+        color: #303030;
+      }
+
+      .ContentsBoxes {
+        width: 70%;
+        display: flex;
+        padding-right: 15%;
+        flex-direction: column;
+      }
+
+      .MediaBox {
+        width: 100%;
+        padding: 12px 0 12px 0;
+        display: flex;
+
+        div {
+          display: flex;
+        }
+
+        .BigText {
+          width: 30%;
+          display: flex;
+          align-items: center;
+          font-family: Pretendard;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .DetailBox {
+          width: 70%;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          padding: 0 5% 0 5%;
+          border: solid 1.5px #ededed;
+
+          :nth-child(1) {
+            width: 24px;
+            height: 24px;
+          }
+          :nth-child(2) {
+            width: 100%;
+            padding: 0 30% 0 5%;
+            font-family: Pretendard;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.88;
+            color: #202020;
+          }
+          :nth-child(3) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+
+    // 패널티 탭
+    .PanultyBox {
+      width: 100%;
+
+      .BarContainer {
+        display: flex;
+
+        .BarBox {
+          width: 20%;
+          padding: 20px 0 0 0;
+          border-right: solid 1px #e4e4e4;
+          .BarSection1 {
+            width: 100%;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 18px;
+            border-bottom-left-radius: 18px;
+            background-color: #ffc043;
+
+            .Circle {
+              width: 26px;
+              height: 26px;
+              border-radius: 13px;
+              box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+              background-color: #fff;
+            }
+          }
+
+          .BarSection2 {
+            width: 100%;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffc043;
+          }
+
+          .BarSection3 {
+            width: 100%;
+            height: 36px;
+            border-top-right-radius: 18px;
+            border-bottom-right-radius: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffc043;
+          }
+
+          .TextBox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0 19px 12px;
+
+            :nth-child(1) {
+              font-size: 16px;
+              font-weight: 500;
+              color: #000;
+            }
+            :nth-child(2) {
+              font-size: 14px;
+              color: #9999a6;
+            }
+          }
+        }
+      }
+
+      .PanultyTextBox {
+        height: 70px;
+        padding: 24px 0 24px 24px;
+        background-color: #f5f5f5;
+        border-top: solid 1px #e4e4e4;
+
+        .TextBox {
+          display: flex;
+          align-items: center;
+
+          :nth-child(1) {
+            font-size: 22px;
+            font-weight: 500;
+            color: #000;
+          }
+          :nth-child(2) {
+            font-size: 22px;
+            font-weight: bold;
+            padding: 0 19px 0 12px;
+          }
+          :nth-child(3) {
+            font-size: 14px;
+            color: #9999a6;
+          }
+        }
+
+        .Text {
+          font-size: 14px;
+          line-height: 2.29;
+          color: #9999a6;
+        }
+      }
+
+      .TextContainer {
+        padding: 24px 0 26px 0;
+
+        .InfoText1 {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 10% 20px 10%;
+          border-bottom: solid 1px #e4e4e4;
+
+          :nth-child(1),
+          :nth-child(3) {
+            font-size: 16px;
+            font-weight: bold;
+            color: #202020;
+          }
+
+          :nth-child(2) {
+            font-size: 16px;
+            font-weight: bold;
+            color: #202020;
+          }
+        }
+        .InfoText2 {
+          display: flex;
+          justify-content: space-between;
+          padding: 20px 8% 0 8%;
+
+          :nth-child(1),
+          :nth-child(3) {
+            font-size: 16px;
+            font-weight: bold;
+            color: #202020;
+          }
+
+          :nth-child(2) {
+            font-size: 18px;
+            font-weight: bold;
+            color: #202020;
+          }
+        }
+      }
+    }
+    // 포인트 탭
+    .PointContainer {
+      width: 100%;
+      padding: 32px 0 0 0;
+      display: flex;
+      gap: 20px;
+
+      div {
+        width: 470px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        background-color: #f5f5f5;
+
+        :nth-child(1) {
+          font-size: 16px;
+          color: #a4a4a4;
+        }
+
+        .YellowPoint {
+          font-size: 28px;
+          font-weight: 600;
+          color: #ffc043;
+        }
+        .BlackPoint {
+          font-size: 28px;
+          font-weight: 600;
+          color: #303030;
+        }
+      }
+    }
+    // 적립내역
+    .SearchBox {
+      padding: 20px 0 20px 0;
+      border-bottom: solid 1px #e4e4e4;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .Year {
+        width: 87px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #ebebeb;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.78;
+        color: #404040;
+      }
+
+      .CalendarBox {
+        width: 175px;
+        height: 40px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border-radius: 20px;
+        border: solid 2px #e4e4e4;
+
+        :nth-child(1) {
+          width: 18px;
+          height: 18px;
+          margin-left: 24px;
+          color: #aaa;
+        }
+
+        :nth-child(2) {
+          font-size: 16px;
+          color: #aaa;
+        }
+      }
+
+      .CalendarSection {
+        width: 8px;
+        height: 2px;
+        border: solid 1px #e4e4e4;
+        background-color: #e4e4e4;
+      }
+
+      .Search {
+        width: 126px;
+        height: 40px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.78;
+        color: #fff;
+      }
+
+      .SearchButton {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #ffc043;
+
+        svg {
+          width: 22px;
+          height: 22px;
+          color: #fff;
+        }
+      }
+    }
+
+    .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+      box-shadow: none;
+    }
+
+    .MuiTableCell-root {
+      text-align: center;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-weight: bold;
+      color: #202020;
+    }
+
+    .MuiStack-root {
+      padding: 40px 0 80px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+        background-color: #333;
+        color: white;
+      }
+    }
+
+    .BottomText {
+      padding-bottom: 120px;
+      font-size: 14px;
+      line-height: 1.43;
+      color: #404040;
     }
   }
 }

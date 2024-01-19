@@ -38,6 +38,16 @@ import premier3 from './premier3.png'
 import premier4 from './premier4.png'
 import premier5 from './premier5.png'
 import naverMain from './naverMain.png'
+import onKakao from './onKakao.png'
+import onApple from './onApple.png'
+import onGoogle from './onGoogle.png'
+import onFacebook from './onFacebook.png'
+import onNaver from './onNaver.png'
+import offKakao from './offKakao.png'
+import offApple from './offApple.png'
+import offGoogle from './offGoogle.png'
+import offFacebook from './offFacebook.png'
+import offNaver from './offNaver.png'
 
 const images = {
   tea,
@@ -80,6 +90,16 @@ const images = {
   premier4,
   premier5,
   naverMain,
+  onKakao,
+  onApple,
+  onFacebook,
+  onNaver,
+  onGoogle,
+  offKakao,
+  offApple,
+  offFacebook,
+  offNaver,
+  offGoogle,
 }
 
 export { images }
