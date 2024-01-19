@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import {
   Box,
   Button,
   Checkbox,
+  Collapse,
   Container,
   FormControlLabel,
   FormGroup,
@@ -25,10 +27,6 @@ import {
 } from '@mui/material'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-
-import '../assets/MyPage.scss'
-import { components } from '../component/index'
-import { images } from '../images/index'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
@@ -38,6 +36,13 @@ import CreateIcon from '@mui/icons-material/Create'
 import CloseIcon from '@mui/icons-material/Close'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 import SyncIcon from '@mui/icons-material/Sync'
+import { DataGrid } from '@mui/x-data-grid'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+
+import '../assets/MyPage.scss'
+import { components } from '../component/index'
+import { images } from '../images/index'
 
 const cardData = [
   {
@@ -133,6 +138,54 @@ const styles = {
   },
 }
 
+// 고객센터 아이템
+const ExpandableTab = ({ question, status, date, answer }) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded)
+  }
+
+  return (
+    <Box>
+      <Box className="CenterContainer">
+        <Box className="QuestionBox">
+          <T className="Question">{question}</T>
+          <Box className="Status">{status}</Box>
+          <T className="Date">{date}</T>
+          {isExpanded ? (
+            <KeyboardArrowUpIcon
+              onClick={handleToggle}
+              variant="contained"
+              color="primary"
+            />
+          ) : (
+            <KeyboardArrowDownIcon
+              onClick={handleToggle}
+              variant="contained"
+              color="primary"
+            />
+          )}
+        </Box>
+      </Box>
+      <Collapse in={isExpanded} unmountOnExit>
+        <T>{answer}</T>
+        <T className="Date">{date}</T>
+      </Collapse>
+    </Box>
+  )
+}
+
+const FAQList = ({ faqData }) => {
+  return (
+    <Box>
+      {faqData.map((faq, index) => (
+        <ExpandableTab key={index} {...faq} />
+      ))}
+    </Box>
+  )
+}
+// 마이 탭 컨텐츠
 function CustomTabPanel(props) {
   // 얼굴 노출
   const [selectedFace, setSelectedFace] = useState(null)
@@ -182,6 +235,8 @@ function CustomTabPanel(props) {
   }
 
   const { value, index, ...other } = props
+  // 캠페인 탭
+  const [campaignSelectedTab, setCampaignSelectedTab] = useState('applied') // 초기 탭 설정
   // 내정보 탭
   const [selectedTab, setSelectedTab] = useState('basic') // 초기 탭 설정
   // 포인트 탭
@@ -242,7 +297,7 @@ function CustomTabPanel(props) {
       '2023.12.18'
     ),
     createData2(
-      1,
+      2,
       '신한 000-0000-0000',
       '김체리',
       '200,000원',
@@ -251,7 +306,7 @@ function CustomTabPanel(props) {
       '2023.12.18'
     ),
     createData2(
-      1,
+      3,
       '신한 000-0000-0000',
       '김체리',
       '200,000원',
@@ -260,7 +315,7 @@ function CustomTabPanel(props) {
       '2023.12.18'
     ),
     createData2(
-      1,
+      4,
       '신한 000-0000-0000',
       '김체리',
       '200,000원',
@@ -269,7 +324,7 @@ function CustomTabPanel(props) {
       '2023.12.18'
     ),
     createData2(
-      1,
+      5,
       '신한 000-0000-0000',
       '김체리',
       '200,000원',
@@ -278,6 +333,103 @@ function CustomTabPanel(props) {
       '2023.12.18'
     ),
   ]
+  // 출금 신청 테이블
+  const columns3 = [
+    {
+      field: 'date',
+      headerName: '적립일',
+      width: 150,
+    },
+    {
+      field: 'reason',
+      headerName: '적립사유',
+      width: 580,
+    },
+    {
+      field: 'point',
+      headerName: '포인트',
+      width: 130,
+    },
+  ]
+
+  const rows3 = [
+    {
+      id: 1,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 2,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 3,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 4,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 5,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 6,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+    {
+      id: 7,
+      date: '2023.12.23',
+      reason: '수제한방 모란꽃차 캠페인 참여',
+      point: '200,000 P',
+    },
+  ]
+
+  // 고객센터 데이터
+  const faqData = [
+    {
+      question: '출금은 어떻게 신청하나요?',
+      status: '답변 전',
+      date: '2023.00.00',
+      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
+    },
+    {
+      question: '출금은 어떻게 신청하나요?',
+      status: '답변 전',
+      date: '2023.00.00',
+      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
+    },
+    {
+      question: '출금은 어떻게 신청하나요?',
+      status: '답변 전',
+      date: '2023.00.00',
+      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
+    },
+  ]
+  // 캠페인 탭 컨텐츠
+  const campaignContents = {
+    applied: (
+      <Box className="AppliedContainer">
+        <Box className="CampaignSection" />
+      </Box>
+    ),
+    selected: <Box></Box>,
+    registered: <Box></Box>,
+    closed: <Box></Box>,
+    content: <Box></Box>,
+  }
 
   // 내정보 탭 컨텐츠
   const tabContents = {
@@ -923,17 +1075,23 @@ function CustomTabPanel(props) {
                   key={row.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                  <TableCell>
-                    {row.bank}
-                    {row.name}
+                  <TableCell className="TableData">
+                    <T>{row.bank}</T>
+                    <T>{row.name}</T>
                   </TableCell>
-                  <TableCell>
-                    {row.amount}
-                    {row.info}
+                  <TableCell className="TableData">
+                    <T>{row.amount}</T>
+                    <T> {row.info}</T>
                   </TableCell>
-                  <TableCell>
-                    {row.submit}
-                    {row.process}
+                  <TableCell className="TableData3">
+                    <Box className="DataBox">
+                      <T>신청</T>
+                      <T>{row.submit}</T>
+                    </Box>
+                    <Box className="DataBox">
+                      <T>처리</T>
+                      <T>{row.process}</T>
+                    </Box>
                   </TableCell>
                 </TableRow>
               ))}
@@ -962,7 +1120,50 @@ function CustomTabPanel(props) {
         </Box>
       </Box>
     ),
-    application: <Box>333</Box>,
+    application: (
+      <Box>
+        <Box className="AdditionalSection" />
+        <Box style={{ height: 400, width: '100%' }}>
+          <DataGrid rows={rows3} columns={columns3} checkboxSelection />
+        </Box>
+        <Box className="AdditionalSection" />
+        <Box className="withdrawBox">
+          <Box className="TextBox">
+            <T>출금 요청할 적립 건</T>
+            <T>2 건</T>
+          </Box>
+          <Box className="TextBox">
+            <T>예상 처리일</T>
+            <T>12월 25일</T>
+          </Box>
+          <Box className="TextBox">
+            <T>출금 신청액</T>
+            <T>400,000 원</T>
+          </Box>
+        </Box>
+        <Box className="AdditionalSection" />
+        <Box className="WithdrawButton">
+          <Button>출금신청</Button>
+        </Box>
+        <Box className="BottomText">
+          · 포인트가 10,000원 이상 모이면 출금 신청을 할 수 있습니다.
+          <br />
+          · 포인트는 한 달에 3번 신청이 가능하며, 신청 마감일 5일 후 지급됩니다.
+          (지급일이 공휴일인 경우, 다음 영업일에 지급됩니다.)
+          <br />
+          · 신청 기간 및 지급일 안내 (1일 ~ 10일, 당월 15일 지급), (11일 ~ 20일,
+          당월 25일 지급), (21일 ~ 말일, 익월 5일 지급)
+          <br />
+          · 출금 금액을 지정하여 신청이 불가하며, 신청 정보와 금액 수정을 원하실
+          경우, 앞선 신청을 취소하시고 다시 신청해 주세요.
+          <br />
+          · 입금계좌의 예금주와 회원 정보의 이름이 동일해야 하며, 실명이어야
+          포인트가 지급됩니다.
+          <br />· 입금액은 관련 법상 사업소득에 따른 세금 3.3%를 공제하고
+          입금되며 입금된 날짜를 기준으로 소득이 발생한 것으로 신고됩니다.
+        </Box>
+      </Box>
+    ),
   }
 
   return (
@@ -1058,45 +1259,48 @@ function CustomTabPanel(props) {
           <Box className="CampaignList">
             <Box
               className={`tab ${
-                selectedTab === 'applied' ? 'SelectedTab' : 'NoSelect'
+                campaignSelectedTab === 'applied' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setSelectedTab('applied')}
+              onClick={() => setCampaignSelectedTab('applied')}
             >
               신청한 캠페인 45
             </Box>
             <Box
               className={`tab ${
-                selectedTab === 'selected' ? 'SelectedTab' : 'NoSelect'
+                campaignSelectedTab === 'selected' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setSelectedTab('selected')}
+              onClick={() => setCampaignSelectedTab('selected')}
             >
               선정된 캠페인 4
             </Box>
             <Box
               className={`tab ${
-                selectedTab === 'registered' ? 'SelectedTab' : 'NoSelect'
+                campaignSelectedTab === 'registered'
+                  ? 'SelectedTab'
+                  : 'NoSelect'
               }`}
-              onClick={() => setSelectedTab('registered')}
+              onClick={() => setCampaignSelectedTab('registered')}
             >
               등록한 캠페인 2
             </Box>
             <Box
               className={`tab ${
-                selectedTab === 'closed' ? 'SelectedTab' : 'NoSelect'
+                campaignSelectedTab === 'closed' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setSelectedTab('closed')}
+              onClick={() => setCampaignSelectedTab('closed')}
             >
               종료된 캠페인 45
             </Box>
             <Box
               className={`tab ${
-                selectedTab === 'content' ? 'SelectedTab' : 'NoSelect'
+                campaignSelectedTab === 'content' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setSelectedTab('content')}
+              onClick={() => setCampaignSelectedTab('content')}
             >
               등록 콘텐츠
             </Box>
           </Box>
+          {campaignContents[campaignSelectedTab]}
         </Box>
       )}
       {value === 2 && (
@@ -1195,7 +1399,18 @@ function CustomTabPanel(props) {
           {potintContents[selectedPoint]}
         </Box>
       )}
-      {value === 4 && <Box></Box>}
+      {/* 고객센터 */}
+      {value === 4 && (
+        <Box>
+          <FAQList faqData={faqData} />
+          <Box className="FaqButton">
+            <Stack spacing={2} className="Paginations">
+              <Pagination count={5} />
+            </Stack>
+            <Button className="Faq">문의하기</Button>
+          </Box>
+        </Box>
+      )}
     </Box>
   )
 }

@@ -1097,5 +1097,221 @@
       line-height: 1.43;
       color: #404040;
     }
+
+    .TableData {
+      text-align: start;
+      :nth-child(1) {
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+      :nth-child(2) {
+        font-size: 14px;
+        color: #9999a6;
+      }
+    }
+
+    .TableData3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .DataBox {
+        display: flex;
+        gap: 5px;
+
+        :nth-child(1) {
+          font-size: 16px;
+          font-weight: 600;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 16px;
+          color: #202020;
+        }
+      }
+    }
+    .MuiDataGrid-footerContainer {
+      display: none;
+    }
+    // 출금신청 그리드
+    .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+      color: #ffc032;
+    }
+
+    .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
+      background-color: #fffaef;
+    }
+
+    .MuiDataGrid-iconButtonContainer {
+      display: none;
+    }
+
+    .MuiDataGrid-columnHeaderTitleContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .MuiDataGrid-columnHeaderTitle {
+        font-size: 16px;
+        font-weight: bold;
+        color: #202020;
+      }
+    }
+
+    .MuiDataGrid-cellContent {
+      font-family: Pretendard;
+      font-size: 16px;
+      font-weight: bold;
+      color: #202020;
+    }
+
+    .css-i4bv87-MuiSvgIcon-root {
+      width: 16px;
+      height: 16px;
+    }
+
+    .withdrawBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px 0 49px 0;
+
+      .TextBox {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        :nth-child(1) {
+          font-size: 16px;
+          color: #a4a4a4;
+        }
+
+        :nth-child(2) {
+          font-size: 24px;
+          font-weight: bold;
+          color: #202020;
+        }
+      }
+    }
+
+    .WithdrawButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0 40px 0;
+
+      button {
+        width: 200px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 24px;
+        background-color: #ffc032;
+        font-family: Pretendard;
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+    }
+    // 고객센터 탭
+    .MuiCollapse-root {
+      padding: 34px 11% 40px 40px;
+      background-color: #f5f5f5;
+
+      .MuiCollapse-wrapperInner {
+        display: flex;
+        justify-content: space-between;
+
+        :nth-child(1) {
+          padding-right: 28px;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 2;
+          color: #202020;
+        }
+      }
+    }
+    .CenterContainer {
+      width: 960px;
+
+      .QuestionBox {
+        display: flex;
+        align-items: center;
+        padding: 35px 24px 35px 24px;
+        border-bottom: solid 1px #e4e4e4;
+
+        .Question {
+          font-size: 16px;
+          font-weight: 600;
+          color: #202020;
+          padding-right: 12px;
+        }
+
+        .Status {
+          width: 62px;
+          height: 24px;
+          display: flex;
+          margin-right: 55%;
+          justify-content: center;
+          align-items: center;
+          background-color: #e4e4e4;
+          font-size: 12px;
+          font-weight: 500;
+          color: #303030;
+          border-radius: 12px;
+        }
+
+        .Date {
+          font-size: 16px;
+          color: #202020;
+          padding-right: 32px;
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+          color: #333;
+        }
+      }
+    }
+
+    .FaqButton {
+      padding: 40px 0 140px 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .Paginations {
+        padding: 0 25% 0 0;
+      }
+
+      .Faq {
+        width: 126px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #202020;
+        font-family: Pretendard;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+    // 캠페인 탭
+    // 선전한 캠페인
+    .CampaignSection {
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #000;
+    }
+
+    .AppliedContainer {
+      width: 960px;
+    }
   }
 }
