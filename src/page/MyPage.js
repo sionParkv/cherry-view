@@ -418,16 +418,204 @@ function CustomTabPanel(props) {
       answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
     },
   ]
+
+  function createData4(id, img, title, tag, sns, person, announce, status) {
+    return { id, img, title, tag, sns, person, announce, status }
+  }
+
+  const rows4 = [
+    createData4(
+      1,
+      'img',
+      '수제한방 모란꽃차',
+      '#배송 #태그 #수제한방차',
+      'sns',
+      '모집 20명',
+      '2023.12.23',
+      '2023.11.28'
+    ),
+    createData4(
+      1,
+      'img',
+      '수제한방 모란꽃차',
+      '#배송 #태그 #수제한방차',
+      'sns',
+      '모집 20명',
+      '2023.12.23',
+      '2023.11.28'
+    ),
+    createData4(
+      1,
+      'img',
+      '수제한방 모란꽃차',
+      '#배송 #태그 #수제한방차',
+      'sns',
+      '모집 20명',
+      '2023.12.23',
+      '2023.11.28'
+    ),
+    createData4(
+      1,
+      'img',
+      '수제한방 모란꽃차',
+      '#배송 #태그 #수제한방차',
+      'sns',
+      '모집 20명',
+      '2023.12.23',
+      '2023.11.28'
+    ),
+  ]
+
   // 캠페인 탭 컨텐츠
   const campaignContents = {
     applied: (
       <Box className="AppliedContainer">
         <Box className="CampaignSection" />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">캠페인 정보</TableCell>
+                <TableCell align="center">인플루언서 발표</TableCell>
+                <TableCell align="center">상태</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows4.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.img}
+                    {row.title}
+                    {row.tag}
+                    {row.sns}
+                    {row.person}
+                  </TableCell>
+                  <TableCell align="center">{row.announce}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
       </Box>
     ),
-    selected: <Box></Box>,
-    registered: <Box></Box>,
-    closed: <Box></Box>,
+    selected: (
+      <Box>
+        <Box className="CampaignSection" />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">캠페인 정보</TableCell>
+                <TableCell align="center">인플루언서 발표</TableCell>
+                <TableCell align="center">상태</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows4.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.img}
+                    {row.title}
+                    {row.tag}
+                    {row.sns}
+                    {row.person}
+                  </TableCell>
+                  <TableCell align="center">{row.announce}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
+      </Box>
+    ),
+    registered: (
+      <Box>
+        <Box className="CampaignSection" />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">캠페인 정보</TableCell>
+                <TableCell align="center">인플루언서 발표</TableCell>
+                <TableCell align="center">상태</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows4.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.img}
+                    {row.title}
+                    {row.tag}
+                    {row.sns}
+                    {row.person}
+                  </TableCell>
+                  <TableCell align="center">{row.announce}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
+      </Box>
+    ),
+    closed: (
+      <Box>
+        <Box className="CampaignSection" />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">캠페인 정보</TableCell>
+                <TableCell align="center">인플루언서 발표</TableCell>
+                <TableCell align="center">상태</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows4.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.img}
+                    {row.title}
+                    {row.tag}
+                    {row.sns}
+                    {row.person}
+                  </TableCell>
+                  <TableCell align="center">{row.announce}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack spacing={2}>
+          <Pagination count={5} />
+        </Stack>
+      </Box>
+    ),
     content: <Box></Box>,
   }
 
