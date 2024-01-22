@@ -16,6 +16,8 @@ import ChangePass from './ChangePass'
 import MyPage from './MyPage'
 import AlarmPage from './Alarm'
 import Premier from './Premier'
+import OwnerPage from './OwnerPage'
+import NewCampaign from './NewCampaign'
 
 const pages = {
   MainPage,
@@ -36,6 +38,8 @@ const pages = {
   MyPage,
   AlarmPage,
   Premier,
+  OwnerPage,
+  NewCampaign,
 }
 
 export { pages }

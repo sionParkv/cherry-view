@@ -40,7 +40,7 @@ import { DataGrid } from '@mui/x-data-grid'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
-import '../assets/MyPage.scss'
+import '../assets/OwnerPage.scss'
 import { components } from '../component/index'
 import { images } from '../images/index'
 
@@ -1774,7 +1774,7 @@ function a11yProps(index) {
   }
 }
 
-const MyPage = () => {
+const OwnerPage = () => {
   const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
@@ -1825,4 +1825,4 @@ const MyPage = () => {
   )
 }
 
-export default MyPage
+export default OwnerPage

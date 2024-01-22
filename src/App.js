@@ -41,8 +41,12 @@ function App() {
       <Route path="/mypage" element={<pages.MyPage />} />
       {/* <알림페이지/> */}
       <Route path="/alarmpage" element={<pages.AlarmPage />} />
-      {/* <알림페이지/> */}
+      {/* <프리미어/> */}
       <Route path="/premier" element={<pages.Premier />} />
+      {/* <광고주 페이지/> */}
+      <Route path="/ownerpage" element={<pages.OwnerPage />} />
+      {/* <새 캠페인 등록/> */}
+      <Route path="/newcampaign" element={<pages.NewCampaign />} />
     </Routes>
   )
 }
