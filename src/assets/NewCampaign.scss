@@ -4,6 +4,12 @@
   max-width: 100% !important;
 }
 
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .NewCampaignBox {
   display: flex;
   justify-content: center;
@@ -364,6 +370,506 @@
             border: solid 1.5px #ededed;
             font-size: 17px;
             font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .DateBox {
+      display: flex;
+      padding: 32px 0 12px;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .PeriodBox {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 12px 0 12px 0;
+          border-bottom: solid 1px #e4e4e4;
+
+          .PeriodText {
+            width: 15%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          .PeriodDate {
+            width: 75%;
+            display: flex;
+            gap: 24px;
+
+            .MuiStack-root {
+              width: 50%;
+
+              .MuiFormControl-root {
+                width: 100%;
+              }
+            }
+          }
+
+          .AnnouceBox {
+            width: 85%;
+            .MuiFormControl-root {
+              width: 88.5%;
+            }
+          }
+
+          .MuiStack-root {
+            width: 50%;
+
+            .MuiFormControl-root {
+              width: 75%;
+            }
+          }
+        }
+      }
+    }
+    // 캠페인 기간
+    .AreaBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .RightAreaBox {
+          .RightTopBox {
+            width: 90%;
+            display: flex;
+            padding-bottom: 12px;
+            border-bottom: solid 1px #e4e4e4;
+
+            .AreaText {
+              width: 17%;
+              padding-top: 1%;
+              font-size: 18px;
+              font-weight: bold;
+              color: #303030;
+            }
+
+            .DeliveryBox {
+              width: 85%;
+              display: flex;
+              flex-direction: column;
+
+              .ButtonBox {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .MuiFormControl-root {
+                  width: 40%;
+                }
+
+                button {
+                  width: 96px;
+                  height: 48px;
+                  border: solid 1.5px #303030;
+                  border-radius: 8px;
+                  font-family: Pretendard;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #303030;
+                }
+              }
+
+              .SecondText {
+                margin: 12px 0 12px 0;
+                border-radius: 8px;
+              }
+
+              .ThridText {
+                border-radius: 8px;
+                background-color: #f5f5f5;
+              }
+            }
+          }
+
+          .RightBottomBox {
+            display: flex;
+            padding-top: 12px;
+
+            .AreaText {
+              width: 15%;
+              font-size: 18px;
+              font-weight: bold;
+              color: #303030;
+            }
+
+            .MuiFormControl-root {
+              width: 75%;
+              input {
+                height: 240px;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 캠페인 미션
+    .MissionBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .RightTopBox {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding-bottom: 12px;
+          border-bottom: solid 1px #e4e4e4;
+
+          :nth-child(1) {
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          :nth-child(2) {
+            font-size: 14px;
+            font-weight: 500;
+            color: #c4c4c4;
+          }
+        }
+
+        .MoreText {
+          padding: 16px 0 16px 0;
+          font-size: 17px;
+          color: #202020;
+        }
+
+        .quill {
+          width: 90%;
+          height: 240px;
+          padding: 0 0 64px 0;
+          margin-right: 10%;
+        }
+
+        .WhiteSection {
+          width: 100%;
+          height: 1px;
+          border-radius: 0.5px;
+          background-color: #e4e4e4;
+        }
+
+        .CheckTextBox {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 12px 0 12px 0;
+          border-bottom: solid 1px #e4e4e4;
+
+          .MuiFormGroup-root {
+            width: 15%;
+          }
+
+          .MuiFormControl-root {
+            width: 75%;
+          }
+        }
+      }
+    }
+    // 신청 정보
+    .SubmitInfoBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .RightTopBox {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          :nth-child(1) {
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+          :nth-child(2) {
+            font-size: 14px;
+            font-weight: 500;
+            color: #c4c4c4;
+          }
+        }
+
+        .CategoryBox {
+          width: 80%;
+          margin-top: 16px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+
+          div {
+            width: calc(25% - 10px);
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: solid 1.5px #ededed;
+            font-size: 17px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    // 추가 안내사항
+    .MoreInfoBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .RightTopBox {
+          display: flex;
+          gap: 32px;
+          align-items: center;
+
+          .MoreText {
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+        }
+
+        .MuiFormControl-root {
+          width: 90%;
+
+          input {
+            height: 240px;
+            padding-top: 0;
+          }
+        }
+      }
+    }
+    // 선정 인원
+    .PersonBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .PersonText {
+          font-size: 18px;
+          font-weight: bold;
+          color: #303030;
+        }
+
+        .CountBox {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+          margin-top: 14px;
+
+          p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          .Count {
+            display: flex;
+            .Value {
+              width: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: solid 2px #ededed;
+              background-color: #fff;
+            }
+            .Up,
+            .Down {
+              height: 55px !important;
+              border-radius: 8px;
+              border: solid 1.5px #ededed;
+              background-color: #fff;
+
+              svg {
+                width: 24px;
+                height: 24px;
+                color: #303030;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 서비스 및 결제
+    .AmountBox {
+      display: flex;
+      padding: 32px 0 24px 0;
+
+      .DetailText {
+        width: 15%;
+        font-size: 22px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .RightBox {
+        width: 85%;
+
+        .RightText {
+          padding-bottom: 18px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+        }
+
+        .DetailTextBox {
+          :nth-child(1) {
+            font-size: 17px;
+            font-weight: bold;
+            color: #000;
+          }
+
+          :nth-child(2) {
+            font-size: 14px;
+            color: #9999a6;
+          }
+        }
+
+        .Amount {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .BasicAmount {
+          height: 100px;
+          padding: 28px 24px 28px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #f5f5f5;
+        }
+
+        .MoreAmount {
+          height: 100px;
+          padding: 28px 24px 28px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .PremierAmount {
+          height: 100px;
+          padding: 28px 24px 28px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #f5f5f5;
+        }
+
+        .AmountSection {
+          width: 100%;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #828282;
+        }
+
+        .TotalBox {
+          padding: 26px 0 24px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          :nth-child(1) {
+            font-size: 22px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          :nth-child(2) {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f00;
+          }
+        }
+
+        .CompleteBox {
+          padding: 80px 0 100px 0;
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+
+          .Preview {
+            width: 320px;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #202020;
+            font-family: Pretendard;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+          }
+
+          .Request {
+            width: 520px;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #ffc032;
+            font-family: Pretendard;
+            font-size: 20px;
+            font-weight: bold;
+            color: #202020;
           }
         }
       }
