@@ -26,6 +26,8 @@ import {
   TextField,
 } from '@mui/material'
 import React, { useState } from 'react'
+import { ResponsiveLine } from '@nivo/line'
+import { PieChart } from 'react-minimal-pie-chart'
 import PropTypes from 'prop-types'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import CreateIcon from '@mui/icons-material/Create'
@@ -184,8 +186,11 @@ function CustomTabPanel(props) {
   }
 
   const { value, index, ...other } = props
-  // 캠페인 탭
-  const [campaignSelectedTab, setCampaignSelectedTab] = useState('applied') // 초기 탭 설정
+  // 대시보드 탭
+  const [dashboardTab, setDashboardTab] = useState('blog') // 초기 탭 설정
+  // 그래프 탭
+  const [graphTab, setGraphTab] = useState('all') // 초기 탭 설정
+
   // 내정보 탭
   const [selectedTab, setSelectedTab] = useState('basic') // 초기 탭 설정
   // 포인트 탭
@@ -367,363 +372,181 @@ function CustomTabPanel(props) {
       answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
     },
   ]
-  // 신청한 캠페인
-  function createData4(id, img, title, tag, sns, person, announce, status) {
-    return { id, img, title, tag, sns, person, announce, status }
-  }
 
-  const rows4 = [
-    createData4(
-      1,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.23',
-      '2023.11.28'
-    ),
-    createData4(
-      2,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.23',
-      '2023.11.28'
-    ),
-    createData4(
-      3,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.23',
-      '2023.11.28'
-    ),
-    createData4(
-      4,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.23',
-      '2023.11.28'
-    ),
+  // 차트 데이터
+  const data = [
+    {
+      id: '총 조회수',
+      data: [
+        { x: 0, y: 300000 },
+        { x: 1, y: 300000 },
+        { x: 2, y: 400000 },
+        { x: 3, y: 400000 },
+        { x: 4, y: 500000 },
+        { x: 5, y: 600000 },
+        { x: 6, y: 600000 },
+        { x: 7, y: 700000 },
+        { x: 8, y: 700000 },
+        { x: 9, y: 800000 },
+        { x: 10, y: 900000 },
+        { x: 11, y: 1000000 },
+        { x: 12, y: 1000000 },
+      ],
+    },
   ]
-  // 선정된 캠페인
-  function createData5(
-    id,
-    img,
-    title,
-    tag,
-    sns,
-    person,
-    startDate,
-    endDate,
-    delivery,
-    status
-  ) {
-    return {
-      id,
-      img,
-      title,
-      tag,
-      sns,
-      person,
-      startDate,
-      endDate,
-      delivery,
-      status,
-    }
-  }
-
-  const rows5 = [
-    createData5(
-      1,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.14',
-      '2023.12.24',
-      '247257861126',
-      '2023.11.28'
-    ),
-    createData5(
-      2,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.14',
-      '2023.12.24',
-      '247257861126',
-      '2023.11.28'
-    ),
-    createData5(
-      3,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.14',
-      '2023.12.24',
-      '247257861126',
-      '2023.11.28'
-    ),
-    createData5(
-      4,
-      images.tea,
-      '수제한방 모란꽃차',
-      '#배송 #태그 #수제한방차',
-      images.naver,
-      '모집 20명',
-      '2023.12.14',
-      '2023.12.24',
-      '247257861126',
-      '2023.11.28'
-    ),
+  // 예제 데이터
+  const data2 = [
+    { title: 'One', value: 10, color: '#E38627' },
+    { title: 'Two', value: 15, color: '#C13C37' },
+    { title: 'Three', value: 20, color: '#6A2135' },
   ]
 
-  // 캠페인 리스트 탭 컨텐츠
-  const campaignContents = {
-    // 신청한 캠페인
-    applied: (
-      <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">인플루언서 발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                        <T>| 마감임박</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="CancleBox">신청 취소</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
-      </Box>
-    ),
-    // 선정된 캠페인
-    selected: (
-      <Box className="AppliedContainer">
-        <Box className="BannerInfoBox">
-          <Box className="BannerRight">
-            <T>캠페인 선정을 축하합니다.</T>
-            <T>콘텐츠 등록 시 스폰서 배너를 꼭 넣어주세요!</T>
-          </Box>
-          <Box className="BannerLeft">스폰서 배너 알아보기</Box>
+  // 그래프 탭
+  const graphContents = {
+    all: (
+      <Box>
+        <Box className="Graph">
+          <ResponsiveLine
+            data={data}
+            margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+            xScale={{ type: 'point' }}
+            yScale={{
+              type: 'linear',
+              min: 'auto',
+              max: 'auto',
+              stacked: true,
+              reverse: false,
+            }}
+            legends={[
+              {
+                anchor: 'bottom-right',
+                direction: 'column',
+                justify: false,
+                translateX: 100,
+                translateY: 0,
+                itemsSpacing: 0,
+                itemDirection: 'left-to-right',
+                itemWidth: 80,
+                itemHeight: 20,
+                itemOpacity: 0.75,
+                symbolSize: 12,
+                symbolShape: 'circle',
+                symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                effects: [
+                  {
+                    on: 'hover',
+                    style: {
+                      itemBackground: 'rgba(0, 0, 0, .03)',
+                      itemOpacity: 1,
+                    },
+                  },
+                ],
+              },
+            ]}
+          />
         </Box>
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">콘텐츠 등록기간</TableCell>
-                <TableCell align="center">배송정보</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody className="SelectedTable">
-              {rows5.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                        <T>| 마감임박</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell className="Registration" align="center">
-                    <T>{row.startDate}</T>
-                    <T>~</T>
-                    <T>{row.endDate}</T>
-                  </TableCell>
-                  <TableCell className="DeliveryCell" align="center">
-                    <T>롯데택배</T>
-                    <T>{row.delivery}</T>
-                  </TableCell>
-                  <TableCell align="center" className="StatusCell">
-                    <Box className="StatusCellBox">
-                      <T>스폰서 배너</T>
-                      <T>컨텐츠 등록</T>
-                      <T>신청일자 {row.status}</T>
-                    </Box>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
+        <Box className="MiddleText">
+          <T>캠페인 진행 비율</T>
+          <T>
+            홍보가 부족한 미디어가 있는지 확인해보세요!
+            <br />
+            어떤 미디어가 가장 효과적이셨나요?
+          </T>
+        </Box>
+        <PieChart
+          data={data2}
+          style={{ height: '200px' }}
+          lineWidth={15}
+          label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
+          labelStyle={{
+            fontSize: '5px',
+            fontFamily: 'sans-serif',
+          }}
+          // labelPosition={12}
+        />
       </Box>
     ),
-    // 등록한 캠페인
-    registered: (
-      <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">캠페인 결과발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="CancleBox">캠페인 평가</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
-      </Box>
-    ),
-    // 종료된 캠페인
-    closed: (
-      <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">캠페인 결과발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="EndBox">작성완료</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
-      </Box>
-    ),
-    content: (
-      <Box className="ContentContainer">
-        <Box className="CampaignSection" />
-        <T className="MainText">등록 콘텐츠 4</T>
-        <Box className="CardBox">
-          <Box className="Card">
-            <img className="MainImg" src={images.tea} />
-            <T className="MainImgText">
-              {' '}
-              겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
-            </T>
-            <T className="MainImgdate">2023.12.20</T>
-            <Box className="SubImgBox">
-              <img src={images.tea} />
-              <T>수제한방 모란꽃차</T>
+    year: <Box>22</Box>,
+    weekend: <Box>33</Box>,
+    month: <Box>44</Box>,
+    threemonth: <Box>55</Box>,
+  }
+
+  // 대시보드 탭 컨텐츠
+  const dashboardContents = {
+    // 블로그
+    blog: (
+      <Box>
+        <Box className="TopContents">
+          <Box className="TopBox">
+            <T>21</T>
+            <T>전체 캠페인</T>
+          </Box>
+          <Box className="TopBox">
+            <T>362</T>
+            <T>전체 콘텐츠</T>
+          </Box>
+          <Box className="TopBox">
+            <T>1,480,000</T>
+            <T>누적 조회수</T>
+          </Box>
+        </Box>
+        <Box className="GraphBox">
+          <T className="GraphTilte">컨텐츠 조회수 누적 성과</T>
+          <Box>
+            <Box className="GraphList">
+              <Box
+                className={`tab ${
+                  graphTab === 'all' ? 'SelectedTab' : 'NoSelect'
+                }`}
+                onClick={() => setGraphTab('all')}
+              >
+                전체
+              </Box>
+              <Box
+                className={`tab ${
+                  graphTab === 'year' ? 'SelectedTab' : 'NoSelect'
+                }`}
+                onClick={() => setGraphTab('year')}
+              >
+                1년
+              </Box>
+              <Box
+                className={`tab ${
+                  graphTab === 'weekend' ? 'SelectedTab' : 'NoSelect'
+                }`}
+                onClick={() => setGraphTab('weekend')}
+              >
+                1주일
+              </Box>
+              <Box
+                className={`tab ${
+                  graphTab === 'month' ? 'SelectedTab' : 'NoSelect'
+                }`}
+                onClick={() => setGraphTab('month')}
+              >
+                1개월
+              </Box>
+              <Box
+                className={`tab ${
+                  graphTab === 'threemonth' ? 'SelectedTab' : 'NoSelect'
+                }`}
+                onClick={() => setGraphTab('threemonth')}
+              >
+                3개월
+              </Box>
+              <Button className="SearchButton">조회하기</Button>
+              <IconButton className="ReButton">
+                <SyncIcon />
+              </IconButton>
             </Box>
+            {graphContents[graphTab]}
           </Box>
         </Box>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
       </Box>
     ),
+    insta: <Box>22</Box>,
+    youtube: <Box>33</Box>,
   }
 
   // 내정보 탭 컨텐츠
@@ -1471,60 +1294,42 @@ function CustomTabPanel(props) {
     >
       {/* 대시보드 */}
       {value === 0 && (
-        <Box>
-          <Box>
-            <T>대시보드</T>
-            <T>캠페인 현황</T>
-          </Box>
-        </Box>
-      )}
-      {value === 1 && (
-        <Box>
+        <Box className="DashboardContainer">
+          <T className="MainText">대시보드</T>
+          <T className="SubText">캠페인 현황</T>
           <Box className="CampaignList">
             <Box
               className={`tab ${
-                campaignSelectedTab === 'applied' ? 'SelectedTab' : 'NoSelect'
+                dashboardTab === 'blog' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setCampaignSelectedTab('applied')}
+              onClick={() => setDashboardTab('blog')}
             >
-              신청한 캠페인 45
+              블로그
             </Box>
             <Box
               className={`tab ${
-                campaignSelectedTab === 'selected' ? 'SelectedTab' : 'NoSelect'
+                dashboardTab === 'insta' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setCampaignSelectedTab('selected')}
+              onClick={() => setDashboardTab('insta')}
             >
-              선정된 캠페인 4
+              인스타그램
             </Box>
             <Box
               className={`tab ${
-                campaignSelectedTab === 'registered'
-                  ? 'SelectedTab'
-                  : 'NoSelect'
+                dashboardTab === 'youtube' ? 'SelectedTab' : 'NoSelect'
               }`}
-              onClick={() => setCampaignSelectedTab('registered')}
+              onClick={() => setDashboardTab('youtube')}
             >
-              등록한 캠페인 2
-            </Box>
-            <Box
-              className={`tab ${
-                campaignSelectedTab === 'closed' ? 'SelectedTab' : 'NoSelect'
-              }`}
-              onClick={() => setCampaignSelectedTab('closed')}
-            >
-              종료된 캠페인 45
-            </Box>
-            <Box
-              className={`tab ${
-                campaignSelectedTab === 'content' ? 'SelectedTab' : 'NoSelect'
-              }`}
-              onClick={() => setCampaignSelectedTab('content')}
-            >
-              등록 콘텐츠
+              유튜브
             </Box>
           </Box>
-          {campaignContents[campaignSelectedTab]}
+          {dashboardContents[dashboardTab]}
+        </Box>
+      )}
+      {/* 캠페인 리스트 */}
+      {value === 1 && (
+        <Box>
+          <Box className="CampaignContaier">!!!!</Box>
         </Box>
       )}
       {value === 2 && (
