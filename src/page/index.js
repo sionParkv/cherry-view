@@ -18,6 +18,8 @@ import AlarmPage from './Alarm'
 import Premier from './Premier'
 import OwnerPage from './OwnerPage'
 import NewCampaign from './NewCampaign'
+import CheckInfluencer from './CheckInfluencer'
+import CompletedInfluencer from './CompletedInfluencer'
 
 const pages = {
   MainPage,
@@ -40,6 +42,8 @@ const pages = {
   Premier,
   OwnerPage,
   NewCampaign,
+  CheckInfluencer,
+  CompletedInfluencer,
 }
 
 export { pages }

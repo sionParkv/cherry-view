@@ -126,7 +126,7 @@ const ExpandableTab = ({ question, status, date, answer }) => {
     </Box>
   )
 }
-
+// 고객센터
 const FAQList = ({ faqData }) => {
   return (
     <Box>
@@ -136,7 +136,8 @@ const FAQList = ({ faqData }) => {
     </Box>
   )
 }
-// 대시보드 탭 컨텐츠
+
+// 탭 컨텐츠
 function CustomTabPanel(props) {
   // 얼굴 노출
   const [selectedFace, setSelectedFace] = useState(null)
@@ -183,6 +184,12 @@ function CustomTabPanel(props) {
 
   const handleGenderClick = (gender) => {
     setSelectedGender(gender === selectedGender ? null : gender)
+  }
+  // 캠페인 리스트 collapse
+  const [campaignOpen, setCampaignOpen] = useState(false)
+
+  const handleCampaignToggle = () => {
+    setCampaignOpen(!campaignOpen)
   }
 
   const { value, index, ...other } = props
@@ -399,6 +406,115 @@ function CustomTabPanel(props) {
     { title: 'One', value: 10, color: '#E38627' },
     { title: 'Two', value: 15, color: '#C13C37' },
     { title: 'Three', value: 20, color: '#6A2135' },
+  ]
+  // 캠페인 리스트 탑 데이터
+  const [selectedParagraph1, setSelectedParagraph1] = useState(null)
+
+  const handleParagraphClick1 = (index) => {
+    setSelectedParagraph1(index)
+  }
+  const [selectedParagraph2, setSelectedParagraph2] = useState(null)
+
+  const handleParagraphClick2 = (index) => {
+    setSelectedParagraph2(index)
+  }
+  const [selectedParagraph3, setSelectedParagraph3] = useState(null)
+
+  const handleParagraphClick3 = (index) => {
+    setSelectedParagraph3(index)
+  }
+
+  const paragraphs1 = ['전체', '지역', '제품', '기자단', '프리미어']
+  const paragraphs2 = ['전체', '블로그', '인스타그램', '유튜브']
+  const paragraphs3 = ['전체', '1년', '1주일', '1개월', '3개월']
+  // 캠페인 리스트 테이블
+  function createData4(
+    id,
+    img,
+    title,
+    tag,
+    sns,
+    person,
+    date1,
+    date2,
+    date3,
+    date4,
+    contents,
+    views
+  ) {
+    return {
+      id,
+      img,
+      title,
+      tag,
+      sns,
+      person,
+      date1,
+      date2,
+      date3,
+      date4,
+      contents,
+      views,
+    }
+  }
+
+  const rows4 = [
+    createData4(
+      1,
+      images.mainImg,
+      '수제한방 모란꽃차',
+      '#배송 #백설 # 수제한방차',
+      images.naver,
+      '20',
+      '11.27 ~ 12.12',
+      '12.13',
+      '12.14 ~ 12.24',
+      '12.29',
+      '24',
+      '1,324'
+    ),
+    createData4(
+      2,
+      images.mainImg,
+      '수제한방 모란꽃차',
+      '#배송 #백설 # 수제한방차',
+      images.naver,
+      '20',
+      '11.27 ~ 12.12',
+      '12.13',
+      '12.14 ~ 12.24',
+      '12.29',
+      '24',
+      '1,324'
+    ),
+    createData4(
+      3,
+      images.mainImg,
+      '수제한방 모란꽃차',
+      '#배송 #백설 # 수제한방차',
+      images.naver,
+      '20',
+      '11.27 ~ 12.12',
+      '12.13',
+      '12.14 ~ 12.24',
+      '12.29',
+      '24',
+      '1,324'
+    ),
+    createData4(
+      4,
+      images.mainImg,
+      '수제한방 모란꽃차',
+      '#배송 #백설 # 수제한방차',
+      images.naver,
+      '20',
+      '11.27 ~ 12.12',
+      '12.13',
+      '12.14 ~ 12.24',
+      '12.29',
+      '24',
+      '1,324'
+    ),
   ]
 
   // 그래프 탭
@@ -1328,8 +1444,142 @@ function CustomTabPanel(props) {
       )}
       {/* 캠페인 리스트 */}
       {value === 1 && (
-        <Box>
-          <Box className="CampaignContaier">!!!!</Box>
+        <Box className="CampaignContaier">
+          <Box className="TopContents" onClick={handleCampaignToggle}>
+            <T className="OneText">전체</T>
+            <T className="TwoText">진행중인 캠페인</T>
+            <IconButton className="OpenButton">
+              {campaignOpen ? (
+                <KeyboardArrowUpIcon
+                  onClick={handleCampaignToggle}
+                  variant="contained"
+                  color="primary"
+                />
+              ) : (
+                <KeyboardArrowDownIcon
+                  onClick={handleCampaignToggle}
+                  variant="contained"
+                  color="primary"
+                />
+              )}
+            </IconButton>
+          </Box>
+
+          <Collapse in={campaignOpen}>
+            {/* 펼쳐질 내용 */}
+            <Box className="OneSection">
+              {paragraphs1.map((text, index) => (
+                <T
+                  key={index}
+                  onClick={() => handleParagraphClick1(index)}
+                  style={{
+                    color: selectedParagraph1 === index ? 'black' : 'gray',
+                  }}
+                >
+                  {text}
+                </T>
+              ))}
+            </Box>
+            <Box className="BottomSection" />
+            <Box className="TwoSection">
+              {paragraphs2.map((text, index) => (
+                <T
+                  key={index}
+                  onClick={() => handleParagraphClick2(index)}
+                  style={{
+                    color: selectedParagraph2 === index ? 'black' : 'gray',
+                  }}
+                >
+                  {text}
+                </T>
+              ))}
+            </Box>
+            <Box className="BottomSection" />
+            <Box className="ThreeSection">
+              {paragraphs3.map((text, index) => (
+                <T
+                  key={index}
+                  onClick={() => handleParagraphClick3(index)}
+                  style={{
+                    color: selectedParagraph3 === index ? 'black' : 'gray',
+                  }}
+                >
+                  {text}
+                </T>
+              ))}
+            </Box>
+          </Collapse>
+          <Box className="SearchBox2">
+            <Button className="SearchButton">조회하기</Button>
+            <IconButton className="ReButton">
+              <SyncIcon />
+            </IconButton>
+          </Box>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">캠페인 정보</TableCell>
+                  <TableCell align="center">캠페인 기간</TableCell>
+                  <TableCell align="center">컨텐츠 수</TableCell>
+                  <TableCell align="center">총 조회수</TableCell>
+                  <TableCell align="center">총 조회수</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows4.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell className="OneCell" component="th" scope="row">
+                      <Box className="MainImg">
+                        <img src={row.img} />
+                      </Box>
+                      <Box className="TextBox">
+                        <T className="TextOne">{row.title}</T>
+                        <T className="TextTwo">{row.tag}</T>
+                        <Box className="SnsBox">
+                          <img src={row.sns} />
+                          <T>모집인원 | {row.person}명</T>
+                        </Box>
+                      </Box>
+                    </TableCell>
+                    <TableCell className="TwoCell" align="center">
+                      <Box className="TextBox">
+                        <T>캠페인 신청기간</T>
+                        <T> {row.date1}</T>
+                      </Box>
+                      <Box className="TextBox">
+                        <T>인프루언서 발표</T>
+                        <T> {row.date2}</T>
+                      </Box>
+                      <Box className="TextBox">
+                        <T>콘텐츠 등록기간 </T>
+                        <T>{row.date3}</T>
+                      </Box>
+                      <Box className="TextBox">
+                        <T>캠페인 결과 발표 </T>
+                        <T>{row.date4}</T>
+                      </Box>
+                    </TableCell>
+                    <TableCell className="ThreeCell" align="center">
+                      <T className="Number">{row.contents}</T>
+                    </TableCell>
+                    <TableCell className="FourCell" align="center">
+                      <T className="Number">{row.views}</T>
+                    </TableCell>
+                    <TableCell className="FiveCell" align="center">
+                      <Box className="ReRegi">재 등록</Box>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
         </Box>
       )}
       {value === 2 && (

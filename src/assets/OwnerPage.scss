@@ -324,6 +324,210 @@
       color: #000;
     }
   }
+  // 캠페인 리스트
+  .CampaignContaier {
+    width: 980px;
+
+    .TopContents {
+      width: 100%;
+      height: 73px;
+      padding: 0 0 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: solid 2px #000;
+      border-top: solid 2px #000;
+
+      .OneText {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .TwoText {
+        font-size: 18px;
+        font-weight: 600;
+        color: #aaa;
+        padding-right: 70%;
+      }
+
+      .OpenButton {
+        width: 40px;
+        height: 40px;
+        background-color: #202020;
+
+        svg {
+          width: 18px;
+          height: 18px;
+          color: #fff;
+        }
+      }
+    }
+
+    .MuiCollapse-root {
+      width: 102.5%;
+      padding: 0 0 0 0;
+
+      .MuiCollapse-wrapperInner {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .BottomSection {
+        width: 100%;
+        height: 2px;
+        background-color: #e4e4e4;
+      }
+
+      .OneSection {
+        height: 68px;
+        padding-left: 24px;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+
+        p {
+          padding: 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .TwoSection {
+        height: 68px;
+        padding-left: 24px;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+
+        p {
+          padding: 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .ThreeSection {
+        padding-left: 24px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+
+        p {
+          padding: 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .SearchBox2 {
+      padding: 24px 0 80px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      .SearchButton {
+        width: 126px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #202020;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Pretendard;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .ReButton {
+        width: 40px;
+        height: 40px;
+        background-color: #ffc043;
+        svg {
+          width: 22px;
+          height: 22px;
+          color: #fff;
+        }
+      }
+    }
+    .OneCell {
+      display: flex;
+      gap: 24px;
+      .MainImg {
+        img {
+          width: 78px;
+          height: 78px;
+          border-radius: 39px;
+          box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.06);
+        }
+      }
+      .TextBox {
+        text-align: start;
+        .TextOne {
+          font-size: 18px;
+          font-weight: bold;
+          color: #202020;
+        }
+        .TextTwo {
+          font-size: 14px;
+          color: #9999a6;
+        }
+        .SnsBox {
+          display: flex;
+          gap: 6px;
+          padding-top: 12px;
+          img {
+            width: 24px;
+            height: 23px;
+          }
+          p {
+            font-size: 14px;
+            color: #222;
+          }
+        }
+      }
+    }
+
+    .TwoCell {
+      text-align: start;
+      .TextBox {
+        display: flex;
+        gap: 12px;
+        padding-bottom: 8px;
+      }
+      :nth-child(1) {
+        font-size: 16px;
+        font-weight: 600;
+        color: #202020;
+      }
+      :nth-child(2) {
+        font-size: 16px;
+        font-weight: 300;
+        color: #202020;
+      }
+    }
+    .Number {
+      font-size: 16px;
+      font-weight: bold;
+      color: #202020;
+    }
+
+    .ReRegi {
+      width: 72px;
+      height: 32px;
+      margin-left: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      border: solid 1px #e4e4e4;
+      background-color: #202020;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
 
   // 내정보 탭
   // 기본 정보
@@ -336,6 +540,7 @@
       border-radius: 1px;
       background-color: #000;
     }
+
     .Profile {
       width: 100%;
       padding: 16px 0 16px 0;
@@ -1121,7 +1326,7 @@
       th {
         display: flex;
         align-items: center;
-        // height: 150px;
+        height: 150px;
       }
 
       td {

@@ -47,6 +47,13 @@ function App() {
       <Route path="/ownerpage" element={<pages.OwnerPage />} />
       {/* <새 캠페인 등록/> */}
       <Route path="/newcampaign" element={<pages.NewCampaign />} />
+      {/* <인플루언서 체크/> */}
+      <Route path="/checkinfluencer" element={<pages.CheckInfluencer />} />
+      {/* <인플루언서 완료/> */}
+      <Route
+        path="/completedinfluencer"
+        element={<pages.CompletedInfluencer />}
+      />
     </Routes>
   )
 }

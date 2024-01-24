@@ -1,0 +1,126 @@
+@import 'common';
+
+.css-1oqqzyl-MuiContainer-root {
+  max-width: 100% !important;
+}
+
+.CheckInfluencerContainer {
+  .CheckInfluencerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p,
+    span,
+    div,
+    button {
+      font-family: Pretendard;
+    }
+
+    .CheckInfluencer {
+      padding: 15% 0 0 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .MainText {
+        font-size: 36px;
+        font-weight: 800;
+        color: #202020;
+      }
+
+      .DateBox {
+        width: 253px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #f4f4f4;
+        margin: 16px 0 37px 0;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+
+        :nth-child(1) {
+          font-size: 16px;
+          font-weight: 600;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 16px;
+          font-weight: 300;
+          color: #202020;
+        }
+      }
+
+      .MainBox {
+        position: relative;
+        display: inline-block; // 이미지와 아이콘이 인라인으로 정렬되도록 설정
+        .MainImg {
+          width: 230px;
+          display: block;
+          height: 230px;
+          border-radius: 115px;
+          box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.06);
+          background-color: #000;
+        }
+
+        .CheckIcon {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 50%; // 아이콘을 수직 가운데로 위치
+          left: 50%; // 아이콘을 수평 가운데로 위치
+          transform: translate(-50%, -50%); // 아이콘 중앙 정렬
+          color: white; // 아이콘 색상 설정 (원하는 색상으로 변경)
+          font-size: 2rem; // 아이콘 크기 설정 (원하는 크기로 변경)
+        }
+      }
+
+      .ImgBox {
+        display: flex;
+        gap: 10px;
+        padding: 29px 0 56px 0;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+        }
+      }
+
+      .ButtonBox {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 100px;
+
+        .MainButton {
+          width: 200px;
+          height: 48px;
+          border-radius: 24px;
+          border: solid 1.5px #e4e4e4;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          font-weight: bold;
+          color: #202020;
+        }
+        .MyButton {
+          width: 200px;
+          height: 48px;
+          border-radius: 24px;
+          border: solid 1.5px #e4e4e4;
+          background-color: #ffc032;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          font-weight: bold;
+          color: #202020;
+        }
+      }
+    }
+  }
+}

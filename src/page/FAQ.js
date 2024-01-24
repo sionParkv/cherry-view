@@ -19,6 +19,7 @@ import AddIcon from '@mui/icons-material/Add'
 import { components } from '../component/index'
 import '../assets/FAQ.scss'
 
+///////////////
 const posts = [
   {
     title: '첫 번째 게시물',
@@ -87,7 +88,7 @@ const FAQ = () => {
     <Container className="NoticeContainer">
       <components.Header />
       <Box className="NoticeBox">
-        <T className="MainText">FAQ!!!</T>
+        <T className="MainText">FAQ</T>
         <Box className="SearchBox">
           <T>공지사항</T>
           <TextField
@@ -113,6 +114,7 @@ const FAQ = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Box>
+
       <components.Footer />
     </Container>
   )
