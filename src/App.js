@@ -54,6 +54,8 @@ function App() {
         path="/completedinfluencer"
         element={<pages.CompletedInfluencer />}
       />
+      {/* <미션검수 페이지/> */}
+      <Route path="/missioninspection" element={<pages.MissonInspection />} />
     </Routes>
   )
 }

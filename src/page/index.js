@@ -20,6 +20,7 @@ import OwnerPage from './OwnerPage'
 import NewCampaign from './NewCampaign'
 import CheckInfluencer from './CheckInfluencer'
 import CompletedInfluencer from './CompletedInfluencer'
+import MissonInspection from './MissionInspection'
 
 const pages = {
   MainPage,
@@ -44,6 +45,7 @@ const pages = {
   NewCampaign,
   CheckInfluencer,
   CompletedInfluencer,
+  MissonInspection,
 }
 
 export { pages }
