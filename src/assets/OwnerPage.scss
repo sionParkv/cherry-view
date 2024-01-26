@@ -131,6 +131,7 @@
           display: flex;
           gap: 8px;
           align-items: center;
+          margin-bottom: 140px;
 
           :nth-child(1) {
             font-size: 32px;
@@ -1000,7 +1001,7 @@
       gap: 40px;
 
       .Type {
-        width: 21%;
+        width: 20%;
         height: 80px;
         border-radius: 40px;
         background-color: #f4f4f4;
@@ -1050,65 +1051,436 @@
       }
     }
   }
+  // 패널티 탭
+  .PanultyContainer {
+    width: 960px;
+    border-top: solid 2px #000;
+    padding: 0 0 120px 0;
 
-  // 고객센터 탭
-  .MuiCollapse-root {
-    padding: 34px 11% 40px 40px;
-    background-color: #f5f5f5;
-
-    .MuiCollapse-wrapperInner {
+    .PanultyBox {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-
-      :nth-child(1) {
-        padding-right: 28px;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 2;
-        color: #202020;
-      }
-    }
-  }
-  .CenterContainer {
-    width: 960px;
-
-    .QuestionBox {
-      display: flex;
       align-items: center;
-      padding: 35px 24px 35px 24px;
-      border-bottom: solid 1px #e4e4e4;
+      border-bottom: solid 2px #e4e4e4;
 
-      .Question {
-        font-size: 16px;
-        font-weight: 600;
-        color: #202020;
-        padding-right: 12px;
-      }
-
-      .Status {
-        width: 62px;
-        height: 24px;
+      .OneContent {
+        height: 80px;
         display: flex;
-        margin-right: 55%;
-        justify-content: center;
         align-items: center;
-        background-color: #e4e4e4;
-        font-size: 12px;
-        font-weight: 500;
-        color: #303030;
-        border-radius: 12px;
+
+        :nth-child(1) {
+          font-size: 16px;
+          font-weight: 600;
+          color: #202020;
+          padding-left: 24px;
+        }
+
+        :nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          color: #202020;
+          padding: 0 8px 0 25px;
+        }
+
+        :nth-child(3) {
+          width: 62px;
+          height: 24px;
+          border-radius: 12px;
+          background-color: #e4e4e4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          font-weight: 500;
+          color: #303030;
+        }
       }
 
       .Date {
         font-size: 16px;
         color: #202020;
-        padding-right: 32px;
+        padding-right: 24px;
+      }
+    }
+    // 디테일 화면
+    .TopBox {
+      height: 67px;
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px #e4e4e4;
+
+      .LeftContents {
+        width: 50%;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        :nth-child(1) {
+          font-size: 18px;
+          font-weight: bold;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 18px;
+          font-weight: 500;
+          color: #202020;
+        }
       }
 
-      svg {
-        width: 32px;
-        height: 32px;
-        color: #333;
+      .MiniSection {
+        width: 2px;
+        height: 16px;
+        background-color: #e4e4e4;
+      }
+
+      .RightContents {
+        width: 50%;
+        display: flex;
+        gap: 32px;
+        padding-left: 40px;
+
+        :nth-child(1) {
+          font-size: 18px;
+          font-weight: bold;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 18px;
+          font-weight: 500;
+          color: #202020;
+        }
+      }
+    }
+
+    .UserBox {
+      height: 67px;
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px #e4e4e4;
+
+      .OneText {
+        font-size: 18px;
+        font-weight: bold;
+        color: #303030;
+      }
+
+      .Users {
+        display: flex;
+        margin: 0 16px 0 60px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .UserInfo {
+        font-size: 18px;
+        color: #303030;
+      }
+    }
+
+    .TitleBox {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px #e4e4e4;
+      gap: 70px;
+
+      :nth-child(1) {
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+
+      :nth-child(2) {
+        font-size: 18px;
+        font-weight: 500;
+        color: #202020;
+      }
+    }
+
+    .ContentBox {
+      padding: 24px 0 56px 0;
+      .Content {
+        display: flex;
+        justify-content: space-between;
+
+        :nth-child(1) {
+          font-size: 18px;
+          font-weight: 500;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 16px;
+          color: #202020;
+        }
+      }
+
+      img {
+        width: 480px;
+        height: 480px;
+      }
+    }
+
+    .AnswerBox {
+      padding: 32px 268px 32px 32px;
+      background-color: #f5f5f5;
+
+      :nth-child(1) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.78;
+        color: #202020;
+      }
+
+      :nth-child(2) {
+        margin-top: 24px;
+        font-size: 16px;
+        color: #202020;
+      }
+    }
+    // 패널티 등록
+    .MainText {
+      width: 20%;
+      font-size: 22px;
+      font-weight: bold;
+      color: #303030;
+    }
+    .TopBox2 {
+      height: 150px;
+      display: flex;
+      padding: 24px 0 16px 0;
+      border-bottom: solid 1px #828282;
+
+      .TypeBox {
+        width: 80%;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        div {
+          width: 184px;
+          height: 48px;
+          border-radius: 8px;
+          border: solid 1.5px #ededed;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          font-weight: bold;
+          color: #303030;
+        }
+      }
+    }
+    .InfoBox {
+      display: flex;
+      height: 165px;
+      padding: 16px 0 0 0;
+      border-bottom: solid 1px #828282;
+
+      .Info {
+        width: 80%;
+
+        .OneBox {
+          padding: 0 0 12px 0;
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #e4e4e4;
+
+          .OneText {
+            width: 20%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          .MuiInputBase-root {
+            width: 80%;
+          }
+        }
+
+        .TwoBox {
+          padding: 12px 0 12px 0;
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #e4e4e4;
+
+          .OneText {
+            width: 20%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #303030;
+          }
+
+          .FindReviewr {
+            display: flex;
+            gap: 8px;
+            width: 177px;
+            height: 48px;
+            border-radius: 8px;
+            border: solid 1.5px #9999a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              font-size: 17px;
+              font-weight: bold;
+            }
+
+            svg {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+    .ContentBox2 {
+      padding: 16px 0 16px 0;
+      display: flex;
+      border-bottom: solid 2px #000;
+
+      .Right {
+        width: 80%;
+
+        .OneText {
+          width: 20%;
+          font-size: 18px;
+          font-weight: bold;
+          color: #303030;
+        }
+
+        .OneBox {
+          padding: 12px 0 12px 0;
+          display: flex;
+          align-items: center;
+          border-bottom: solid 1px #e4e4e4;
+        }
+
+        .TwoBox {
+          padding: 12px 0 12px 0;
+          display: flex;
+          border-bottom: solid 1px #e4e4e4;
+
+          .PictureAdd {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            background-color: #ebebeb;
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .ButtonBox2 {
+      padding: 40px 0 0 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      .Previous {
+        width: 200px;
+        height: 48px;
+        border-radius: 24px;
+        border: solid 1.5px #e4e4e4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+
+      .Regist {
+        width: 200px;
+        height: 48px;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffc032;
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+    }
+  }
+
+  .InfoContainer {
+    width: 960px;
+
+    .InfoBox {
+      border-top: solid 2px #000;
+    }
+
+    .AlarmText {
+      font-size: 20px;
+      color: #202020;
+      margin-right: 18%;
+    }
+
+    .AddIcon {
+      width: 20px;
+      height: 20px;
+      color: #333;
+    }
+
+    .TopAlarmBox {
+      padding: 0 32px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+      background-color: #fffaee;
+      border-bottom: solid 2px #e4e4e4;
+
+      .AlarmButton {
+        width: 40px;
+        height: 40px;
+        background-color: #ffc032;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          color: #202020;
+        }
+      }
+    }
+
+    .InfoTextBox {
+      padding: 0 32px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+      border-bottom: solid 2px #e4e4e4;
+
+      .DateBox {
+        text-align: center;
+
+        :nth-child(1) {
+          font-size: 32px;
+          color: #a4a4a4;
+          margin-bottom: -10px;
+        }
+
+        :nth-child(2) {
+          font-size: 14px;
+          font-weight: 300;
+          color: #a4a4a4;
+        }
       }
     }
   }
@@ -1136,238 +1508,276 @@
       color: #fff;
     }
   }
-  // 캠페인 탭
-  // 신청한 캠페인
-  .CampaignSection {
-    width: 100%;
-    height: 2px;
-    border-radius: 1px;
-    background-color: #000;
-  }
+  // 공지사항 상세
+  .InfoDetailScreen {
+    border-top: solid 2px #202020;
+    padding: 0 0 140px 0;
 
-  .AppliedContainer {
-    width: 960px;
-
-    .CellBox {
-      height: 100%;
+    .TitleBox {
+      height: 150px;
       display: flex;
+      flex-direction: column;
       gap: 24px;
-
-      .CellBoxImg {
-        width: 78px;
-        height: 78px;
-        border-radius: 39px;
-      }
-
-      .RightBox {
-        text-align: start;
-        display: flex;
-        flex-direction: column;
-
-        .RowTitle {
-          font-size: 18px;
-          font-weight: bold;
-          color: #202020;
-        }
-
-        .RowTag {
-          font-size: 14px;
-          color: #9999a6;
-        }
-
-        .BottomContent {
-          margin-top: 12px;
-          display: flex;
-          gap: 6px;
-          align-items: center;
-
-          img {
-            width: 24px;
-            height: 24px;
-          }
-
-          :nth-child(2) {
-            font-size: 14px;
-            color: #222;
-          }
-
-          :nth-child(3) {
-            font-size: 14px;
-            color: #949494;
-          }
-        }
-      }
-    }
-
-    .StatusCell {
-      .CancleBox {
-        width: 96px;
-        height: 40px;
-        border-radius: 20px;
-        border: solid 1.5px #e4e4e4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        font-weight: bold;
-        color: #202020;
-      }
-
-      .EndBox {
-        width: 96px;
-        height: 40px;
-        border-radius: 20px;
-        border: solid 1.5px #e4e4e4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        font-weight: bold;
-        color: #9999a6;
-        background-color: #e4e4e4;
-      }
-    }
-  }
-  // 선정된 캠페인
-  .AppliedContainer {
-    width: 960px;
-
-    .BannerInfoBox {
-      height: 102px;
-      margin-bottom: 20px;
-      display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      background-color: #f5f5f5;
-      padding: 24px 40px 24px 40px;
+      text-align: center;
+      padding: 32px 0 32px 0;
+      border-bottom: solid 2px #dedede;
 
-      .BannerRight {
-        :nth-child(1) {
-          font-size: 22px;
-          font-weight: 500;
-          line-height: 1.45;
-        }
-
-        :nth-child(2) {
-          font-size: 22px;
-          font-weight: bold;
-          line-height: 1.45;
-        }
+      :nth-child(1) {
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
       }
 
-      .BannerLeft {
-        width: 156px;
-        height: 40px;
-        border-radius: 20px;
-        border: solid 1.5px #e4e4e4;
-        background-color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
+      :nth-child(2) {
+        font-size: 17px;
+        font-weight: 300;
+        color: #333;
       }
     }
 
-    .Registration,
-    .DeliveryCell {
+    .ContentBox {
+      padding: 40px 0 80px 0;
+      text-align: center;
+
       p {
-        font-size: 16px;
-        font-weight: bold;
-        color: #202020;
+        font-size: 17px;
+        font-weight: 300;
+        color: #333;
       }
-    }
-    .MuiTableBody-root {
-      .MuiTableRow-root {
-        th {
-          height: 150px;
-        }
+
+      .MainText {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      img {
+        padding: 40px 0 40px 0;
       }
     }
 
-    .StatusCell {
-      .StatusCellBox {
+    .FileBox {
+      padding: 0 24px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
+      border-radius: 4px;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+      background-color: #f5f5f5;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: #a4a4a4;
+      }
+
+      .First {
         display: flex;
         gap: 8px;
-        flex-direction: column;
+
+        p {
+          font-size: 17px;
+          font-weight: 600;
+          color: #202020;
+        }
+      }
+    }
+  }
+  // 1:1문의
+  .CenterContainer {
+    width: 960px;
+
+    .QuestionBox {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 35px 24px 35px 24px;
+      border-bottom: solid 1px #e4e4e4;
+
+      .Question {
+        font-size: 16px;
+        font-weight: 600;
+        color: #202020;
+        padding-right: 12px;
+      }
+
+      .Status {
+        height: 24px;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        :nth-child(1),
-        :nth-child(2) {
-          width: 96px;
-          height: 40px;
+        background-color: #e4e4e4;
+        font-size: 12px;
+        font-weight: 500;
+        color: #303030;
+        border-radius: 12px;
+      }
+
+      .Date {
+        font-size: 16px;
+        color: #202020;
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+        color: #333;
+      }
+    }
+  }
+  // 고객센터 탭
+  .MuiCollapse-root {
+    width: 90%;
+    background-color: #f5f5f5;
+
+    .MuiCollapse-wrapperInner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .CollapseTitle {
+        border-bottom: solid 1px #303030;
+        padding-bottom: 34px;
+      }
+
+      .CollapseInfo {
+        display: flex;
+        padding-top: 35px;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+  // 문의하기
+  .InquryContainer {
+    border-top: solid 2px #000;
+
+    .TopInfo {
+      padding: 24px 0 24px 0;
+      border-bottom: solid 2px #000;
+
+      div {
+        padding: 0 33px 0 33px;
+        height: 104px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.6;
+        color: #303030;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .MainText {
+      width: 20%;
+      font-size: 22px;
+      font-weight: bold;
+      color: #303030;
+    }
+    .TopBox2 {
+      height: 150px;
+      display: flex;
+      padding: 24px 0 16px 0;
+      border-bottom: solid 1px #828282;
+
+      .TypeBox {
+        width: 80%;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        div {
+          width: 184px;
+          height: 48px;
+          border-radius: 8px;
+          border: solid 1.5px #ededed;
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 20px;
-          border: solid 1.5px #e4e4e4;
-          font-size: 14px;
+          font-size: 18px;
           font-weight: bold;
-          color: #202020;
-        }
-
-        :nth-child(3) {
-          font-size: 12px;
-          color: #202020;
+          color: #303030;
         }
       }
     }
-  }
-  // 종료된 캠페인
 
-  // 등록 콘텐츠
-  .ContentContainer {
-    width: 960px;
-
-    .MainText {
-      margin-top: 32px;
-      font-size: 26px;
-      font-weight: 600;
-    }
-
-    .CardBox {
-      padding-top: 24px;
+    .ContentBox2 {
+      padding: 16px 0 16px 0;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      border-bottom: solid 2px #000;
 
-      .Card {
-        width: calc(20% - 10px);
+      .Right {
+        width: 80%;
 
-        .MainImg {
-          width: 176px;
-          height: 173px;
+        .OneText {
+          width: 20%;
+          font-size: 18px;
+          font-weight: bold;
+          color: #303030;
         }
 
-        .MainImgText {
-          margin-top: 12px;
-          font-size: 14px;
-          line-height: 1.43;
-          color: #222;
-        }
-
-        .MainImgdate {
-          padding: 8px 0 16px 0;
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 1.43;
-          color: #9999a6;
-        }
-
-        .SubImgBox {
+        .OneBox {
+          padding: 12px 0 12px 0;
           display: flex;
           align-items: center;
-          gap: 10px;
-          :nth-child(1) {
-            width: 24px;
-            height: 24px;
-            border-radius: 12px;
-          }
+          border-bottom: solid 1px #e4e4e4;
+        }
 
-          :nth-child(2) {
-            font-size: 14px;
-            line-height: 1.43;
-            color: #222;
+        .TwoBox {
+          padding: 12px 0 12px 0;
+          display: flex;
+          border-bottom: solid 1px #e4e4e4;
+
+          .PictureAdd {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            background-color: #ebebeb;
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
           }
         }
+      }
+    }
+
+    .ButtonBox2 {
+      padding: 40px 0 80px 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      .Previous {
+        width: 200px;
+        height: 48px;
+        border-radius: 24px;
+        border: solid 1.5px #e4e4e4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
+      }
+
+      .Regist {
+        width: 200px;
+        height: 48px;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffc032;
+        font-size: 18px;
+        font-weight: bold;
+        color: #202020;
       }
     }
   }

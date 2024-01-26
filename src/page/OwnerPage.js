@@ -8,6 +8,7 @@ import {
   IconButton,
   Pagination,
   Paper,
+  Select,
   Stack,
   Typography as T,
   Tab,
@@ -28,58 +29,15 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import SyncIcon from '@mui/icons-material/Sync'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import AddIcon from '@mui/icons-material/Add'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+import FolderIcon from '@mui/icons-material/Folder'
+import FileDownloadIcon from '@mui/icons-material/FileDownload'
 
 import '../assets/OwnerPage.scss'
 import { components } from '../component/index'
 import { images } from '../images/index'
 
-// 고객센터 아이템
-const ExpandableTab = ({ question, status, date, answer }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
-
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded)
-  }
-
-  return (
-    <Box>
-      <Box className="CenterContainer">
-        <Box className="QuestionBox">
-          <T className="Question">{question}</T>
-          <Box className="Status">{status}</Box>
-          <T className="Date">{date}</T>
-          {isExpanded ? (
-            <KeyboardArrowUpIcon
-              onClick={handleToggle}
-              variant="contained"
-              color="primary"
-            />
-          ) : (
-            <KeyboardArrowDownIcon
-              onClick={handleToggle}
-              variant="contained"
-              color="primary"
-            />
-          )}
-        </Box>
-      </Box>
-      <Collapse in={isExpanded} unmountOnExit>
-        <T>{answer}</T>
-        <T className="Date">{date}</T>
-      </Collapse>
-    </Box>
-  )
-}
-// 고객센터
-const FAQList = ({ faqData }) => {
-  return (
-    <Box>
-      {faqData.map((faq, index) => (
-        <ExpandableTab key={index} {...faq} />
-      ))}
-    </Box>
-  )
-}
 // 포인트 결제 화면
 function PaymentScreen() {
   const [showPaymentScreen2, setShowPaymentScreen2] = useState(false)
@@ -144,7 +102,7 @@ function PaymentScreen() {
     </Box>
   )
 }
-
+// 결제 화면
 function Payment2() {
   const [selectedBox, setSelectedBox] = useState(null)
 
@@ -202,6 +160,315 @@ function Payment2() {
   )
 }
 
+// 패널티 상세화면
+function PanultyDetail() {
+  return (
+    <Box>
+      <Box className="TopBox">
+        <Box className="LeftContents">
+          <T>패널티 사유</T>
+          <T>콘텐츠</T>
+        </Box>
+        <Box className="MiniSection" />
+        <Box className="RightContents">
+          <T>관련 캠페인</T>
+          <T>수제한방 모란꽃차</T>
+        </Box>
+      </Box>
+      <Box className="UserBox">
+        <T className="OneText">체험단</T>
+        <Box className="Users">
+          <img src={images.userPictuer} />
+          <img src={images.userPictuer} />
+          <img src={images.userPictuer} />
+          <img src={images.userPictuer} />
+        </Box>
+        <T className="UserInfo">인플루언서 외 3명</T>
+      </Box>
+      <Box className="TitleBox">
+        <T>제목</T>
+        <T>콘텐츠 등록기간 내 콘텐츠를 등록하지 않았어요.</T>
+      </Box>
+      <Box className="ContentBox">
+        <Box className="Content">
+          <T>묵묵 부답입니다.</T>
+          <T>2023.00.00</T>
+        </Box>
+        <img src={images.mainImg} />
+      </Box>
+      <Box className="AnswerBox">
+        <T>
+          안녕하세요. 체리뷰 운영팀 김관리자입니다.
+          <br />
+          약속된 기간에 콘텐츠 작성이 이루어지지않아 캠페인에 진행에 문제가
+          있으신 내용 맞으실까요?
+          <br />
+          해당 내용은 운영팀에서 확인 후 적절한 패널티를 적용하도록하겠습니다.
+          <br />
+          완벽한 서비스를 제공해드릴 수 있도록 노력하겠습니다. 감사합니다.
+        </T>
+        <T>2023.00.00</T>
+      </Box>
+    </Box>
+  )
+}
+// 패널티 등록 화면
+function PanultyRegist({ onBack }) {
+  const [selectedBox, setSelectedBox] = useState(null)
+
+  const handleClick = (index) => {
+    setSelectedBox(index === selectedBox ? null : index)
+  }
+  return (
+    <Box>
+      <Box className="TopBox2">
+        <T className="MainText">패널티 사유</T>
+        <Box className="TypeBox">
+          {[
+            '콘텐츠',
+            '부적절한 표현',
+            '도용',
+            '불성실',
+            '커뮤니티',
+            '기타',
+          ].map((option, index) => (
+            <Box
+              className="Type"
+              key={index}
+              onClick={() => handleClick(index)}
+              style={{
+                color: selectedBox === index ? '#ffc043' : 'black',
+                border:
+                  selectedBox === index
+                    ? '2px solid #ffc043'
+                    : '2px solid #e4e4e4',
+                cursor: 'pointer',
+              }}
+            >
+              {option}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+      <Box className="InfoBox">
+        <T className="MainText">체험단 정보</T>
+        <Box className="Info">
+          <Box className="OneBox">
+            <T className="OneText">관련 캠페인</T>
+            <Select />
+          </Box>
+          <Box className="TwoBox">
+            <T className="OneText">체험단</T>
+            <Box className="FindReviewr">
+              <T>해당 리뷰어 찾기</T>
+              <ArrowForwardIosIcon />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box className="ContentBox2">
+        <T className="MainText">패널티 내용</T>
+        <Box className="Right">
+          <Box className="OneBox">
+            <T className="OneText">제목</T>
+            <TextField placeholder="사유를 간결히 작성해주세요" />
+          </Box>
+          <Box className="OneBox">
+            <T className="OneText">패널티 내용</T>
+            <TextField placeholder="패널티 사유를 작성해주세요." />
+          </Box>
+          <Box className="TwoBox">
+            <T className="OneText">사진 첨부</T>
+            <IconButton className="PictureAdd">
+              <AddIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </Box>
+      <Box className="ButtonBox2">
+        <Box onClick={onBack} className="Previous">
+          이전으로
+        </Box>
+        <Box className="Regist">패널티 신청</Box>
+      </Box>
+    </Box>
+  )
+}
+// 고객센터 상세 화면
+function InfoDetailScreen() {
+  return (
+    <Box className="InfoDetailScreen">
+      <Box className="TitleBox">
+        <T>Lorem ipsum dolor sit amet, consectetur adipiscing elit</T>
+        <T>2023. 11. 30</T>
+      </Box>
+      <Box className="ContentBox">
+        <T>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          <br />
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+          <br />
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip <br />
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+          voluptate velit esse <br />
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, <br />
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </T>
+        <img src={images.content1} />
+        <T className="MainText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </T>
+        <img src={images.content2} />
+        <T>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+          <br />
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip <br />
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+          voluptate velit esse <br />
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, <br />
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </T>
+      </Box>
+      <Box className="FileBox">
+        <Box className="First">
+          <FolderIcon />
+          <T>체리뷰 이용약관.pdf</T>
+        </Box>
+        <FileDownloadIcon />
+      </Box>
+    </Box>
+  )
+}
+
+// 고객센터 아이템
+const ExpandableTab = ({ question, status, date, title, answer }) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded)
+  }
+
+  return (
+    <Box>
+      <Box className="CenterContainer">
+        <Box className="QuestionBox">
+          <T className="Question">{question}</T>
+          <Box className="Status">{status}</Box>
+          <T className="Date">{date}</T>
+          {isExpanded ? (
+            <KeyboardArrowUpIcon
+              onClick={handleToggle}
+              variant="contained"
+              color="primary"
+            />
+          ) : (
+            <KeyboardArrowDownIcon
+              onClick={handleToggle}
+              variant="contained"
+              color="primary"
+            />
+          )}
+        </Box>
+      </Box>
+      <Collapse in={isExpanded} unmountOnExit>
+        <Box className="CollapseTitle">
+          <T>{title}</T>
+        </Box>
+        <Box className="CollapseInfo">
+          <T>{answer}</T>
+          <T className="Date">{date}</T>
+        </Box>
+      </Collapse>
+    </Box>
+  )
+}
+
+const FAQList = ({ faqData }) => {
+  return (
+    <Box>
+      {faqData.map((faq, index) => (
+        <ExpandableTab key={index} {...faq} />
+      ))}
+    </Box>
+  )
+}
+// 문의하기 화면
+function Inqury({ onBack }) {
+  const [selectedBox, setSelectedBox] = useState(null)
+
+  const handleClick = (index) => {
+    setSelectedBox(index === selectedBox ? null : index)
+  }
+  return (
+    <Box className="InquryContainer">
+      <Box className="TopInfo">
+        <Box>
+          산업안전보건법 제 41조 시행령에 근거하여 2018년 10월 18일 부터
+          산업안전보건법에 따라 <br />
+          고객응대근로자 보호조치를 시행하고 있습니다. 고객응대근로자에게 폭언,
+          폭행 등을 하지 말아주세요.
+        </Box>
+      </Box>
+      <Box className="TopBox2">
+        <T className="MainText">문의 분류</T>
+        <Box className="TypeBox">
+          {['캠페인', '서비스', '물품', '체험단', '티켓', '기타'].map(
+            (option, index) => (
+              <Box
+                className="Type"
+                key={index}
+                onClick={() => handleClick(index)}
+                style={{
+                  color: selectedBox === index ? '#ffc043' : 'black',
+                  border:
+                    selectedBox === index
+                      ? '2px solid #ffc043'
+                      : '2px solid #e4e4e4',
+                  cursor: 'pointer',
+                }}
+              >
+                {option}
+              </Box>
+            )
+          )}
+        </Box>
+      </Box>
+      <Box className="ContentBox2">
+        <T className="MainText">문의 내용</T>
+        <Box className="Right">
+          <Box className="OneBox">
+            <T className="OneText">문의 제목</T>
+            <TextField placeholder="사유를 간결히 작성해주세요" />
+          </Box>
+          <Box className="OneBox">
+            <T className="OneText">문의 내용</T>
+            <TextField placeholder="패널티 사유를 작성해주세요." />
+          </Box>
+          <Box className="TwoBox">
+            <T className="OneText">사진 첨부</T>
+            <IconButton className="PictureAdd">
+              <AddIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </Box>
+      <Box className="ButtonBox2">
+        <Box onClick={onBack} className="Previous">
+          이전으로
+        </Box>
+        <Box className="Regist">제출하기</Box>
+      </Box>
+      <Box></Box>
+    </Box>
+  )
+}
+
 // 탭 컨텐츠
 function CustomTabPanel(props) {
   // 캠페인 리스트 collapse
@@ -219,6 +486,8 @@ function CustomTabPanel(props) {
 
   // 내정보 탭
   const [selectedTab, setSelectedTab] = useState('basic') // 초기 탭 설정
+  // 고객센터 탭
+  const [infoTab, setInfoTab] = useState('info') // 초기 탭 설정
   // 포인트 탭
   const [selectedPoint, setSelectedPoint] = useState('accumulate') // 초기 탭 설정
 
@@ -270,28 +539,6 @@ function CustomTabPanel(props) {
       '1,250,000원',
       '158,500P'
     ),
-  ]
-
-  // 고객센터 데이터
-  const faqData = [
-    {
-      question: '출금은 어떻게 신청하나요?',
-      status: '답변 전',
-      date: '2023.00.00',
-      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
-    },
-    {
-      question: '출금은 어떻게 신청하나요?',
-      status: '답변 전',
-      date: '2023.00.00',
-      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
-    },
-    {
-      question: '출금은 어떻게 신청하나요?',
-      status: '답변 전',
-      date: '2023.00.00',
-      answer: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
-    },
   ]
 
   // 차트 데이터
@@ -436,6 +683,104 @@ function CustomTabPanel(props) {
   const handleClick = () => {
     setShowPaymentScreen(true)
   }
+  // 패널티 상세로 넘기기
+  const [showPanultyScreen, setShowPanultyScreen] = useState(null)
+  // 고객센터 상세로 넘기기
+  const [showInfoScreen, setShowInfoScreen] = useState(null)
+  // 문의하기 넘기기
+  const [showInquryScreen, setShowInquryScreen] = useState(null)
+
+  // 패널티 데이터
+  const panultyContents = [
+    {
+      id: 1,
+      content: '콘텐츠',
+      message: '콘텐츠 등록기간 내 콘텐츠를 등록하지 않았어요.',
+      status: '대기중',
+      date: '2023.00.00',
+    },
+    {
+      id: 2,
+      content: '콘텐츠',
+      message: '콘텐츠 등록기간 내 콘텐츠를 등록하지 않았어요.',
+      status: '대기중',
+      date: '2023.00.00',
+    },
+    {
+      id: 3,
+      content: '콘텐츠',
+      message: '콘텐츠 등록기간 내 콘텐츠를 등록하지 않았어요.',
+      status: '대기중',
+      date: '2023.00.00',
+    },
+    {
+      id: 4,
+      content: '콘텐츠',
+      message: '콘텐츠 등록기간 내 콘텐츠를 등록하지 않았어요.',
+      status: '대기중',
+      date: '2023.00.00',
+    },
+  ]
+  // 고객센터 공지사항 아이템
+  const infoTexts = [
+    {
+      id: 1,
+      date1: '01',
+      date2: '23.05',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm...',
+    },
+    {
+      id: 2,
+      date1: '01',
+      date2: '23.05',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm...',
+    },
+    {
+      id: 3,
+      date1: '01',
+      date2: '23.05',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm...',
+    },
+    {
+      id: 4,
+      date1: '01',
+      date2: '23.05',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm...',
+    },
+    {
+      id: 5,
+      date1: '01',
+      date2: '23.05',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm...',
+    },
+  ]
+  // 고객센터 데이터
+  const faqData = [
+    {
+      question: '출금은 어떻게 신청하나요?',
+      status: '답변 전',
+      date: '2023.00.00',
+      title: '신청해서 선정됐는데 일정이 어려워져서 큰일이에요..',
+      answer:
+        '안녕하세요. 갑자기 일정이 생겨서 캠페인 진행에 어려움이 생기셨군요.하지만 이런 문제가 있을 시 광고주측의 일정도 체크하여 조율하여야해서 임의로 도와드릴 수 없는 점 양해부탁드립니다.광고주 측에서 연락받으실 수 있도록 조취해드리겠습니다. 감사합니다.',
+    },
+    {
+      question: '캠페인이 원래 이렇게 선정이 안되나요??',
+      status: '답변 전',
+      date: '2023.00.00',
+      title: '캠페인이 원래 이렇게 선정이 안되나요?',
+      answer:
+        '안녕하세요. 갑자기 일정이 생겨서 캠페인 진행에 어려움이 생기셨군요.하지만 이런 문제가 있을 시 광고주측의 일정도 체크하여 조율하여야해서 임의로 도와드릴 수 없는 점 양해부탁드립니다.광고주 측에서 연락받으실 수 있도록 조취해드리겠습니다. 감사합니다.',
+    },
+    {
+      question: '출금은 어떻게 신청하나요?',
+      status: '답변 전',
+      date: '2023.00.00',
+      title: '저는 왜 인기가 없나요. 선정이 안됩니다.',
+      answer:
+        '안녕하세요. 갑자기 일정이 생겨서 캠페인 진행에 어려움이 생기셨군요.하지만 이런 문제가 있을 시 광고주측의 일정도 체크하여 조율하여야해서 임의로 도와드릴 수 없는 점 양해부탁드립니다.광고주 측에서 연락받으실 수 있도록 조취해드리겠습니다. 감사합니다.',
+    },
+  ]
 
   // 그래프 탭
   const graphContents = {
@@ -733,6 +1078,78 @@ function CustomTabPanel(props) {
     ),
   }
 
+  //고객센터 탭 컨텐츠
+  const infoContents = {
+    info: (
+      <Box>
+        {!showInfoScreen && (
+          <Box className="InfoBox">
+            <Box className="TopAlarmBox">
+              <IconButton className="AlarmButton">
+                <NotificationsIcon />
+              </IconButton>
+              <T className="AlarmText">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusm...
+              </T>
+              <AddIcon className="AddIcon" />
+            </Box>
+            {infoTexts.map((item) => (
+              <Box
+                onClick={() => setShowInfoScreen('screen1')}
+                key={item.id}
+                className="InfoTextBox"
+              >
+                <Box className="DateBox">
+                  <T>{item.date1}</T>
+                  <T>{item.date2}</T>
+                </Box>
+                <T className="AlarmText">{item.text}</T>
+                <AddIcon className="AddIcon" />
+              </Box>
+            ))}
+            <Box className="FaqButton">
+              <Stack spacing={2} className="Paginations">
+                <Pagination count={5} />
+              </Stack>
+              <Button className="Faq">문의하기</Button>
+            </Box>
+          </Box>
+        )}
+        {showInfoScreen === 'screen1' && (
+          <Box>
+            <InfoDetailScreen />
+          </Box>
+        )}
+      </Box>
+    ),
+    one: (
+      <Box>
+        {!showInquryScreen && (
+          <Box>
+            <FAQList faqData={faqData} />
+            <Box className="FaqButton">
+              <Stack spacing={2} className="Paginations">
+                <Pagination count={5} />
+              </Stack>
+              <Button
+                onClick={() => setShowInquryScreen('screen1')}
+                className="Faq"
+              >
+                문의하기
+              </Button>
+            </Box>
+          </Box>
+        )}
+        {showInquryScreen === 'screen1' && (
+          <Box>
+            <Inqury onBack={() => setShowInquryScreen(null)} />
+          </Box>
+        )}
+      </Box>
+    ),
+  }
+
   return (
     <Box
       role="tabpanel"
@@ -981,17 +1398,65 @@ function CustomTabPanel(props) {
         </Box>
       )}
       {/* 패널티 */}
-      {value === 4 && <Box>!!!!!!!!!!!!!</Box>}
+      {value === 4 && (
+        <Box className="PanultyContainer">
+          {!showPanultyScreen && (
+            <Box>
+              {panultyContents.map((item) => (
+                <Box
+                  onClick={() => setShowPanultyScreen('screen2')}
+                  key={item.id}
+                  className="PanultyBox"
+                >
+                  <Box className="OneContent">
+                    <T>{item.content}</T>
+                    <T>{item.message}</T>
+                    <Box>{item.status}</Box>
+                  </Box>
+                  <T className="Date">{item.date}</T>
+                </Box>
+              ))}
+              <Box className="FaqButton">
+                <Stack spacing={2} className="Paginations">
+                  <Pagination count={5} />
+                </Stack>
+                <Button
+                  onClick={() => setShowPanultyScreen('screen1')}
+                  className="Faq"
+                >
+                  패널티 신청
+                </Button>
+              </Box>
+            </Box>
+          )}
+          {showPanultyScreen === 'screen1' && (
+            <PanultyRegist onBack={() => setShowPanultyScreen(null)} />
+          )}
+          {showPanultyScreen === 'screen2' && <PanultyDetail />}
+        </Box>
+      )}
       {/* 고객센터 */}
       {value === 5 && (
-        <Box>
-          <FAQList faqData={faqData} />
-          <Box className="FaqButton">
-            <Stack spacing={2} className="Paginations">
-              <Pagination count={5} />
-            </Stack>
-            <Button className="Faq">문의하기</Button>
+        <Box className="InfoContainer">
+          <Box className="CampaignList">
+            <Box
+              className={`tab ${
+                infoTab === 'info' ? 'SelectedTab' : 'NoSelect'
+              }`}
+              onClick={() => setInfoTab('info')}
+            >
+              공지사항
+            </Box>
+            <Box
+              className={`tab ${
+                infoTab === 'one' ? 'SelectedTab' : 'NoSelect'
+              }`}
+              onClick={() => setInfoTab('one')}
+            >
+              1:1 문의
+            </Box>
           </Box>
+          {infoContents[infoTab]}
         </Box>
       )}
     </Box>

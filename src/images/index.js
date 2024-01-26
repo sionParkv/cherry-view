@@ -48,6 +48,8 @@ import offApple from './offApple.png'
 import offGoogle from './offGoogle.png'
 import offFacebook from './offFacebook.png'
 import offNaver from './offNaver.png'
+import content1 from './content1.png'
+import content2 from './content2.png'
 
 const images = {
   tea,
@@ -100,6 +102,8 @@ const images = {
   offFacebook,
   offNaver,
   offGoogle,
+  content1,
+  content2,
 }
 
 export { images }
