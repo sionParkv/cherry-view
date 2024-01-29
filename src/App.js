@@ -56,6 +56,10 @@ function App() {
       />
       {/* <미션검수 페이지/> */}
       <Route path="/missioninspection" element={<pages.MissonInspection />} />
+      {/* <공지사항 상세 페이지/> */}
+      <Route path="/noticedetail" element={<pages.NoticeDetail />} />
+      {/* <커뮤니티 상세 페이지/> */}
+      <Route path="/communitydetail" element={<pages.CommunityDetail />} />
     </Routes>
   )
 }
