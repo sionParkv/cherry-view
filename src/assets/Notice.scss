@@ -5,7 +5,7 @@
 }
 
 .NoticeContainer {
-  width: max-content;
+  width: 100%;
   p,
   span,
   div {
@@ -13,12 +13,13 @@
   }
 
   .Display {
-    display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
 
   .NoticeBox {
+    width: 100%;
     padding: 10% 10% 0 10%;
     margin-bottom: 120px;
     display: flex;

@@ -23,6 +23,10 @@ import CompletedInfluencer from './CompletedInfluencer'
 import MissonInspection from './MissionInspection'
 import NoticeDetail from './NoticeDetail'
 import CommunityDetail from './CommunityDetail'
+import Community from './Community'
+import CampaginProduct from './CampaignProduct'
+import CampaginArea from './CampaignArea'
+import Suggestion from './Suggestion'
 
 const pages = {
   MainPage,
@@ -50,6 +54,10 @@ const pages = {
   MissonInspection,
   NoticeDetail,
   CommunityDetail,
+  Community,
+  CampaginProduct,
+  CampaginArea,
+  Suggestion,
 }
 
 export { pages }

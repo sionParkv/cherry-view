@@ -26,12 +26,30 @@
     display: flex;
     flex-direction: column;
 
-    .MainText {
-      font-family: Pretendard;
-      font-size: 56px;
-      font-weight: bold;
-      line-height: 0.63;
-      color: #202020;
+    .MainBox {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .MainText {
+        font-family: Pretendard;
+        font-size: 56px;
+        font-weight: bold;
+        line-height: 0.63;
+        color: #202020;
+      }
+
+      .PenIcon {
+        width: 48px;
+        height: 48px;
+        background-color: #484848;
+
+        path {
+          width: 24px;
+          height: 24px;
+          color: #fff;
+        }
+      }
     }
 
     .SearchBox {
@@ -70,6 +88,75 @@
       border-top: solid 2px #000;
     }
 
+    .AlarmText {
+      font-size: 20px;
+      color: #202020;
+      margin-right: 50%;
+    }
+
+    .AlarmText2 {
+      font-size: 20px;
+      color: #202020;
+    }
+
+    .OwnerText {
+      width: 100px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #202020;
+      display: flex;
+      margin-right: 41%;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .AddIcon {
+      width: 20px;
+      height: 20px;
+      color: #333;
+    }
+
+    .TopAlarmBox {
+      padding: 0 32px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+      background-color: #fffaee;
+      border-bottom: solid 2px #e4e4e4;
+
+      .AlarmButton {
+        width: 40px;
+        height: 40px;
+        background-color: #ffc032;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          color: #202020;
+        }
+      }
+    }
+
+    .DateBox {
+      text-align: center;
+
+      :nth-child(1) {
+        font-size: 32px;
+        color: #a4a4a4;
+        margin-bottom: -10px;
+      }
+
+      :nth-child(2) {
+        font-size: 14px;
+        font-weight: 300;
+        color: #a4a4a4;
+      }
+    }
+
     .InfoTextBox {
       padding: 0 32px 0 24px;
       display: flex;
@@ -77,58 +164,6 @@
       align-items: center;
       height: 72px;
       border-bottom: solid 2px #e4e4e4;
-
-      .DateBox {
-        width: 56px;
-        height: 56px;
-        background-color: #ffc032;
-        border-radius: 25px;
-        font-size: 32px;
-        font-weight: bold;
-        color: #202020;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      svg {
-        width: 32px;
-        height: 32px;
-
-        path {
-          color: #333;
-        }
-      }
-    }
-
-    .MuiCollapse-root {
-      padding: 40px 24px 40px 24px;
-      background-color: #fffaee;
-
-      .MuiCollapse-wrapperInner {
-        display: flex;
-        gap: 40px;
-
-        :nth-child(1) {
-          width: 56px;
-          height: 56px;
-          background-color: #202020;
-          border-radius: 25px;
-          font-size: 32px;
-          font-weight: bold;
-          color: #ffc032;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        :nth-child(2) {
-          font-size: 18px;
-          font-weight: 300;
-          line-height: 1.56;
-          color: #333;
-        }
-      }
     }
 
     .NoResultsMessage {

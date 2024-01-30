@@ -1,0 +1,233 @@
+@import 'common';
+
+.css-1oqqzyl-MuiContainer-root {
+  max-width: 100% !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #ffc043 !important;
+}
+
+.SuggestionContainer {
+  width: 100%;
+  p,
+  span,
+  div {
+    font-family: Pretendard;
+  }
+
+  .SuggestionBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Suggestion {
+      width: 100%;
+      padding: 15% 10% 10% 20%;
+      display: flex;
+      align-items: center;
+      //   justify-content: center;
+
+      .LeftBox {
+        width: 860px;
+        padding: 53px 100px 40px 48px;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+
+        .Maintext {
+          font-size: 32px;
+          font-weight: bold;
+          color: #202020;
+        }
+
+        .SubText {
+          font-size: 14px;
+          margin: 16px 0 32px 0;
+        }
+
+        .MuiButtonBase-root {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+          color: #ffc043;
+        }
+
+        .SnsBox {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+
+          .SNS {
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+            background-color: #c5c5c5;
+          }
+        }
+
+        .AreaBox {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .Area {
+            width: calc(15% - 10px);
+            height: 40px;
+            border-radius: 20px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+
+        .SmallCategory {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+
+          .Category {
+            width: calc(19.7% - 10px);
+            height: 64px;
+            align-items: center;
+            border-radius: 32px;
+            background-color: #fff;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+
+            img {
+              width: 36px;
+              height: 36px;
+            }
+
+            p {
+              font-size: 16px;
+              font-weight: 600;
+              color: #303030;
+            }
+          }
+        }
+
+        .ButtonBox {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px;
+
+          .LaterButton {
+            width: 131px;
+            height: 64px;
+            border-radius: 32px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+          }
+          .NextButton {
+            width: 131px;
+            height: 64px;
+            border-radius: 32px;
+            background-color: #ccc;
+            display: flex;
+            gap: 13px;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              font-size: 18px;
+              font-weight: bold;
+              color: #fff;
+            }
+
+            svg {
+              width: 28px;
+              height: 18px;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .RightBox {
+        width: 20%;
+        position: absolute;
+        margin: 0 0 7% 48%;
+        padding: 40px 50px 40px 50px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.12);
+
+        .GoodIcon {
+          width: 32px;
+          height: 32px;
+          color: #ffc043;
+        }
+
+        .SubText {
+          font-size: 14px;
+          font-weight: 500;
+          color: #9999a6;
+          margin: 20px 0 0 0;
+        }
+
+        .MainText {
+          font-size: 26px;
+          font-weight: bold;
+          color: #202020;
+        }
+
+        .BottomBox {
+          display: flex;
+          gap: 25px;
+          margin-top: 48px;
+        }
+
+        .Bar {
+          width: 36px;
+          height: 232px;
+          border-radius: 18px;
+          background-color: #ffc043;
+        }
+
+        .Circle {
+          position: absolute;
+          margin: 1% 0 0 1%;
+          width: 26px;
+          height: 26px;
+          border-radius: 13px;
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+          background-color: #fff;
+        }
+
+        .BottomText {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+
+          .TextSection {
+            :nth-child(1) {
+              font-size: 20px;
+              font-weight: bold;
+              color: #ccc;
+            }
+
+            :nth-child(2) {
+              font-size: 14px;
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

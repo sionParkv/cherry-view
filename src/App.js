@@ -60,6 +60,14 @@ function App() {
       <Route path="/noticedetail" element={<pages.NoticeDetail />} />
       {/* <커뮤니티 상세 페이지/> */}
       <Route path="/communitydetail" element={<pages.CommunityDetail />} />
+      {/* <커뮤니티 페이지/> */}
+      <Route path="/community" element={<pages.Community />} />
+      {/* <캠페인 리스트(제품)/> */}
+      <Route path="/product" element={<pages.CampaginProduct />} />
+      {/* <캠페인 리스트(지역)/> */}
+      <Route path="/area" element={<pages.CampaginArea />} />
+      {/* <추천 페이지/> */}
+      <Route path="/suggestion" element={<pages.Suggestion />} />
     </Routes>
   )
 }
