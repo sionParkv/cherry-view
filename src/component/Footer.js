@@ -7,15 +7,18 @@ const Footer = () => {
   return (
     <Container className="Footer">
       <Box className="TopInfo">
-        <T>개인정보처리방침</T>
-        <Box />
-        <T>이용약관</T>
-        <Box />
-        <T>고객센터</T>
-        <Box />
-        <T>광고주센터</T>
-        <Box />
-        <T>상품소개</T>
+        <Box className="TopLeft">
+          <T>개인정보처리방침</T>
+          <Box />
+          <T>이용약관</T>
+          <Box />
+          <T>고객센터</T>
+          <Box />
+          <T>광고주센터</T>
+          <Box />
+          <T>상품소개</T>
+        </Box>
+
         <T className="LastText">
           © 2024. 기프트인포 INC. all rights reserved.
         </T>

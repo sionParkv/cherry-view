@@ -528,6 +528,414 @@
       font-weight: 500;
       color: #fff;
     }
+    // 캠페인 상세
+    .DetailTop {
+      height: 60px;
+      padding: 0 40px 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 20px;
+      background-color: #f5f5f5;
+
+      .AlarmIcon {
+        width: 26px;
+        height: 26px;
+        color: #ffc043;
+      }
+
+      .Success {
+        font-size: 20px;
+        font-weight: 600;
+        padding-right: 10%;
+      }
+
+      .Info {
+        font-size: 16px;
+        font-weight: 300;
+        padding-right: 25%;
+      }
+
+      .ArrowIcon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .DetailSecond {
+      display: flex;
+      padding: 40px 0 32px 0;
+      align-items: center;
+
+      img {
+        width: 78px;
+        height: 78px;
+        border-radius: 39px;
+        box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.06);
+      }
+
+      .OneBox {
+        margin: 15px 25% 0 24px;
+
+        :nth-child(1) {
+          font-size: 32px;
+          font-weight: bold;
+          color: #202020;
+        }
+
+        :nth-child(2) {
+          font-size: 14px;
+          color: #9999a6;
+        }
+      }
+
+      .TwoBox {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        width: 148px;
+        height: 40px;
+        border-radius: 20px;
+        border: solid 1.5px #ddd;
+
+        p {
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .TagBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 40px;
+
+      .Tag {
+        width: calc(15% - 10px);
+        height: 40px;
+        border-radius: 20px;
+        border: solid 1.5px #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .Boxes {
+      display: flex;
+
+      div {
+        width: calc(100% / 6);
+        display: flex;
+        gap: 22px;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 8px;
+        align-items: center;
+
+        p {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .MiddleSection {
+      height: 70px;
+      display: flex;
+      margin: 40px 0 75px 0;
+      justify-content: center;
+      align-items: center;
+      border-top: solid 2px #202020;
+      border-bottom: solid 2px #202020;
+
+      .CheckIcon {
+        width: 18px;
+        height: 18px;
+        background-color: #000;
+        margin-right: 10px;
+
+        svg {
+          width: 14px;
+          height: 14px;
+          color: #fff;
+        }
+      }
+
+      .OneText {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .TwoText {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .LeftContent {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 140px;
+
+      // 캠페인 정보
+      .TextBox {
+        display: flex;
+        align-items: center;
+        padding: 0 0 25px 0;
+
+        .CampText {
+          width: 17%;
+          height: 34px;
+          font-size: 28px;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          font-family: Pretendard;
+        }
+
+        button {
+          width: 30px;
+          height: 30px;
+          background-color: black;
+          svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+          }
+        }
+      }
+
+      .HashBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-right: 10%;
+
+        .HashInfo {
+          width: 120px;
+          height: 40px;
+          display: flex;
+          flex-basis: calc(15% - 10px);
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 20px;
+          border: solid 1.5px #ddd;
+        }
+      }
+
+      .Section {
+        width: 100%;
+        height: 0.1px;
+        margin: 32px 0 42px 0;
+        border: solid 1px #e4e4e4;
+      }
+      // 상품정보
+      .TitleBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .OneBox {
+          display: flex;
+          align-items: center;
+        }
+
+        .Text {
+          font-family: Pretendard;
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1.81;
+          color: #202020;
+        }
+
+        svg {
+          width: 25px;
+          height: 22px;
+        }
+
+        .PersonInfo {
+          width: 137px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px;
+          border: solid 1.5px #ddd;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .SubText {
+        font-size: 14px;
+        color: #9999a6;
+      }
+
+      .MainImg {
+        width: 100%;
+        height: 824px;
+      }
+
+      .History {
+        font-family: Pretendard;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 40px 0 24px 0;
+      }
+
+      .HistoryText {
+        height: 129px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 80px;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 5%;
+        border: solid 2px #ededed;
+        background-color: #f8f8f8;
+      }
+
+      .Map {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 24px 0;
+
+        .Schedule {
+          font-family: Pretendard;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        .Road {
+          width: 180px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 20px;
+          border: solid 1.5px #ddd;
+        }
+      }
+
+      .NaverMap {
+        height: 264px;
+      }
+
+      .ScheduleText {
+        height: 129px;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 1.63;
+        margin: 16px 0 80px 0;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 5%;
+        border: solid 2px #ededed;
+        background-color: #f8f8f8;
+      }
+
+      .MissionText {
+        font-family: Pretendard;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 0 24px 0;
+      }
+
+      .MissionItem {
+        display: flex;
+
+        .Detail {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-right: 15px;
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+
+          p {
+            font-family: Pretendard;
+            font-size: 14px;
+            line-height: 1.86;
+          }
+        }
+      }
+
+      .MissionItems {
+        display: flex;
+        flex-direction: column;
+
+        .ItemLogo {
+          width: 117px;
+          height: 40px;
+          margin: 80px 0 24px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px;
+          background-color: #f4f4f4;
+
+          img {
+            width: 28px;
+            height: 28px;
+          }
+
+          p {
+            font-family: Pretendard;
+            font-size: 18px;
+            font-weight: bold;
+            padding-right: 5%;
+          }
+        }
+
+        :nth-child(2) {
+          font-family: Pretendard;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        :nth-child(3) {
+          opacity: 0.5;
+          font-family: Pretendard;
+          font-size: 14px;
+          line-height: 1.43;
+        }
+      }
+
+      .InfoTitle {
+        width: 114px;
+        height: 40px;
+        margin: 80px 0 24px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .InfoText {
+        font-family: Pretendard;
+        font-size: 16px;
+        line-height: 1.63;
+      }
+    }
   }
 
   // 내정보 탭

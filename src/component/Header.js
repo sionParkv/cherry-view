@@ -27,6 +27,9 @@ const Header = () => {
   const goToFAQ = () => {
     navigate('/faq')
   }
+  const goToCommunity = () => {
+    navigate('/community')
+  }
   const goToLogin = () => {
     navigate('/login')
   }
@@ -62,6 +65,7 @@ const Header = () => {
                 <T>프리미어</T>
                 <T onClick={goToNotice}>공지사항</T>
                 <T onClick={goToFAQ}>FAQ</T>
+                <T onClick={goToCommunity}>커뮤니티</T>
               </Box>
             </Box>
             {/* 우측 로그인 박스 */}

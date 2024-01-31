@@ -21,7 +21,7 @@ import {
   Tabs,
   TextField,
 } from '@mui/material'
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { ResponsiveLine } from '@nivo/line'
 import { PieChart } from 'react-minimal-pie-chart'
 import PropTypes from 'prop-types'
@@ -33,6 +33,16 @@ import AddIcon from '@mui/icons-material/Add'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import FolderIcon from '@mui/icons-material/Folder'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import CheckIcon from '@mui/icons-material/Check'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import {
+  Container as MapDiv,
+  Marker,
+  NaverMap,
+  useNavermaps,
+} from 'react-naver-maps'
 
 import '../assets/OwnerPage.scss'
 import { components } from '../component/index'
@@ -153,6 +163,240 @@ function Payment2() {
             환불됩니다
             <br />· 기타문의 사항 및 궁금하신 점은 고객센터 문의 또는 이용약관,
             유료서비스 이용약관에서 확인할 수 있습니다.
+          </T>
+        </Box>
+      </Box>
+    </Box>
+  )
+}
+//  캠페인 리스트 상세화면
+function CampaignDetail() {
+  const contents = [
+    '제품 캠페인',
+    '뷰티',
+    '20명 이상 모집',
+    '마감임박',
+    '산뜻한 발림',
+    '겨울 필수템',
+    'The Orcinary',
+    'MD 추천',
+    '친환경 제품',
+  ]
+
+  const missionItem = [
+    {
+      icon: images.message,
+      title: '키워드',
+      text: '제목 키워드 : 디오디너리, 저자극, 매트한, 비타민C, 모든피부용\n본문 키워드 : 디오디너리, 저자극, 매트한, 비타민C, 모든피부용',
+      subText:
+        '· 위 키워드를 콘텐츠에 넣어주세요.\n· 캠페인 미션으로 주어진 키워드를 적용하지 않으면 수정요청이 있을 수 있습니다.',
+    },
+    {
+      icon: images.link,
+      title: '링크삽입',
+      text: '구매 가능한 쇼핑몰 링크를 넣어주세요\n-https://www.sephora.kr/brands/the-ordinary',
+      subText: '· 위 링크를 본문에 넣어주세요.',
+    },
+    {
+      icon: images.text,
+      title: '글자 수',
+      text: '800자 이상으로 작성해주세요.\n작성 시 본문 키워드를 이용해 자연스러운 문장으로 작성해주세요.',
+      subText:
+        '· 캠페인 미션으로 주어진 글자 수를 적용하지 않으면 수정요청이 있을 수 있습니다.',
+    },
+    {
+      icon: images.video,
+      title: '동영상',
+      text: '연출 컷이나 제형을 동영상이나 움짤로 넣어주세요',
+      subText:
+        '· 캠페인 미션으로 주어진 동영상 요청사항을 적용하지 않으면 수정요청이 있을 수 있습니다.',
+    },
+    {
+      icon: images.picture,
+      title: '사진 수',
+      text: '연출 컷, 제형 사진, 사용 시 느낌을 상세히 표현해주시고, 제품을 들고 있는 셀카 사진을 넣어주시면 더욱 좋습니다.\n(사진은 최소 5컷 이상)',
+      subText:
+        '· 위 안내된 사진 갯수를 준수해주세요. 미 이행 시 수정요청이 있을 수 있습니다.',
+    },
+  ]
+
+  const navermaps = useNavermaps()
+
+  const [liked, setLiked] = useState(false)
+
+  const handleLikeClick = () => {
+    setLiked((prevLiked) => !prevLiked)
+  }
+  return (
+    <Box>
+      <Box className="DetailTop">
+        <NotificationsIcon className="AlarmIcon" />
+        <T className="Success">컴펌이 완료되었습니다</T>
+        <T className="Info">캠페인 신청기간에 자동으로 정상 업로드 됩니다.</T>
+        <ArrowForwardIcon className="ArrowIcon" />
+      </Box>
+      <Box className="DetailSecond">
+        <img src={images.mainImg} />
+        <Box className="OneBox">
+          <T>자연을 담은 Coverage Foundation</T>
+          <T>The Orcinary</T>
+        </Box>
+        <Box className="TwoBox">
+          <T>체험단 페이지</T>
+          <ArrowForwardIosIcon />
+        </Box>
+      </Box>
+      <Box className="TagBox">
+        {contents.map((content, index) => (
+          <Box className="Tag" key={index}>
+            # {content}
+          </Box>
+        ))}
+      </Box>
+      <Box className="Boxes">
+        <Box>
+          <T>캠페인 컨펌</T>
+          <T>~11.26</T>
+        </Box>
+        <Box>
+          <T>캠페인 신청기간</T>
+          <T>11.27 ~ 12.12</T>
+        </Box>
+        <Box>
+          <T>인플루언서 발표</T>
+          <T>12.13</T>
+        </Box>
+        <Box>
+          <T>콘텐츠 등록기간</T>
+          <T>12.14 ~ 12.24</T>
+        </Box>
+        <Box>
+          <T>캠페인 결과발표</T>
+          <T>12.29</T>
+        </Box>
+        <Box>
+          <T>보고서</T>
+          <T>12.30~</T>
+        </Box>
+      </Box>
+      <Box className="MiddleSection">
+        <IconButton className="CheckIcon">
+          <CheckIcon />
+        </IconButton>
+        <T className="OneText">컨펌이 완료되었습니다.</T>
+        <T className="TwoText">캠페인 신청기간에 자동으로 정상 업로드됩니다.</T>
+      </Box>
+      <Box className="LeftContent">
+        <Box className="TextBox">
+          <T className="CampText">캠페인 정보</T>
+          <IconButton>
+            <OpenInNewIcon />
+          </IconButton>
+        </Box>
+        <Box className="HashBox">
+          {contents.map((item, index) => (
+            <Box className="HashInfo" key={index}>
+              # {item}
+            </Box>
+          ))}
+        </Box>
+        <Box className="Section" />
+        {/* 상품 정보 */}
+        <Box className="TitleBox">
+          <Box className="OneBox">
+            <T className="Text">자연을 담은 Coverage Foundation</T>
+            <IconButton onClick={handleLikeClick}>
+              {liked ? <Favorite color="error" /> : <FavoriteBorder />}
+            </IconButton>
+          </Box>
+
+          <Box className="PersonInfo">신청 23/20</Box>
+        </Box>
+        <T className="SubText">The Orcinary</T>
+        <img className="MainImg" src={images.mainImg} />
+        <T className="History">제공 내역</T>
+        <Box className="HistoryText">
+          자연을 담은 Coverage Foundation 본품 1개
+          <br />
+          <br />
+          색상 택 1(1호, 2호) <br />
+          ㄴ1호 : 밝은 21호 피부 추천 / 2호 : 21~23호 피부 추천
+        </Box>
+        <Box className="Map">
+          <T className="Schedule">영업시간 및 방문 가능일정</T>
+          <Box className="Road">네이버 지도 길찾기</Box>
+        </Box>
+        <MapDiv className="NaverMap">
+          <NaverMap
+            defaultCenter={new navermaps.LatLng(37.3595704, 127.105399)}
+            defaultZoom={10}
+          >
+            <Marker
+              defaultPosition={new navermaps.LatLng(37.3595704, 127.105399)}
+            />
+          </NaverMap>
+        </MapDiv>
+        <Box className="ScheduleText">
+          [영업시간] 화~일 17:00~23:30 (L.O 22:30) / 월요일 휴무 <br />
+          [인플루언서 방문가능일정] 화~금 17:00~23:30 (L.O 22:30)
+          <br /> * 토, 일, 월 방문불가
+        </Box>
+        <T className="MissionText">캠페인 미션</T>
+        <Box className="MissionItem">
+          {missionItem.map((item, index) => (
+            <Box className="Detail" key={index}>
+              <img src={item.icon} />
+              <T>{item.title}</T>
+            </Box>
+          ))}
+        </Box>
+        <Box>
+          {missionItem.map((item, index) => (
+            <Box key={index} className="MissionItems">
+              <Box className="ItemLogo">
+                <img src={item.icon} alt={`Image ${index}`} />
+                <T>{item.title}</T>
+              </Box>
+              <T gutterBottom>
+                {item.text &&
+                  item.text.split('\n').map((text, i) => (
+                    <Fragment key={i}>
+                      {text}
+                      <br />
+                    </Fragment>
+                  ))}
+              </T>
+              <T>
+                {item.subtext ||
+                  item.subText.split('\n').map((text, i) => (
+                    <Fragment key={i}>
+                      {text}
+                      <br />
+                    </Fragment>
+                  ))}
+              </T>
+            </Box>
+          ))}
+          <Box className="InfoTitle">신청 정보</Box>
+          <T className="InfoText">- 사용 카메라 종류 , 블로그 관리인 수</T>
+          <Box className="InfoTitle">추가 안내사항</Box>
+          <T className="InfoText">
+            - 제공받은 제품은 타인에게 양도 및 판매, 교환을 절대 허용하지
+            않으며, 적발 시 제품 가격 환불 및 캠페인 참여 제한됩니다.
+            <br /> - 콘텐츠 등록 기간 내 콘텐츠 미등록 시 서비스 이용료 및 제품
+            가격에 대하여 비용 청구됩니다.
+            <br /> - 선정 후 단순 변심에 의한 제공내역 옵션 및 배송지 변경은
+            어렵습니다.
+            <br /> - 안내된 제공 내역과 다르거나, 별도 공지 없이 7일 이상
+            배송되지 않는 등 진행이 어려운 경우 1:1문의로 연락해주세요.
+            <br /> - 업체 측 요청에 따라 선정 인플루언서 수가 변경될 수
+            있습니다.
+            <br /> - 콘텐츠 작성 시 선정 된 본 캠페인의 제품만으로 단독 촬영하여
+            진행되어야 합니다.
+            <br /> - 작성하신 콘텐츠는 6개월 유지해야 하며, 유지하지 않을 경우
+            페널티가 부과됩니다.
+            <br /> - 콘텐츠 작성 시 태그 달기 부분에 제공 드린 키워드를 추가
+            작성 부탁드립니다.
           </T>
         </Box>
       </Box>
@@ -683,10 +927,19 @@ function CustomTabPanel(props) {
   const handleClick = () => {
     setShowPaymentScreen(true)
   }
+  // 캠페인 상세로 넘기기
+  const [showDetailScreen, setShowDetailScreen] = useState(false)
+
+  const handleDetailClick = () => {
+    setShowDetailScreen(true)
+  }
+
   // 패널티 상세로 넘기기
   const [showPanultyScreen, setShowPanultyScreen] = useState(null)
+
   // 고객센터 상세로 넘기기
   const [showInfoScreen, setShowInfoScreen] = useState(null)
+
   // 문의하기 넘기기
   const [showInquryScreen, setShowInquryScreen] = useState(null)
 
@@ -1192,144 +1445,156 @@ function CustomTabPanel(props) {
           {dashboardContents[dashboardTab]}
         </Box>
       )}
+
       {/* 캠페인 리스트 */}
       {value === 1 && (
         <Box className="CampaignContaier">
-          <Box className="TopContents" onClick={handleCampaignToggle}>
-            <T className="OneText">전체</T>
-            <T className="TwoText">진행중인 캠페인</T>
-            <IconButton className="OpenButton">
-              {campaignOpen ? (
-                <KeyboardArrowUpIcon
+          {showDetailScreen ? (
+            <CampaignDetail />
+          ) : (
+            <Box>
+              <Box className="TopContents" onClick={handleCampaignToggle}>
+                <T className="OneText">전체</T>
+                <T className="TwoText">진행중인 캠페인</T>
+                <IconButton
                   onClick={handleCampaignToggle}
-                  variant="contained"
-                  color="primary"
-                />
-              ) : (
-                <KeyboardArrowDownIcon
-                  onClick={handleCampaignToggle}
-                  variant="contained"
-                  color="primary"
-                />
-              )}
-            </IconButton>
-          </Box>
+                  className="OpenButton"
+                >
+                  {campaignOpen ? (
+                    <KeyboardArrowUpIcon variant="contained" color="primary" />
+                  ) : (
+                    <KeyboardArrowDownIcon
+                      variant="contained"
+                      color="primary"
+                    />
+                  )}
+                </IconButton>
+              </Box>
 
-          <Collapse in={campaignOpen}>
-            {/* 펼쳐질 내용 */}
-            <Box className="OneSection">
-              {paragraphs1.map((text, index) => (
-                <T
-                  key={index}
-                  onClick={() => handleParagraphClick1(index)}
-                  style={{
-                    color: selectedParagraph1 === index ? 'black' : 'gray',
-                  }}
-                >
-                  {text}
-                </T>
-              ))}
+              <Collapse in={campaignOpen}>
+                {/* 펼쳐질 내용 */}
+                <Box className="OneSection">
+                  {paragraphs1.map((text, index) => (
+                    <T
+                      key={index}
+                      onClick={() => handleParagraphClick1(index)}
+                      style={{
+                        color: selectedParagraph1 === index ? 'black' : 'gray',
+                      }}
+                    >
+                      {text}
+                    </T>
+                  ))}
+                </Box>
+                <Box className="BottomSection" />
+                <Box className="TwoSection">
+                  {paragraphs2.map((text, index) => (
+                    <T
+                      key={index}
+                      onClick={() => handleParagraphClick2(index)}
+                      style={{
+                        color: selectedParagraph2 === index ? 'black' : 'gray',
+                      }}
+                    >
+                      {text}
+                    </T>
+                  ))}
+                </Box>
+                <Box className="BottomSection" />
+                <Box className="ThreeSection">
+                  {paragraphs3.map((text, index) => (
+                    <T
+                      key={index}
+                      onClick={() => handleParagraphClick3(index)}
+                      style={{
+                        color: selectedParagraph3 === index ? 'black' : 'gray',
+                      }}
+                    >
+                      {text}
+                    </T>
+                  ))}
+                </Box>
+              </Collapse>
+              <Box className="SearchBox2">
+                <Button className="SearchButton">조회하기</Button>
+                <IconButton className="ReButton">
+                  <SyncIcon />
+                </IconButton>
+              </Box>
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="center">캠페인 정보</TableCell>
+                      <TableCell align="center">캠페인 기간</TableCell>
+                      <TableCell align="center">컨텐츠 수</TableCell>
+                      <TableCell align="center">총 조회수</TableCell>
+                      <TableCell align="center">총 조회수</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rows4.map((row) => (
+                      <TableRow
+                        onClick={handleDetailClick}
+                        key={row.id}
+                        sx={{
+                          '&:last-child td, &:last-child th': { border: 0 },
+                        }}
+                      >
+                        <TableCell
+                          className="OneCell"
+                          component="th"
+                          scope="row"
+                        >
+                          <Box className="MainImg">
+                            <img src={row.img} />
+                          </Box>
+                          <Box className="TextBox">
+                            <T className="TextOne">{row.title}</T>
+                            <T className="TextTwo">{row.tag}</T>
+                            <Box className="SnsBox">
+                              <img src={row.sns} />
+                              <T>모집인원 | {row.person}명</T>
+                            </Box>
+                          </Box>
+                        </TableCell>
+                        <TableCell className="TwoCell" align="center">
+                          <Box className="TextBox">
+                            <T>캠페인 신청기간</T>
+                            <T> {row.date1}</T>
+                          </Box>
+                          <Box className="TextBox">
+                            <T>인프루언서 발표</T>
+                            <T> {row.date2}</T>
+                          </Box>
+                          <Box className="TextBox">
+                            <T>콘텐츠 등록기간 </T>
+                            <T>{row.date3}</T>
+                          </Box>
+                          <Box className="TextBox">
+                            <T>캠페인 결과 발표 </T>
+                            <T>{row.date4}</T>
+                          </Box>
+                        </TableCell>
+                        <TableCell className="ThreeCell" align="center">
+                          <T className="Number">{row.contents}</T>
+                        </TableCell>
+                        <TableCell className="FourCell" align="center">
+                          <T className="Number">{row.views}</T>
+                        </TableCell>
+                        <TableCell className="FiveCell" align="center">
+                          <Box className="ReRegi">재 등록</Box>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              <Stack spacing={2}>
+                <Pagination count={5} />
+              </Stack>
             </Box>
-            <Box className="BottomSection" />
-            <Box className="TwoSection">
-              {paragraphs2.map((text, index) => (
-                <T
-                  key={index}
-                  onClick={() => handleParagraphClick2(index)}
-                  style={{
-                    color: selectedParagraph2 === index ? 'black' : 'gray',
-                  }}
-                >
-                  {text}
-                </T>
-              ))}
-            </Box>
-            <Box className="BottomSection" />
-            <Box className="ThreeSection">
-              {paragraphs3.map((text, index) => (
-                <T
-                  key={index}
-                  onClick={() => handleParagraphClick3(index)}
-                  style={{
-                    color: selectedParagraph3 === index ? 'black' : 'gray',
-                  }}
-                >
-                  {text}
-                </T>
-              ))}
-            </Box>
-          </Collapse>
-          <Box className="SearchBox2">
-            <Button className="SearchButton">조회하기</Button>
-            <IconButton className="ReButton">
-              <SyncIcon />
-            </IconButton>
-          </Box>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="center">캠페인 정보</TableCell>
-                  <TableCell align="center">캠페인 기간</TableCell>
-                  <TableCell align="center">컨텐츠 수</TableCell>
-                  <TableCell align="center">총 조회수</TableCell>
-                  <TableCell align="center">총 조회수</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows4.map((row) => (
-                  <TableRow
-                    key={row.name}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell className="OneCell" component="th" scope="row">
-                      <Box className="MainImg">
-                        <img src={row.img} />
-                      </Box>
-                      <Box className="TextBox">
-                        <T className="TextOne">{row.title}</T>
-                        <T className="TextTwo">{row.tag}</T>
-                        <Box className="SnsBox">
-                          <img src={row.sns} />
-                          <T>모집인원 | {row.person}명</T>
-                        </Box>
-                      </Box>
-                    </TableCell>
-                    <TableCell className="TwoCell" align="center">
-                      <Box className="TextBox">
-                        <T>캠페인 신청기간</T>
-                        <T> {row.date1}</T>
-                      </Box>
-                      <Box className="TextBox">
-                        <T>인프루언서 발표</T>
-                        <T> {row.date2}</T>
-                      </Box>
-                      <Box className="TextBox">
-                        <T>콘텐츠 등록기간 </T>
-                        <T>{row.date3}</T>
-                      </Box>
-                      <Box className="TextBox">
-                        <T>캠페인 결과 발표 </T>
-                        <T>{row.date4}</T>
-                      </Box>
-                    </TableCell>
-                    <TableCell className="ThreeCell" align="center">
-                      <T className="Number">{row.contents}</T>
-                    </TableCell>
-                    <TableCell className="FourCell" align="center">
-                      <T className="Number">{row.views}</T>
-                    </TableCell>
-                    <TableCell className="FiveCell" align="center">
-                      <Box className="ReRegi">재 등록</Box>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Stack spacing={2}>
-            <Pagination count={5} />
-          </Stack>
+          )}
         </Box>
       )}
       {/* 회원정보 */}

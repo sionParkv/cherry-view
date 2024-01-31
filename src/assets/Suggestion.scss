@@ -67,6 +67,17 @@
             height: 160px;
             border-radius: 8px;
             background-color: #c5c5c5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-weight: bold;
+            color: #fff;
+
+            svg {
+              width: 70px;
+              height: 70px;
+            }
           }
         }
 

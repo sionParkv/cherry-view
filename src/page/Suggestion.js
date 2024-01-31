@@ -10,6 +10,8 @@ import React, { useState } from 'react'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import PropTypes from 'prop-types'
+import YouTubeIcon from '@mui/icons-material/YouTube'
+import InstagramIcon from '@mui/icons-material/Instagram'
 
 import '../assets/Suggestion.scss'
 import { components } from '../component/index'
@@ -83,7 +85,7 @@ function CustomTabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <T>{children}</T>
+          <Box>{children}</Box>
         </Box>
       )}
     </div>
@@ -198,9 +200,13 @@ const ThirdScreen = () => (
       · 블로그, 인스타그램, 유튜브 어떤 미디어가 편하신가요?!
     </T>
     <Box className="SnsBox">
-      <Box className="SNS"></Box>
-      <Box className="SNS"></Box>
-      <Box className="SNS"></Box>
+      <Box className="SNS">b</Box>
+      <Box className="SNS">
+        <InstagramIcon />
+      </Box>
+      <Box className="SNS">
+        <YouTubeIcon />
+      </Box>
     </Box>
   </Box>
 )
