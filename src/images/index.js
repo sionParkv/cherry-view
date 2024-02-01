@@ -50,6 +50,11 @@ import offFacebook from './offFacebook.png'
 import offNaver from './offNaver.png'
 import content1 from './content1.png'
 import content2 from './content2.png'
+import reservation1 from './reservation1.png'
+import reservation2 from './reservation2.png'
+import successImg from './successImg.png'
+import mobileBack from './mobileBack.png'
+import mobileSuccess from './mobileSuccess.png'
 
 const images = {
   tea,
@@ -104,6 +109,11 @@ const images = {
   offGoogle,
   content1,
   content2,
+  reservation1,
+  reservation2,
+  successImg,
+  mobileBack,
+  mobileSuccess,
 }
 
 export { images }

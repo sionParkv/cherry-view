@@ -27,6 +27,9 @@ import Community from './Community'
 import CampaginProduct from './CampaignProduct'
 import CampaginArea from './CampaignArea'
 import Suggestion from './Suggestion'
+import ApplicationList from './ApplicationList'
+import Reservation from './Reservation'
+import ReservationSuccess from './ReservationSuccess'
 
 const pages = {
   MainPage,
@@ -58,6 +61,9 @@ const pages = {
   CampaginProduct,
   CampaginArea,
   Suggestion,
+  ApplicationList,
+  Reservation,
+  ReservationSuccess,
 }
 
 export { pages }

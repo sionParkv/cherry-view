@@ -68,6 +68,15 @@ function App() {
       <Route path="/area" element={<pages.CampaginArea />} />
       {/* <추천 페이지/> */}
       <Route path="/suggestion" element={<pages.Suggestion />} />
+      {/* <신청 리스트 페이지/> */}
+      <Route path="/applicationlist" element={<pages.ApplicationList />} />
+      {/* <이벤트 페이지/> */}
+      <Route path="/reservation" element={<pages.Reservation />} />
+      {/* <이벤트 완료 페이지/> */}
+      <Route
+        path="/reservationsuccess"
+        element={<pages.ReservationSuccess />}
+      />
     </Routes>
   )
 }
