@@ -2,6 +2,7 @@ import { Box, Container, Typography as T } from '@mui/material'
 import React from 'react'
 
 import '../assets/Footer.scss'
+import { images } from '../images/index'
 
 const Footer = () => {
   return (
@@ -25,7 +26,7 @@ const Footer = () => {
       </Box>
       <Box className="BottomInfo">
         <Box className="Logo">
-          <T>LOGO</T>
+          <img src={images.logo} />
           <T>
             서울특별시 은평구 진흥로 182 풍안빌딩 4층 <br></br>
             사업자 등록번호 000-00-00000 | 대표자 000

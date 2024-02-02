@@ -21,10 +21,7 @@
       align-items: center;
 
       .Logo {
-        color: #5e4f42;
-        font-size: 40px;
-        font-weight: 500;
-        line-height: 1.1;
+        margin-right: -30px;
       }
 
       .IconMenu {
@@ -76,6 +73,173 @@
           letter-spacing: -0.25px;
           font-weight: 500;
           color: black;
+        }
+      }
+    }
+  }
+}
+
+.MuiModal-root {
+  p,
+  span,
+  div {
+    font-family: Pretendard;
+  }
+
+  .MainModal {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .Display {
+      padding: 3% 10% 10% 10%;
+    }
+
+    .TopBox {
+      display: flex;
+      justify-content: space-between;
+
+      .MuiFormControl-root {
+        width: 40%;
+
+        .MuiInputBase-root {
+          border-radius: 40px !important;
+          background-color: white;
+        }
+      }
+
+      .SearchButton {
+        svg {
+          width: 32px;
+          height: 32px;
+          color: #202020;
+        }
+      }
+
+      .LoginBox {
+        display: flex;
+
+        svg {
+          width: 36px;
+          height: 36px;
+          color: #000;
+        }
+
+        p {
+          font-size: 10px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .MiddleBox {
+      margin: 20px 0 24px 0;
+      padding: 32px 40px 32px 36px;
+      border-radius: 16px;
+      background-color: white;
+      text-align: start;
+
+      .TextBox {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        p {
+          font-size: 26px;
+          font-weight: 600;
+        }
+
+        svg {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      .SmallCategory {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 32px 0 32px 0;
+
+        .Item {
+          width: calc(15% - 10px);
+          height: 90px;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 45px;
+          background-color: #f4f4f4;
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+
+          p {
+            // font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .BottomBox {
+      display: flex;
+      align-items: center;
+
+      .LeftBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        width: 480px;
+        height: 80px;
+        border-radius: 16px;
+        background-color: #fff;
+
+        .Item {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+
+          p {
+            font-size: 22px;
+            font-weight: 600;
+          }
+
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+
+      .RightBox {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-left: 64px;
+
+        .Item {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          p {
+            font-size: 22px;
+            font-weight: 600;
+          }
+
+          svg {
+            width: 22px;
+            height: 22px;
+          }
         }
       }
     }

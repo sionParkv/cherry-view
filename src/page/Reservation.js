@@ -94,6 +94,7 @@ const Reservation = () => {
       <Box className="MainBox">
         <Box className="TopContent">
           <img className="MainImg" src={images.reservation1} />
+          <img className="MMainImg" src={images.Mreservation1} />
           <Box className="BottomClick">
             <T>응모하기</T>
             <KeyboardDoubleArrowDownOutlinedIcon />
@@ -104,7 +105,7 @@ const Reservation = () => {
           <Box className="applicationBox">
             <T className="MainText">
               체리뷰
-              <br /> 사전 회원가입 및 <sapn className="red">응모</sapn>
+              <br /> 사전 회원가입 및 <span className="red">응모</span>
             </T>
             <Box className="SubmitBox">
               <Box className="EmailBox">
@@ -237,6 +238,7 @@ const Reservation = () => {
             </Box>
           </Box>
         </Box>
+        <img className="MobileImg" src={images.Mreservation2} />
       </Box>
     </Container>
   )

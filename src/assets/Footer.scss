@@ -16,6 +16,7 @@
     justify-content: space-between;
     padding: 0 10% 0 10%;
     border: solid 1px #e4e4e4;
+    background-color: #fff;
 
     .TopLeft {
       display: flex;
@@ -50,12 +51,14 @@
     justify-content: space-between;
     padding: 0 10% 0 10%;
     border: solid 1px #e4e4e4;
+    background-color: #fff;
 
     .Logo {
       :nth-child(1) {
         font-size: 40px;
         font-weight: 500;
         color: #5e4f42;
+        margin-bottom: 10px;
       }
       :nth-child(2) {
         font-family: Pretendard;

@@ -55,6 +55,14 @@ import reservation2 from './reservation2.png'
 import successImg from './successImg.png'
 import mobileBack from './mobileBack.png'
 import mobileSuccess from './mobileSuccess.png'
+import Mreservation1 from './Mreservation1.png'
+import Mreservation2 from './Mreservation2.png'
+import logo from './logo.svg'
+import mic from './mic.png'
+import premier from './premier.png'
+import carousel1 from './carousel1.png'
+import carousel2 from './carousel2.png'
+import carousel3 from './carousel3.png'
 
 const images = {
   tea,
@@ -114,6 +122,14 @@ const images = {
   successImg,
   mobileBack,
   mobileSuccess,
+  Mreservation1,
+  Mreservation2,
+  logo,
+  mic,
+  premier,
+  carousel1,
+  carousel2,
+  carousel3,
 }
 
 export { images }
