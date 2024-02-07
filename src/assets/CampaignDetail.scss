@@ -1,16 +1,28 @@
 @import 'common';
 
-.CampDetail {
-  width: max-content;
+.DisplayBox {
+  width: 100%;
   display: flex;
-  padding-bottom: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.CampDetail {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  padding: 10% 10% 120px 10%;
+
+  p,
+  span,
+  div {
+    font-family: Pretendard;
+  }
 
   // 왼쪽 컨텐츠
   .LeftContent {
     width: 100%;
     height: 100%;
-    padding: 10% 0 0 0;
-    margin-left: 21%;
 
     // 캠페인 정보
     .TextBox {
@@ -19,7 +31,7 @@
       padding: 0 0 25px 0;
 
       .CampText {
-        width: 17%;
+        width: 13%;
         height: 34px;
         font-size: 28px;
         display: flex;
@@ -61,7 +73,7 @@
     }
 
     .Section {
-      width: 90%;
+      width: 100%;
       height: 0.1px;
       margin: 32px 0 42px 0;
       border: solid 1px #e4e4e4;
@@ -70,21 +82,26 @@
     .TitleBox {
       display: flex;
       align-items: center;
+      justify-content: space-between;
 
-      .Text {
-        font-family: Pretendard;
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 1.81;
-        color: #202020;
+      .TitleOne {
+        display: flex;
+        align-items: center;
+        .Text {
+          font-family: Pretendard;
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1.81;
+          color: #202020;
+        }
+
+        svg {
+          width: 25px;
+          height: 22px;
+        }
       }
 
-      svg {
-        width: 25px;
-        height: 22px;
-      }
-
-      :nth-child(3) {
+      .TitleTwo {
         width: 137px;
         height: 40px;
         display: flex;
@@ -261,7 +278,9 @@
   // 오른쪽 컨텐츠
   .RightContent {
     width: 30%;
-    padding: 10% 0 0 0;
+    position: sticky;
+    top: 10%; /* 원하는 위치로 조정 */
+    align-self: flex-start; /* 화면 위쪽에 정렬되도록 설정 */
 
     .First {
       width: 400px;

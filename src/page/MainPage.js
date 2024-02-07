@@ -9,7 +9,7 @@ import {
   Typography as T,
 } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import AliceCarousel from 'react-alice-carousel'
+// import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 import '../assets/MainPage.scss'
@@ -17,42 +17,42 @@ import { images } from '../images/index'
 import { useState } from 'react'
 import { components } from '../component/index'
 
-const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
-  1024: { items: 3 },
-}
+// const responsive = {
+//   0: { items: 1 },
+//   568: { items: 2 },
+//   1024: { items: 3 },
+// }
 
-const carouselItems = [
-  {
-    id: 1,
-    imageSrc: images.carousel1,
-  },
-  {
-    id: 2,
-    imageSrc: images.carousel2,
-  },
-  {
-    id: 3,
-    imageSrc: images.carousel3,
-  },
-  {
-    id: 4,
-    imageSrc: images.carousel1,
-  },
-  {
-    id: 5,
-    imageSrc: images.carousel1,
-  },
-  {
-    id: 6,
-    imageSrc: images.carousel1,
-  },
-]
+// const carouselItems = [
+//   {
+//     id: 1,
+//     imageSrc: images.carousel1,
+//   },
+//   {
+//     id: 2,
+//     imageSrc: images.carousel2,
+//   },
+//   {
+//     id: 3,
+//     imageSrc: images.carousel3,
+//   },
+//   {
+//     id: 4,
+//     imageSrc: images.carousel1,
+//   },
+//   {
+//     id: 5,
+//     imageSrc: images.carousel1,
+//   },
+//   {
+//     id: 6,
+//     imageSrc: images.carousel1,
+//   },
+// ]
 
-const itemsBox = carouselItems.map((item) => (
-  <img key={item.id} src={item.imageSrc} alt={`Image ${item.id}`} />
-))
+// const itemsBox = carouselItems.map((item) => (
+//   <img key={item.id} src={item.imageSrc} alt={`Image ${item.id}`} />
+// ))
 
 const imageItem = {
   item1: images.cate1,
@@ -175,12 +175,12 @@ const MainPage = () => {
       <Box className="Display">
         <Box className="MainBox">
           <Box className="CarouselBox">
-            <AliceCarousel
+            {/* <AliceCarousel
               mouseTracking
               items={itemsBox}
               responsive={responsive}
               controlsStrategy="alternate"
-            />
+            /> */}
           </Box>
           <T className="MainText">
             체리뷰에 찾으시는<br></br>캠페인이 있으신가요?
@@ -292,7 +292,7 @@ const MainPage = () => {
             ))}
           </Box>
           {/* 더많은 캠페인 */}
-          <Box className="BottomImg"></Box>
+          <img src={images.mainBottom} className="BottomImg"></img>
         </Box>
       </Box>
 

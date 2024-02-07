@@ -52,22 +52,45 @@ const items = [
 
 const FirstScreen = () => (
   <Box>
-    <T className="Maintext">
-      인플루언서님의
-      <br />
-      자신있는 분야가 있으신가요?
-    </T>
-    <T className="SubText">
-      · 원하시는 분야를 선택해주시면 관련분야의 캠페인을 추천드립니다!
-    </T>
-    <Box className="SmallCategory">
-      {items.map((item, index) => (
-        <Box className="Category" key={index}>
-          {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
-          <img src={imageItem[`item${index + 1}`]} alt={item} />
-          <T>{item}</T>
-        </Box>
-      ))}
+    <Box className="WebFirst">
+      <T className="Maintext">
+        인플루언서님의
+        <br />
+        자신있는 분야가 있으신가요?
+      </T>
+      <T className="SubText">
+        · 원하시는 분야를 선택해주시면 관련분야의 캠페인을 추천드립니다!
+      </T>
+      <Box className="SmallCategory">
+        {items.map((item, index) => (
+          <Box className="Category" key={index}>
+            {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
+            <img src={imageItem[`item${index + 1}`]} alt={item} />
+            <T>{item}</T>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+    <Box className="MobileFirst">
+      <T>
+        인플루언서님의
+        <br />
+        자신있는 분야가 있으신가요?
+      </T>
+      <T>
+        · 원하시는 분야를 선택해주시면 관련분야의 캠페인을
+        <br />
+        추천드립니다!
+      </T>
+      <Box className="SmallCategory">
+        {items.map((item, index) => (
+          <Box className="Category" key={index}>
+            {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
+            <img src={imageItem[`item${index + 1}`]} alt={item} />
+            <T>{item}</T>
+          </Box>
+        ))}
+      </Box>
     </Box>
   </Box>
 )
@@ -177,37 +200,43 @@ const TabBox = () => {
 
 const SecondScreen = () => (
   <Box>
-    <T className="Maintext">
-      인플루언서님의 방문 가능한 지역 캠페인!
-      <br />
-      어디로 추천드릴까요?
-    </T>
-    <T className="SubText">
-      · 활동 범위에 맞게 추천드릴게요! 어느 지역이 좋으신가요?
-    </T>
-    <TabBox />
+    <Box className="WebSecond">
+      <T className="Maintext">
+        인플루언서님의 방문 가능한 지역 캠페인!
+        <br />
+        어디로 추천드릴까요?
+      </T>
+      <T className="SubText">
+        · 활동 범위에 맞게 추천드릴게요! 어느 지역이 좋으신가요?
+      </T>
+      <TabBox />
+    </Box>
+    <Box className="MobileSecond"></Box>
   </Box>
 )
 
 const ThirdScreen = () => (
   <Box>
-    <T className="Maintext">
-      인플루언서님은
-      <br />
-      어떤 미디어의 캠페인이 편하신가요?
-    </T>
-    <T className="SubText">
-      · 블로그, 인스타그램, 유튜브 어떤 미디어가 편하신가요?!
-    </T>
-    <Box className="SnsBox">
-      <Box className="SNS">b</Box>
-      <Box className="SNS">
-        <InstagramIcon />
-      </Box>
-      <Box className="SNS">
-        <YouTubeIcon />
+    <Box className="WebThird">
+      <T className="Maintext">
+        인플루언서님은
+        <br />
+        어떤 미디어의 캠페인이 편하신가요?
+      </T>
+      <T className="SubText">
+        · 블로그, 인스타그램, 유튜브 어떤 미디어가 편하신가요?!
+      </T>
+      <Box className="SnsBox">
+        <Box className="SNS">b</Box>
+        <Box className="SNS">
+          <InstagramIcon />
+        </Box>
+        <Box className="SNS">
+          <YouTubeIcon />
+        </Box>
       </Box>
     </Box>
+    <Box className="MobileThird"></Box>
   </Box>
 )
 
@@ -292,6 +321,28 @@ const Suggestion = () => {
                 </Box>
               </Box>
             </Box>
+          </Box>
+        </Box>
+        <Box className="MobileBox">
+          <Box>
+            {showFirstScreen && <FirstScreen />}
+            {showSecondScreen && <SecondScreen />}
+            {showThirdScreen && <ThirdScreen />}
+          </Box>
+          <Box className="ButtonBox">
+            <Button className="LaterButton">나중에</Button>
+            <Button onClick={handleNextClick} className="NextButton">
+              {showThirdScreen ? (
+                <>
+                  <T>시작하기</T>
+                </>
+              ) : (
+                <>
+                  <T>다음</T>
+                  <ArrowForwardIosIcon />
+                </>
+              )}
+            </Button>
           </Box>
         </Box>
       </Box>

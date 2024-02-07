@@ -119,11 +119,9 @@ const CommunityDetail = () => {
               placeholder="로그인 후 댓글을 남겨주세요."
             />
             <Box className="CommentInfo">
-              <T>
-                개인정보를 포함하거나 혐오나 차별·비난 등 표현,
-                광고·홍보·상업적·사기 등의 부적절하거나 불법적인 댓글의 등록을
-                금지합니다.
-              </T>
+              개인정보를 포함하거나 혐오나 차별·비난 등 표현,
+              광고·홍보·상업적·사기 등의 부적절하거나 불법적인 댓글의 등록을
+              금지합니다.
             </Box>
             <TextField
               multiline
@@ -138,11 +136,9 @@ const CommunityDetail = () => {
               placeholder="댓글을 작성해주세요."
             />
             <Box className="CommentInfo">
-              <T>
-                개인정보를 포함하거나 혐오나 차별·비난 등 표현,
-                광고·홍보·상업적·사기 등의 부적절하거나 불법적인 댓글의 등록을
-                금지합니다.
-              </T>
+              개인정보를 포함하거나 혐오나 차별·비난 등 표현,
+              광고·홍보·상업적·사기 등의 부적절하거나 불법적인 댓글의 등록을
+              금지합니다.
             </Box>
           </Box>
           <Box className="CommentBox2">

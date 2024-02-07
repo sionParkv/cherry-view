@@ -27,7 +27,7 @@ const Login = () => {
       <Box className="BasicBox">
         <Box className="LoginBox">
           <Box className="TopBox">
-            <T className="Logo">LOGO</T>
+            <img className="Logo" src={images.logo}></img>
             <TextField label="이메일" defaultValue="" />
             <TextField label="비밀번호" defaultValue="" />
             <Box className="SearchBox">

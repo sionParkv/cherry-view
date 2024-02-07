@@ -8,6 +8,12 @@ import {
 import React, { Fragment, useState } from 'react'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import {
+  Container as MapDiv,
+  Marker,
+  NaverMap,
+  useNavermaps,
+} from 'react-naver-maps'
 
 import { components } from '../component/index'
 import { images } from '../images'
@@ -73,6 +79,8 @@ const missionItem = [
 ]
 
 const CampDetail = () => {
+  const navermaps = useNavermaps()
+
   const [liked, setLiked] = useState(false)
 
   const handleLikeClick = () => {
@@ -85,158 +93,160 @@ const CampDetail = () => {
     navigate('/submit')
   }
 
-  //useEffect(() => {
-  //   const clientId = 'YOUR_NAVER_MAP_CLIENT_ID'; // 본인의 Naver Map API Client ID를 사용하세요
-  //   const navermaps = window.naver.maps;
-
-  //   const mapOptions = {
-  //     center: new navermaps.LatLng(37.5665, 126.9780), // 초기 중심 좌표
-  //     zoom: 10, // 초기 줌 레벨
-  //   };
-
-  //   const map = new navermaps.Map('map', mapOptions);
-
-  //   // 지도에 마커 추가 예시
-  //   const marker = new navermaps.Marker({
-  //     position: new navermaps.LatLng(37.5665, 126.9780), // 마커 위치
-  //     map: map,
-  //   });
-  // }, []);
   return (
     <Container>
       <components.TopButton />
       <components.Header />
-      <Box className="CampDetail">
-        {/* 왼쪽 컨텐츠 */}
-        <Box className="LeftContent">
-          <Box className="TextBox">
-            <T className="CampText">캠페인 정보</T>
-            <IconButton>
-              <OpenInNewIcon />
-            </IconButton>
-          </Box>
-          <Box className="HashBox">
-            {hashInfo.map((item, index) => (
-              <Box className="HashInfo" key={index}>
-                # {item}
+      <Box className="DisplayBox">
+        <Box className="CampDetail">
+          {/* 왼쪽 컨텐츠 */}
+          <Box className="LeftContent">
+            <Box className="TextBox">
+              <T className="CampText">캠페인 정보</T>
+              <IconButton>
+                <OpenInNewIcon />
+              </IconButton>
+            </Box>
+            <Box className="HashBox">
+              {hashInfo.map((item, index) => (
+                <Box className="HashInfo" key={index}>
+                  # {item}
+                </Box>
+              ))}
+            </Box>
+            <Box className="Section" />
+            {/* 상품 정보 */}
+            <Box className="TitleBox">
+              <Box className="TitleOne">
+                <T className="Text">자연을 담은 Coverage Foundation</T>
+                <IconButton onClick={handleLikeClick}>
+                  {liked ? <Favorite color="error" /> : <FavoriteBorder />}
+                </IconButton>
               </Box>
-            ))}
-          </Box>
-          <Box className="Section" />
-          {/* 상품 정보 */}
-          <Box className="TitleBox">
-            <T className="Text">자연을 담은 Coverage Foundation</T>
-            <IconButton onClick={handleLikeClick}>
-              {liked ? <Favorite color="error" /> : <FavoriteBorder />}
-            </IconButton>
-            <Box>신청 23/20</Box>
-          </Box>
-          <T className="SubText">The Orcinary</T>
-          <img className="MainImg" src={images.mainImg} />
-          <T className="History">제공 내역</T>
-          <Box className="HistoryText">
-            자연을 담은 Coverage Foundation 본품 1개
-            <br />
-            <br />
-            색상 택 1(1호, 2호) <br />
-            ㄴ1호 : 밝은 21호 피부 추천 / 2호 : 21~23호 피부 추천
-          </Box>
-          <Box className="Map">
-            <T className="Schedule">영업시간 및 방문 가능일정</T>
-            <Box className="Road">네이버 지도 길찾기</Box>
-          </Box>
-          <Box className="NaverMap">
-            <components.MapNaverDefault/>
-          </Box>
-          <Box className="ScheduleText">
-            [영업시간] 화~일 17:00~23:30 (L.O 22:30) / 월요일 휴무 <br />
-            [인플루언서 방문가능일정] 화~금 17:00~23:30 (L.O 22:30)
-            <br /> * 토, 일, 월 방문불가
-          </Box>
-          <T className="MissionText">캠페인 미션</T>
-          <Box className="MissionItem">
-            {missionItem.map((item, index) => (
-              <Box className="Detail" key={index}>
-                <img src={item.icon} />
-                <T>{item.title}</T>
-              </Box>
-            ))}
-          </Box>
-          <Box>
-            {missionItem.map((item, index) => (
-              <Box key={index} className="MissionItems">
-                <Box className="ItemLogo">
-                  <img src={item.icon} alt={`Image ${index}`} />
+
+              <Box className="TitleTwo">신청 23/20</Box>
+            </Box>
+            <T className="SubText">The Orcinary</T>
+            <img className="MainImg" src={images.mainImg} />
+            <T className="History">제공 내역</T>
+            <Box className="HistoryText">
+              자연을 담은 Coverage Foundation 본품 1개
+              <br />
+              <br />
+              색상 택 1(1호, 2호) <br />
+              ㄴ1호 : 밝은 21호 피부 추천 / 2호 : 21~23호 피부 추천
+            </Box>
+            <Box className="Map">
+              <T className="Schedule">영업시간 및 방문 가능일정</T>
+              <Box className="Road">네이버 지도 길찾기</Box>
+            </Box>
+            <MapDiv className="NaverMap">
+              <NaverMap
+                defaultCenter={new navermaps.LatLng(37.3595704, 127.105399)}
+                defaultZoom={10}
+              >
+                <Marker
+                  defaultPosition={new navermaps.LatLng(37.3595704, 127.105399)}
+                />
+              </NaverMap>
+            </MapDiv>
+            <Box className="ScheduleText">
+              [영업시간] 화~일 17:00~23:30 (L.O 22:30) / 월요일 휴무 <br />
+              [인플루언서 방문가능일정] 화~금 17:00~23:30 (L.O 22:30)
+              <br /> * 토, 일, 월 방문불가
+            </Box>
+            <T className="MissionText">캠페인 미션</T>
+            <Box className="MissionItem">
+              {missionItem.map((item, index) => (
+                <Box className="Detail" key={index}>
+                  <img src={item.icon} />
                   <T>{item.title}</T>
                 </Box>
-                <T gutterBottom>
-                  {item.text &&
-                    item.text.split('\n').map((text, i) => (
-                      <Fragment key={i}>
-                        {text}
-                        <br />
-                      </Fragment>
-                    ))}
-                </T>
-                <T>
-                  {item.subtext ||
-                    item.subText.split('\n').map((text, i) => (
-                      <Fragment key={i}>
-                        {text}
-                        <br />
-                      </Fragment>
-                    ))}
-                </T>
-              </Box>
-            ))}
-            <Box className="InfoTitle">신청 정보</Box>
-            <T className="InfoText">- 사용 카메라 종류 , 블로그 관리인 수</T>
-            <Box className="InfoTitle">추가 안내사항</Box>
-            <T className="InfoText">
-              - 제공받은 제품은 타인에게 양도 및 판매, 교환을 절대 허용하지
-              않으며, 적발 시 제품 가격 환불 및 캠페인 참여 제한됩니다.
-              <br /> - 콘텐츠 등록 기간 내 콘텐츠 미등록 시 서비스 이용료 및
-              제품 가격에 대하여 비용 청구됩니다.
-              <br /> - 선정 후 단순 변심에 의한 제공내역 옵션 및 배송지 변경은
-              어렵습니다.
-              <br /> - 안내된 제공 내역과 다르거나, 별도 공지 없이 7일 이상
-              배송되지 않는 등 진행이 어려운 경우 1:1문의로 연락해주세요.
-              <br /> - 업체 측 요청에 따라 선정 인플루언서 수가 변경될 수
-              있습니다.
-              <br /> - 콘텐츠 작성 시 선정 된 본 캠페인의 제품만으로 단독
-              촬영하여 진행되어야 합니다.
-              <br /> - 작성하신 콘텐츠는 6개월 유지해야 하며, 유지하지 않을 경우
-              페널티가 부과됩니다.
-              <br /> - 콘텐츠 작성 시 태그 달기 부분에 제공 드린 키워드를 추가
-              작성 부탁드립니다.
-            </T>
+              ))}
+            </Box>
+            <Box>
+              {missionItem.map((item, index) => (
+                <Box key={index} className="MissionItems">
+                  <Box className="ItemLogo">
+                    <img src={item.icon} alt={`Image ${index}`} />
+                    <T>{item.title}</T>
+                  </Box>
+                  <T gutterBottom>
+                    {item.text &&
+                      item.text.split('\n').map((text, i) => (
+                        <Fragment key={i}>
+                          {text}
+                          <br />
+                        </Fragment>
+                      ))}
+                  </T>
+                  <T>
+                    {item.subtext ||
+                      item.subText.split('\n').map((text, i) => (
+                        <Fragment key={i}>
+                          {text}
+                          <br />
+                        </Fragment>
+                      ))}
+                  </T>
+                </Box>
+              ))}
+              <Box className="InfoTitle">신청 정보</Box>
+              <T className="InfoText">- 사용 카메라 종류 , 블로그 관리인 수</T>
+              <Box className="InfoTitle">추가 안내사항</Box>
+              <T className="InfoText">
+                - 제공받은 제품은 타인에게 양도 및 판매, 교환을 절대 허용하지
+                않으며, 적발 시 제품 가격 환불 및 캠페인 참여 제한됩니다.
+                <br /> - 콘텐츠 등록 기간 내 콘텐츠 미등록 시 서비스 이용료 및
+                제품 가격에 대하여 비용 청구됩니다.
+                <br /> - 선정 후 단순 변심에 의한 제공내역 옵션 및 배송지 변경은
+                어렵습니다.
+                <br /> - 안내된 제공 내역과 다르거나, 별도 공지 없이 7일 이상
+                배송되지 않는 등 진행이 어려운 경우 1:1문의로 연락해주세요.
+                <br /> - 업체 측 요청에 따라 선정 인플루언서 수가 변경될 수
+                있습니다.
+                <br /> - 콘텐츠 작성 시 선정 된 본 캠페인의 제품만으로 단독
+                촬영하여 진행되어야 합니다.
+                <br /> - 작성하신 콘텐츠는 6개월 유지해야 하며, 유지하지 않을
+                경우 페널티가 부과됩니다.
+                <br /> - 콘텐츠 작성 시 태그 달기 부분에 제공 드린 키워드를 추가
+                작성 부탁드립니다.
+              </T>
+            </Box>
           </Box>
-        </Box>
-        {/* 오른쪽 컨텐츠 */}
-        <Box className="RightContent">
-          <Box className="First">캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12</Box>
-          <Box className="Second">
-            캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12
+          {/* 오른쪽 컨텐츠 */}
+          <Box className="RightContent">
+            <Box className="First">
+              캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12
+            </Box>
+            <Box className="Second">
+              캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12
+            </Box>
+            <Box className="Third">인플루언서 발표 &nbsp;&nbsp;12.13</Box>
+            <Box className="Third">
+              콘텐츠 등록기간 &nbsp;&nbsp;12.14 ~ 12.24
+            </Box>
+            <Box className="Third">캠페인 결과발표 &nbsp;&nbsp;12.29</Box>
+            <Box className="Media">
+              <T>모집 미디어</T>
+              <img src={images.naver}></img>
+              <T>네이버 블로그</T>
+            </Box>
+            <Box className="ListBox">
+              {rightList.map((item, index) => (
+                <Box className="List" key={index}>
+                  {item}
+                  <Box className="Section"></Box>
+                </Box>
+              ))}
+            </Box>
+            <Button className="CampButton" onClick={goToSubmit}>
+              캠페인 신청하기
+            </Button>
           </Box>
-          <Box className="Third">인플루언서 발표 &nbsp;&nbsp;12.13</Box>
-          <Box className="Third">콘텐츠 등록기간 &nbsp;&nbsp;12.14 ~ 12.24</Box>
-          <Box className="Third">캠페인 결과발표 &nbsp;&nbsp;12.29</Box>
-          <Box className="Media">
-            <T>모집 미디어</T>
-            <img src={images.naver}></img>
-            <T>네이버 블로그</T>
-          </Box>
-          <Box className="ListBox">
-            {rightList.map((item, index) => (
-              <Box className="List" key={index}>
-                {item}
-                <Box className="Section"></Box>
-              </Box>
-            ))}
-          </Box>
-          <Button className="CampButton" onClick={goToSubmit}>캠페인 신청하기</Button>
         </Box>
       </Box>
+
       <components.Footer />
     </Container>
   )

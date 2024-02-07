@@ -19,7 +19,6 @@ const ChangePass = () => {
     <Container className="ChangePass">
       <components.Header />
       <Box className="BasicBox">
-        {' '}
         <Box className="SearchBox">
           <T className="One">비밀번호 찾기</T>
           <T className="Two">회원가입시 등록한 정보로 찾을 수 있습니다.</T>

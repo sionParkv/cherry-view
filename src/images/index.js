@@ -63,6 +63,9 @@ import premier from './premier.png'
 import carousel1 from './carousel1.png'
 import carousel2 from './carousel2.png'
 import carousel3 from './carousel3.png'
+import mainBottom from './mainBottom.png'
+import mobileInsta1 from './mobileInsta1.png'
+import mobileInsta2 from './mobileInsta2.png'
 
 const images = {
   tea,
@@ -130,6 +133,9 @@ const images = {
   carousel1,
   carousel2,
   carousel3,
+  mainBottom,
+  mobileInsta1,
+  mobileInsta2,
 }
 
 export { images }

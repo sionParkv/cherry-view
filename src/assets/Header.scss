@@ -7,78 +7,115 @@
   .MuiContainer-root {
     width: 100%;
   }
-
-  .GridContainer {
-    width: 100%;
-    display: flex;
-    padding: 0 7% 0 10%;
-    justify-content: space-between;
-    align-items: center;
-
-    .LeftBox {
+  // 웹
+  @media (min-width: 769px) {
+    .GridContainer {
       width: 100%;
       display: flex;
+      padding: 0 7% 0 10%;
+      justify-content: space-between;
       align-items: center;
 
-      .Logo {
-        margin-right: -30px;
-      }
+      .LeftBox {
+        width: 100%;
+        display: flex;
+        align-items: center;
 
-      .IconMenu {
-        padding: 0 1% 0 2%;
-        svg {
-          width: 36px;
-          height: 36px;
+        .Logo {
+          margin-right: -30px;
+        }
+
+        .IconMenu {
+          padding: 0 1% 0 2%;
+          svg {
+            width: 36px;
+            height: 36px;
+          }
+        }
+
+        .Menu {
+          display: flex;
+          gap: 40px;
+          text-align: center;
+
+          p {
+            color: black;
+            font-family: Pretendard;
+            font-size: 19px;
+            letter-spacing: -0.48px;
+            font-weight: bold;
+          }
         }
       }
 
-      .Menu {
+      .LoginBox {
         display: flex;
-        gap: 40px;
-        text-align: center;
+        justify-content: flex-end;
 
-        p {
-          color: black;
-          font-family: Pretendard;
-          font-size: 19px;
-          letter-spacing: -0.48px;
-          font-weight: bold;
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-right: 25%;
+
+          button {
+            width: 36px;
+            height: 36px;
+            svg {
+              width: 36px;
+              height: 36px;
+              color: black;
+            }
+          }
+
+          p {
+            font-family: Pretendard;
+            font-size: 10px;
+            letter-spacing: -0.25px;
+            font-weight: 500;
+            color: black;
+          }
         }
       }
     }
 
-    .LoginBox {
+    .MobileBox {
+      display: none;
+    }
+  }
+  // 모바일
+  @media (max-width: 768px) {
+    .MuiToolbar-root {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      align-items: center;
+    }
+    .GridContainer {
+      display: none;
+    }
 
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-right: 25%;
+    .MobileBox {
+      width: 100%;
+      padding: 0 5% 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-        button {
-          width: 36px;
-          height: 36px;
-          svg {
-            width: 36px;
-            height: 36px;
-            color: black;
-          }
-        }
+      img {
+        width: 30%;
+        padding-left: 10%;
+      }
 
-        p {
-          font-family: Pretendard;
-          font-size: 10px;
-          letter-spacing: -0.25px;
-          font-weight: 500;
-          color: black;
-        }
+      svg {
+        width: 20px;
+        height: 20px;
+        color: #000;
       }
     }
   }
 }
 
+// 팝업
 .MuiModal-root {
   p,
   span,

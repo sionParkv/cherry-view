@@ -18,6 +18,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import SearchIcon from '@mui/icons-material/Search'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
 import '../assets/Header.scss'
 import { useState } from 'react'
@@ -140,6 +141,20 @@ const Header = () => {
                     </IconButton>
                     <T>회원가입</T>
                   </Box>
+                </Box>
+              </Box>
+              <Box className="MobileBox">
+                <IconButton>
+                  <ArrowBackIosNewIcon />
+                </IconButton>
+                <img src={images.logo} />
+                <Box>
+                  <IconButton>
+                    <SearchRoundedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <NotificationsNoneOutlinedIcon />
+                  </IconButton>
                 </Box>
               </Box>
             </Toolbar>
