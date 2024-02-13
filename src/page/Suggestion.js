@@ -72,12 +72,12 @@ const FirstScreen = () => (
       </Box>
     </Box>
     <Box className="MobileFirst">
-      <T>
+      <T className="MainText">
         인플루언서님의
         <br />
         자신있는 분야가 있으신가요?
       </T>
-      <T>
+      <T className="SubText">
         · 원하시는 분야를 선택해주시면 관련분야의 캠페인을
         <br />
         추천드립니다!
@@ -211,7 +211,15 @@ const SecondScreen = () => (
       </T>
       <TabBox />
     </Box>
-    <Box className="MobileSecond"></Box>
+    <Box className="MobileSecond">
+      <T className="MainText">
+        인플루언서님의 방문 가능한 지역 캠페인! 어디로 추천드릴까요?
+      </T>
+      <T className="SubText">
+        · 활동 범위에 맞게 추천드릴게요! 어느 지역이 좋으신가요?
+      </T>
+      <TabBox />
+    </Box>
   </Box>
 )
 
@@ -236,7 +244,24 @@ const ThirdScreen = () => (
         </Box>
       </Box>
     </Box>
-    <Box className="MobileThird"></Box>
+    <Box className="MobileThird">
+      <T className="MainText">
+        인플루언서님은 어떤 미디어의
+        <br /> 캠페인이 편하신가요?
+      </T>
+      <T className="SubText">
+        · 블로그, 인스타그램, 유튜브 어떤 미디어가 편하신가요?!
+      </T>
+      <Box className="SnsBox">
+        <Box className="SNS">b</Box>
+        <Box className="SNS">
+          <InstagramIcon />
+        </Box>
+        <Box className="SNS">
+          <YouTubeIcon />
+        </Box>
+      </Box>
+    </Box>
   </Box>
 )
 

@@ -16,134 +16,277 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-  }
+    // 웹
+    @media (min-width: 769px) {
+      .NoticeBox {
+        width: 100%;
+        padding: 10% 10% 0 10%;
+        margin-bottom: 120px;
+        display: flex;
+        flex-direction: column;
 
-  .NoticeBox {
-    width: 100%;
-    padding: 10% 10% 0 10%;
-    margin-bottom: 120px;
-    display: flex;
-    flex-direction: column;
+        .MainText {
+          font-family: Pretendard;
+          font-size: 56px;
+          font-weight: bold;
+          line-height: 0.63;
+          color: #202020;
+        }
 
-    .MainText {
-      font-family: Pretendard;
-      font-size: 56px;
-      font-weight: bold;
-      line-height: 0.63;
-      color: #202020;
-    }
+        .SearchBox {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 16px 0 40px 0;
 
-    .SearchBox {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 16px 0 40px 0;
+          p {
+            font-family: Pretendard;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #7d7d7d;
+          }
 
-      p {
-        font-family: Pretendard;
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 1.75;
-        color: #7d7d7d;
-      }
+          .MuiInputBase-root {
+            width: 440px;
+            height: 56px;
+            border-radius: 28px;
+            border: solid 2px #e4e4e4;
 
-      .MuiInputBase-root {
-        width: 440px;
-        height: 56px;
-        border-radius: 28px;
-        border: solid 2px #e4e4e4;
+            .SearchButton {
+              width: 48px;
+              height: 48px;
+              background-color: #484848;
 
-        .SearchButton {
-          width: 48px;
-          height: 48px;
-          background-color: #484848;
+              svg {
+                color: white;
+              }
+            }
+          }
+        }
 
-          svg {
+        .InfoBox {
+          border-top: solid 2px #000;
+        }
+
+        .AlarmText {
+          font-size: 20px;
+          color: #202020;
+          margin-right: 50%;
+        }
+
+        .AddIcon {
+          width: 32px;
+          height: 32px;
+          color: #333;
+        }
+
+        .TopAlarmBox {
+          padding: 0 32px 0 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 72px;
+          background-color: #fffaee;
+          border-bottom: solid 2px #e4e4e4;
+
+          .AlarmButton {
+            width: 40px;
+            height: 40px;
+            background-color: #ffc032;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              color: #202020;
+            }
+          }
+        }
+
+        .InfoTextBox {
+          padding: 0 32px 0 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 72px;
+          border-bottom: solid 2px #e4e4e4;
+
+          .DateBox {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            :nth-child(1) {
+              font-size: 32px;
+              color: #a4a4a4;
+              margin-bottom: -10px;
+            }
+
+            :nth-child(2) {
+              font-size: 14px;
+              font-weight: 300;
+              color: #a4a4a4;
+            }
+          }
+        }
+
+        .NoResultsMessage {
+          padding: 5% 0 5% 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .MuiStack-root {
+          padding: 40px 0 80px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+            background-color: #333;
             color: white;
           }
         }
       }
-    }
-
-    .InfoBox {
-      border-top: solid 2px #000;
-    }
-
-    .AlarmText {
-      font-size: 20px;
-      color: #202020;
-      margin-right: 50%;
-    }
-
-    .AddIcon {
-      width: 20px;
-      height: 20px;
-      color: #333;
-    }
-
-    .TopAlarmBox {
-      padding: 0 32px 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-      background-color: #fffaee;
-      border-bottom: solid 2px #e4e4e4;
-
-      .AlarmButton {
-        width: 40px;
-        height: 40px;
-        background-color: #ffc032;
-
-        svg {
-          width: 20px;
-          height: 20px;
-          color: #202020;
-        }
+      .MobileBox {
+        display: none;
       }
-    }
-
-    .InfoTextBox {
-      padding: 0 32px 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-      border-bottom: solid 2px #e4e4e4;
-
-      .DateBox {
-        text-align: center;
-
-        :nth-child(1) {
-          font-size: 32px;
-          color: #a4a4a4;
-          margin-bottom: -10px;
+      @media (max-width: 768px) {
+        .NoticeBox {
+          display: none;
         }
 
-        :nth-child(2) {
-          font-size: 14px;
-          font-weight: 300;
-          color: #a4a4a4;
+        .MobileBox {
+          width: 100%;
+          padding: 10% 5% 0 5%;
+          margin-bottom: 120px;
+          display: flex;
+          flex-direction: column;
+
+          .MainText {
+            font-size: 56px;
+            font-weight: bold;
+            line-height: 0.63;
+            color: #202020;
+          }
+
+          .SearchBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 16px 0 40px 0;
+
+            p {
+              font-family: Pretendard;
+              font-size: 20px;
+              font-weight: 300;
+              line-height: 1.75;
+              color: #7d7d7d;
+            }
+
+            .MuiInputBase-root {
+              width: 440px;
+              height: 56px;
+              border-radius: 28px;
+              border: solid 2px #e4e4e4;
+
+              .SearchButton {
+                width: 48px;
+                height: 48px;
+                background-color: #484848;
+
+                svg {
+                  color: white;
+                }
+              }
+            }
+          }
+
+          .InfoBox {
+            border-top: solid 2px #000;
+          }
+
+          .AlarmText {
+            font-size: 20px;
+            color: #202020;
+            margin-right: 50%;
+          }
+
+          .AddIcon {
+            width: 32px;
+            height: 32px;
+            color: #333;
+          }
+
+          .TopAlarmBox {
+            padding: 0 32px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            background-color: #fffaee;
+            border-bottom: solid 2px #e4e4e4;
+
+            .AlarmButton {
+              width: 40px;
+              height: 40px;
+              background-color: #ffc032;
+
+              svg {
+                width: 20px;
+                height: 20px;
+                color: #202020;
+              }
+            }
+          }
+
+          .InfoTextBox {
+            padding: 0 32px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            border-bottom: solid 2px #e4e4e4;
+
+            .DateBox {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+
+              :nth-child(1) {
+                font-size: 32px;
+                color: #a4a4a4;
+                margin-bottom: -10px;
+              }
+
+              :nth-child(2) {
+                font-size: 14px;
+                font-weight: 300;
+                color: #a4a4a4;
+              }
+            }
+          }
+
+          .NoResultsMessage {
+            padding: 5% 0 5% 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .MuiStack-root {
+            padding: 40px 0 80px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+              background-color: #333;
+              color: white;
+            }
+          }
         }
-      }
-    }
-
-    .NoResultsMessage {
-      padding: 5% 0 5% 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .MuiStack-root {
-      padding: 40px 0 80px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-        background-color: #333;
-        color: white;
       }
     }
   }

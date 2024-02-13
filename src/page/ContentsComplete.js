@@ -69,55 +69,116 @@ const ContentsComplete = () => {
   return (
     <Container className="ContentsComplete">
       <components.Header />
-      <Box className="CompleteBox">
-        <Box className="MainBox">
-          <CheckCircleIcon />
-          <T>콘텐츠 등록 완료</T>
+      <Box className="Display">
+        <Box className="WebBox">
+          <Box className="MainBox">
+            <CheckCircleIcon />
+            <T>콘텐츠 등록 완료</T>
+          </Box>
+          <Box className="QuesBox">
+            <T>인플루언서님,</T>
+            <T>이번 캠페인은 어떠셨나요? </T>
+          </Box>
+          <Box className="RatingBox">
+            <T className="RatingText">
+              캠페인 모집공고와 상이한 점이 있었나요?{' '}
+            </T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">
+              캠페인 진행 중 불쾌한 요구를 받으셨나요?
+            </T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">배송/예약은 순조롭게 진행됐나요?</T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">
+              이번 캠페인에 대해 체리뷰에 <br />
+              말씀해주실 사항이 있으시면 작성해주세요.{' '}
+            </T>
+            <components.TextBox maxLength={500} />
+          </Box>
+          <Box className="ButtonBox">
+            <Button className="Previous">이전으로</Button>
+            <Button className="Submit">제출하기</Button>
+          </Box>
         </Box>
-        <Box className="QuesBox">
-          <T>인플루언서님,</T>
-          <T>이번 캠페인은 어떠셨나요? </T>
-        </Box>
-        <Box className="RatingBox">
-          <T className="RatingText">캠페인 모집공고와 상이한 점이 있었나요? </T>
-          <ThemeProvider theme={theme}>
-            <StyledRating
-              className="Rating"
-              defaultValue={2}
-              IconContainerComponent={IconContainer}
-              getLabelText={(value) => customIcons[value].label}
-              highlightSelectedOnly
-            />
-          </ThemeProvider>
-          <T className="RatingText">캠페인 진행 중 불쾌한 요구를 받으셨나요?</T>
-          <ThemeProvider theme={theme}>
-            <StyledRating
-              className="Rating"
-              defaultValue={2}
-              IconContainerComponent={IconContainer}
-              getLabelText={(value) => customIcons[value].label}
-              highlightSelectedOnly
-            />
-          </ThemeProvider>
-          <T className="RatingText">배송/예약은 순조롭게 진행됐나요?</T>
-          <ThemeProvider theme={theme}>
-            <StyledRating
-              className="Rating"
-              defaultValue={2}
-              IconContainerComponent={IconContainer}
-              getLabelText={(value) => customIcons[value].label}
-              highlightSelectedOnly
-            />
-          </ThemeProvider>
-          <T className="RatingText">
-            이번 캠페인에 대해 체리뷰에 <br />
-            말씀해주실 사항이 있으시면 작성해주세요.{' '}
-          </T>
-          <components.TextBox maxLength={500} />
-        </Box>
-        <Box className="ButtonBox">
-          <Button className="Previous">이전으로</Button>
-          <Button className="Submit">제출하기</Button>
+        <Box className="MobileBox">
+          <Box className="MainBox">
+            <CheckCircleIcon />
+            <T>콘텐츠 등록 완료</T>
+          </Box>
+          <Box className="QuesBox">
+            <T>인플루언서님,</T>
+            <T>이번 캠페인은 어떠셨나요? </T>
+          </Box>
+          <Box className="RatingBox">
+            <T className="RatingText">
+              캠페인 모집공고와 상이한 점이 있었나요?{' '}
+            </T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">
+              캠페인 진행 중 불쾌한 요구를 받으셨나요?
+            </T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">배송/예약은 순조롭게 진행됐나요?</T>
+            <ThemeProvider theme={theme}>
+              <StyledRating
+                className="Rating"
+                defaultValue={2}
+                IconContainerComponent={IconContainer}
+                getLabelText={(value) => customIcons[value].label}
+                highlightSelectedOnly
+              />
+            </ThemeProvider>
+            <T className="RatingText">
+              이번 캠페인에 대해 체리뷰에 <br />
+              말씀해주실 사항이 있으시면 작성해주세요.{' '}
+            </T>
+            {/* <components.TextBox className="TextBox" maxLength={500} /> */}
+          </Box>
+          <Box className="ButtonBox">
+            <Button className="Previous">이전으로</Button>
+            <Button className="Submit">제출하기</Button>
+          </Box>
         </Box>
       </Box>
       <components.Footer />

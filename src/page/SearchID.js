@@ -17,15 +17,6 @@ import { useNavigate } from 'react-router-dom'
 function CustomTabPanel(props) {
   const { value, index, ...other } = props
 
-  const navigate = useNavigate()
-
-  const goToLogin = () => {
-    navigate('/login')
-  }
-  const goToSubmitID = () => {
-    navigate('/submitid')
-  }
-
   return (
     <Box
       role="tabpanel"
@@ -39,12 +30,6 @@ function CustomTabPanel(props) {
         <Box>
           <TextField label="이름" className="One" />
           <TextField label="휴대폰번호" className="One" />
-          <Button className="SearchButton">아이디 찾기</Button>
-          <Box className="BottomBox">
-            <T>비밀번호 찾기</T>
-            <Box className="Section" />
-            <T onClick={goToLogin}>로그인 하기</T>
-          </Box>
         </Box>
       )}
       {/* 이메일 */}
@@ -52,14 +37,6 @@ function CustomTabPanel(props) {
         <Box>
           <TextField label="이름" className="One" />
           <TextField label="이메일" className="One" />
-          <Button className="SearchButton" onClick={goToSubmitID}>
-            아이디 찾기
-          </Button>
-          <Box className="BottomBox">
-            <T>비밀번호 찾기</T>
-            <Box className="Section" />
-            <T onClick={goToLogin}>로그인 하기</T>
-          </Box>
         </Box>
       )}
     </Box>
@@ -81,6 +58,15 @@ function a11yProps(index) {
 }
 
 const SearchID = () => {
+  const navigate = useNavigate()
+
+  const goToLogin = () => {
+    navigate('/login')
+  }
+  const goToSubmitID = () => {
+    navigate('/submitid')
+  }
+
   const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
@@ -91,7 +77,6 @@ const SearchID = () => {
     <Container className="SearchID">
       <components.Header />
       <Box className="BasicBox">
-        {' '}
         <Box className="SearchBox">
           <Box className="TextBox">
             <T>아이디 찾기</T>
@@ -103,6 +88,34 @@ const SearchID = () => {
           </Tabs>
           <CustomTabPanel value={value} index={0}></CustomTabPanel>
           <CustomTabPanel value={value} index={1}></CustomTabPanel>
+          <Button className="SearchButton" onClick={goToSubmitID}>
+            아이디 찾기
+          </Button>
+          <Box className="BottomBox">
+            <T>비밀번호 찾기</T>
+            <Box className="Section" />
+            <T onClick={goToLogin}>로그인 하기</T>
+          </Box>
+        </Box>
+        <Box className="MobileBox">
+          <Box className="TextBox">
+            <T>아이디 찾기</T>
+            <T>회원가입시 등록한 정보로 찾을 수 있습니다.</T>
+          </Box>
+          <Tabs value={value} onChange={handleChange}>
+            <Tab label="휴대폰 번호" {...a11yProps(0)} />
+            <Tab label="이메일" {...a11yProps(1)} />
+          </Tabs>
+          <CustomTabPanel value={value} index={0}></CustomTabPanel>
+          <CustomTabPanel value={value} index={1}></CustomTabPanel>
+          <Button className="SearchButton" onClick={goToSubmitID}>
+            아이디 찾기
+          </Button>
+          <Box className="BottomBox">
+            <T>비밀번호 찾기</T>
+            <Box className="Section" />
+            <T onClick={goToLogin}>로그인 하기</T>
+          </Box>
         </Box>
       </Box>
 

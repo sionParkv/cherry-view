@@ -13,9 +13,9 @@ const TextBox = ({ maxLength }) => {
   }
 
   return (
-    <Box>
+    <Box style={{ width: '100%' }}>
       <textarea
-        style={{ padding: '20px' }}
+        style={{ padding: '20px', width: '100%' }}
         value={text}
         onChange={handleChange}
         placeholder={`캠페인 진행과정 중 좋은 점이나 싫은 점 혹은 개선사항 등 어떤글도 좋습니다. 자유롭게 작성해주세요.`}

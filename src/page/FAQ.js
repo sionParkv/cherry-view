@@ -150,6 +150,80 @@ const FAQ = () => {
             </Box>
           </Box>
         </Box>
+        <Box className="MobileBox">
+          <T className="MainText">FAQ</T>
+          <T className="SubText">자주묻는 질문</T>
+          <TextField
+            placeholder="검색어를 입력하세요."
+            InputProps={{
+              endAdornment: (
+                <IconButton className="SearchButton">
+                  <SearchIcon />
+                </IconButton>
+              ),
+            }}
+            // TextField 값이 변경될 때마다 setSearchTerm으로 검색어 업데이트
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+
+          <Box className="InfoBox">
+            {/* 검색 결과에 따라 필터링된 항목만 반복하여 렌더링 */}
+            <Box>
+              {filteredInfoTexts.map((item) => (
+                <React.Fragment key={item.id}>
+                  <Box className="InfoTextBox">
+                    <Box className="DateBox">Q</Box>
+                    <T className="AlarmText">{item.text}</T>
+                    {expandedItems.includes(item.id) ? (
+                      <KeyboardArrowUpIcon
+                        onClick={() => handleToggle(item.id)}
+                        variant="contained"
+                        color="primary"
+                      />
+                    ) : (
+                      <KeyboardArrowDownIcon
+                        onClick={() => handleToggle(item.id)}
+                        variant="contained"
+                        color="primary"
+                      />
+                    )}
+                  </Box>
+                  <Collapse
+                    key={`collapse-${item.id}`}
+                    in={expandedItems.includes(item.id)}
+                    unmountOnExit
+                  >
+                    <Box>A</Box>
+                    <T>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                      <br />
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                      laboris nisi ut aliquip ex ea commodo consequat. <br />
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. <br />
+                      Excepteur sint occaecat cupidatat non proident, sunt in
+                      culpa qui officia deserunt mollit anim id est laborum.
+                    </T>
+                  </Collapse>
+                </React.Fragment>
+              ))}
+            </Box>
+
+            {/* 만약 검색 결과가 없다면 메시지를 표시할 수 있습니다. */}
+            {filteredInfoTexts.length === 0 && (
+              <Box className="NoResultsMessage">
+                <T>검색 결과가 없습니다.</T>
+              </Box>
+            )}
+            <Box className="FaqButton">
+              <Stack spacing={2} className="Paginations">
+                <Pagination count={5} />
+              </Stack>
+            </Box>
+          </Box>
+        </Box>
       </Box>
 
       <components.Footer />
