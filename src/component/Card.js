@@ -13,25 +13,27 @@ const MainCard = ({ imageSrc, title, description, snsImage, person, dday }) => {
     <Container>
       <Card className="MainCard">
         <CardMedia component="img" image={imageSrc} alt="Image" />
-        <CardContent>
-          <Typography
-            className="Title"
-            gutterBottom
-            variant="Fh5"
-            component="div"
-          >
-            {title}
-          </Typography>
-          <Typography className="Tag" variant="body2">
-            {description}
-          </Typography>
-        </CardContent>
-        <CardContent className="SnsText">
-          <img src={snsImage} alt="sns"></img>
-          <T>{person}</T>
-          <Box />
-          <T>{dday}</T>
-        </CardContent>
+        <Box>
+          <CardContent>
+            <Typography
+              className="Title"
+              gutterBottom
+              variant="Fh5"
+              component="div"
+            >
+              {title}
+            </Typography>
+            <Typography className="Tag" variant="body2">
+              {description}
+            </Typography>
+          </CardContent>
+          <CardContent className="SnsText">
+            <img src={snsImage} alt="sns"></img>
+            <T>{person}</T>
+            <Box />
+            <T>{dday}</T>
+          </CardContent>
+        </Box>
       </Card>
     </Container>
   )

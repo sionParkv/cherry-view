@@ -294,6 +294,131 @@ const MainPage = () => {
           {/* 더많은 캠페인 */}
           <img src={images.mainBottom} className="BottomImg"></img>
         </Box>
+        {/* 모바일 */}
+        <Box className="MobileBox">
+          <Box className="CarouselBox">
+            {/* <AliceCarousel
+              mouseTracking
+              items={itemsBox}
+              responsive={responsive}
+              controlsStrategy="alternate"
+            /> */}
+          </Box>
+          <T className="MainText">
+            체리뷰에 찾으시는<br></br>캠페인이 있으신가요?
+          </T>
+          <Box className="CategoryBox">
+            <FormControl>
+              <Select
+                className="SelectBox"
+                value={type}
+                onChange={handleChange}
+              >
+                <MenuItem value={0}>전체</MenuItem>
+                <MenuItem value={1}>지역캠페인</MenuItem>
+                <MenuItem value={2}>제품캠페인</MenuItem>
+                <MenuItem value={3}>기자단캠페인</MenuItem>
+                <MenuItem value={4}>프리미어</MenuItem>
+              </Select>
+            </FormControl>
+
+            <Box className="SmallCategory">
+              {items.map((item, index) => (
+                <Box key={index}>
+                  {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
+                  <img src={imageItem[`item${index + 1}`]} alt={item} />
+                  <T>{item}</T>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box className="MiddleCategory">
+            <Box className="MiddleBox">
+              <T className="MiddleText">
+                체리뷰에 찾으시는<br></br>인기있는 캠페인
+              </T>
+              <T className="Text">
+                현재 가장 인기있는 캠페인을 신청해보세요<br></br>선정되시면
+                알람으로 알려드립니다.
+              </T>
+              <T className="MoreText">
+                더 많은 캠페인 보기
+                <ArrowForwardIosIcon />
+              </T>
+              <Box className="TagBox">
+                <Box># 마감임박</Box>
+                <Box># 베스트 캠페인</Box>
+                <Box># 12월 베스트</Box>
+                <Box># 20명 이상 모집</Box>
+              </Box>
+            </Box>
+            <Box className="CardPage">
+              {cardData.map((card) => (
+                <Box className="CardBox" key={card.id}>
+                  <components.MainCard
+                    imageSrc={card.imageSrc}
+                    title={card.title}
+                    description={card.description}
+                    snsImage={card.snsImage}
+                    person={card.person}
+                    dday={card.dday}
+                  />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box className="LastCategory">
+            <Box className="LastBox">
+              <T className="LastText">
+                추운 겨울,<br></br>하고싶은 캠페인
+              </T>
+              <T className="Text">
+                겨울 지금 딱 하기 좋은 캠페인을<br></br>체리뷰 MD가 모아왔어요.
+              </T>
+              <T className="MoreText">
+                더 많은 캠페인 보기
+                <ArrowForwardIosIcon />
+              </T>
+              <Box className="TagBox">
+                <Box># 마감임박</Box>
+                <Box># 베스트 캠페인</Box>
+                <Box># 12월 베스트</Box>
+                <Box># 20명 이상 모집</Box>
+              </Box>
+            </Box>
+            <Box className="CardPage">
+              {cardData.map((card) => (
+                <Box className="CardBox" key={card.id}>
+                  <components.MainCard
+                    imageSrc={card.imageSrc}
+                    title={card.title}
+                    description={card.description}
+                    snsImage={card.snsImage}
+                    person={card.person}
+                    dday={card.dday}
+                  />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          {/* 하단 리스트 */}
+          <Box className="BottomCard">
+            {cardData.map((card) => (
+              <Box className="CardBox" key={card.id}>
+                <components.MainCard
+                  imageSrc={card.imageSrc}
+                  title={card.title}
+                  description={card.description}
+                  snsImage={card.snsImage}
+                  person={card.person}
+                  dday={card.dday}
+                />
+              </Box>
+            ))}
+          </Box>
+          {/* 더많은 캠페인 */}
+          <img src={images.mainBottom} className="BottomImg"></img>
+        </Box>
       </Box>
 
       <components.Footer />

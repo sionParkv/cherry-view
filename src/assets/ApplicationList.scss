@@ -18,281 +18,300 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .ListBox {
-      width: 100%;
-      padding: 10% 10% 10% 20%;
-      display: flex;
-      justify-content: center;
-      gap: 56px;
 
-      .LeftBox {
-        width: 60%;
+    // 웹
+    @media (min-width: 769px) {
+      .ListBox {
+        width: 100%;
+        padding: 10% 10% 10% 20%;
+        display: flex;
+        justify-content: center;
+        gap: 56px;
 
-        // 캠페인 정보
-        .TextBox {
-          display: flex;
-          align-items: center;
-          padding: 0 0 25px 0;
+        .LeftBox {
+          width: 60%;
 
-          .CampText {
-            width: 17%;
-            height: 34px;
-            font-size: 28px;
+          // 캠페인 정보
+          .TextBox {
             display: flex;
             align-items: center;
-            font-weight: bold;
-            font-family: Pretendard;
-          }
+            padding: 0 0 25px 0;
 
-          button {
-            width: 30px;
-            height: 30px;
-            background-color: black;
-            svg {
-              width: 20px;
-              height: 20px;
-              color: white;
-            }
-          }
-        }
-
-        .HashBox {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          padding-right: 10%;
-
-          .HashInfo {
-            width: calc(16% - 10px);
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 20px;
-            border: solid 1.5px #ddd;
-          }
-        }
-
-        .Section {
-          width: 100%;
-          height: 0.1px;
-          margin: 32px 0 42px 0;
-          border: solid 1px #e4e4e4;
-        }
-        // 상품정보
-        .TitleBox {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          .TitleLeft {
-            display: flex;
-            align-items: center;
-            .Text {
+            .CampText {
+              width: 17%;
+              height: 34px;
+              font-size: 28px;
+              display: flex;
+              align-items: center;
+              font-weight: bold;
               font-family: Pretendard;
-              font-size: 32px;
-              font-weight: bold;
-              line-height: 1.81;
-              color: #202020;
             }
 
-            svg {
-              width: 25px;
-              height: 22px;
+            button {
+              width: 30px;
+              height: 30px;
+              background-color: black;
+              svg {
+                width: 20px;
+                height: 20px;
+                color: white;
+              }
             }
           }
 
-          .TitleRight {
-            width: 137px;
-            height: 40px;
+          .HashBox {
+            width: 100%;
             display: flex;
-            gap: 8px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-            border: solid 1.5px #ddd;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-right: 10%;
 
-            p {
-              font-size: 16px;
-              font-weight: bold;
-            }
-
-            svg {
-              width: 16px;
-              height: 16px;
+            .HashInfo {
+              width: calc(16% - 10px);
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              font-weight: 600;
+              border-radius: 20px;
+              border: solid 1.5px #ddd;
             }
           }
-        }
 
-        .SubText {
-          font-size: 14px;
-          color: #9999a6;
-        }
-
-        .UserContainer {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 21px;
-          padding: 32px 0 140px 0;
-
-          .UserBox {
-            width: calc(44.5% - 10px);
-            height: 80px;
+          .Section {
+            width: 100%;
+            height: 0.1px;
+            margin: 32px 0 42px 0;
+            border: solid 1px #e4e4e4;
+          }
+          // 상품정보
+          .TitleBox {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-radius: 40px;
-            background-color: #f4f4f4;
-            padding: 0 32px 0 8px;
 
-            img {
-              width: 64px;
-              height: 64px;
+            .TitleLeft {
+              display: flex;
+              align-items: center;
+              .Text {
+                font-family: Pretendard;
+                font-size: 32px;
+                font-weight: bold;
+                line-height: 1.81;
+                color: #202020;
+              }
+
+              svg {
+                width: 25px;
+                height: 22px;
+              }
             }
 
-            p {
-              font-size: 18px;
-              color: #303030;
-              padding-right: 40%;
-            }
+            .TitleRight {
+              width: 137px;
+              height: 40px;
+              display: flex;
+              gap: 8px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 20px;
+              border: solid 1.5px #ddd;
 
-            svg {
-              width: 20px;
-              height: 20px;
+              p {
+                font-size: 16px;
+                font-weight: bold;
+              }
+
+              svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+
+          .SubText {
+            font-size: 14px;
+            color: #9999a6;
+          }
+
+          .UserContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+            padding: 32px 0 140px 0;
+
+            .UserBox {
+              width: calc(44.5% - 10px);
+              height: 80px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-radius: 40px;
+              background-color: #f4f4f4;
+              padding: 0 32px 0 8px;
+
+              img {
+                width: 64px;
+                height: 64px;
+              }
+
+              p {
+                font-size: 18px;
+                color: #303030;
+                padding-right: 40%;
+              }
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
             }
           }
         }
-      }
-      .RightBox {
-        width: 40%;
+        .RightBox {
+          width: 40%;
 
-        .Section {
-          width: 85%;
-          height: 2px;
-          background-color: #5e4f42;
-        }
+          .Section {
+            width: 85%;
+            height: 2px;
+            background-color: #5e4f42;
+          }
 
-        .MainImg {
-          width: 80%;
-          height: 400px;
-        }
+          .MainImg {
+            width: 80%;
+            height: 400px;
+          }
 
-        .First {
-          width: 80%;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          padding: 0 0 0 32px;
-          border-radius: 20px;
-          background-color: #5e4f42;
-          font-size: 16px;
-          font-weight: 600;
-          color: white;
-        }
-
-        .Second {
-          width: 80%;
-          font-size: 16px;
-          padding: 16px 0 8px 32px;
-          border-bottom: solid 1px #e4e4e4;
-          font-weight: 600;
-          color: #202020;
-        }
-
-        .Third {
-          width: 80%;
-          font-size: 16px;
-          padding: 16px 0 8px 32px;
-          border-bottom: solid 1px #e4e4e4;
-          font-weight: 600;
-          color: #ccc;
-        }
-
-        .Media {
-          width: 80%;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          padding: 0 0 0 32px;
-          margin: 16px 0 12px 0;
-          border-radius: 20px;
-          background-color: #f4f4f4;
-
-          :nth-child(1) {
+          .First {
+            width: 80%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 32px;
+            border-radius: 20px;
+            background-color: #5e4f42;
             font-size: 16px;
-            font-weight: bold;
-            font-family: Pretendard;
-            color: black;
+            font-weight: 600;
+            color: white;
           }
 
-          :nth-child(2) {
-            width: 16px;
-            height: 16px;
-            padding: 0 0 0 45%;
-          }
-
-          :nth-child(3) {
+          .Second {
+            width: 80%;
             font-size: 16px;
-            font-weight: 300;
-            font-family: Pretendard;
-            padding: 0 0 0 7px;
+            padding: 16px 0 8px 32px;
+            border-bottom: solid 1px #e4e4e4;
+            font-weight: 600;
             color: #202020;
           }
-        }
 
-        .AppliButton {
-          width: 85%;
-          height: 64px;
-          border-radius: 8px;
-          background-color: #ffc032;
-          font-family: Pretendard;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 20px;
-          font-weight: bold;
-          color: #202020;
-        }
-
-        .AfterBox {
-          width: 85%;
-          height: 80px;
-          border-radius: 8px;
-          background-color: #f5f5f5;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 1.5;
-        }
-
-        .AfterButtonBox {
-          width: 85%;
-          display: flex;
-          gap: 16px;
-          margin-top: 16px;
-
-          .Cancle {
-            width: 30%;
-            height: 56px;
-            border-radius: 8px;
-            font-family: Pretendard;
-            border: solid 1.5px #e4e4e4;
+          .Third {
+            width: 80%;
+            font-size: 16px;
+            padding: 16px 0 8px 32px;
+            border-bottom: solid 1px #e4e4e4;
             font-weight: 600;
-            color: #979797;
+            color: #ccc;
+          }
+
+          .Media {
+            width: 80%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 32px;
+            margin: 16px 0 12px 0;
+            border-radius: 20px;
+            background-color: #f4f4f4;
+
+            :nth-child(1) {
+              font-size: 16px;
+              font-weight: bold;
+              font-family: Pretendard;
+              color: black;
+            }
+
+            :nth-child(2) {
+              width: 16px;
+              height: 16px;
+              padding: 0 0 0 45%;
+            }
+
+            :nth-child(3) {
+              font-size: 16px;
+              font-weight: 300;
+              font-family: Pretendard;
+              padding: 0 0 0 7px;
+              color: #202020;
+            }
+          }
+
+          .AppliButton {
+            width: 85%;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #ffc032;
+            font-family: Pretendard;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #202020;
           }
 
-          .View {
-            width: 70%;
+          .AfterBox {
+            width: 85%;
+            height: 80px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+          }
+
+          .AfterButtonBox {
+            width: 85%;
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+
+            .Cancle {
+              width: 30%;
+              height: 56px;
+              border-radius: 8px;
+              font-family: Pretendard;
+              border: solid 1.5px #e4e4e4;
+              font-weight: 600;
+              color: #979797;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .View {
+              width: 70%;
+              height: 56px;
+              border-radius: 8px;
+              font-family: Pretendard;
+              background-color: #ffc032;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 18px;
+              font-weight: bold;
+              color: #000;
+            }
+          }
+
+          .ViewButton {
+            width: 85%;
             height: 56px;
+            margin-top: 16px;
             border-radius: 8px;
             font-family: Pretendard;
             background-color: #ffc032;
@@ -304,20 +323,306 @@
             color: #000;
           }
         }
+      }
+      .MobileBox {
+        display: none;
+      }
+    }
+    // 모바일
+    @media (max-width: 768px) {
+      .ListBox {
+        display: none;
+      }
 
-        .ViewButton {
-          width: 85%;
-          height: 56px;
-          margin-top: 16px;
-          border-radius: 8px;
-          font-family: Pretendard;
-          background-color: #ffc032;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 18px;
-          font-weight: bold;
-          color: #000;
+      .MobileBox {
+        width: 100%;
+        padding: 20% 5% 10% 5%;
+        display: flex;
+        justify-content: center;
+
+        .LeftBox {
+          width: 100%;
+
+          // 캠페인 정보
+          .TextBox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 0 20px 0;
+
+            .CampText {
+              font-size: 28px;
+              display: flex;
+              align-items: center;
+              font-weight: bold;
+            }
+
+            button {
+              width: 20px;
+              height: 20px;
+              background-color: black;
+              svg {
+                width: 12px;
+                height: 12px;
+                color: white;
+              }
+            }
+          }
+
+          .HashBox {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .HashInfo {
+              width: calc(30% - 10px);
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              font-weight: 600;
+              border-radius: 20px;
+              border: solid 1.5px #ddd;
+            }
+          }
+
+          .Section {
+            width: 100%;
+            height: 0.1px;
+            margin: 32px 0 42px 0;
+            border: solid 1px #e4e4e4;
+          }
+
+          .TitleLeft {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .Text {
+              font-size: 26px;
+              font-weight: bold;
+              color: #202020;
+            }
+
+            svg {
+              width: 23px;
+              height: 20px;
+            }
+          }
+
+          .TitleRight {
+            width: 97px;
+            height: 30px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border: solid 1.5px #ddd;
+            margin: 29px 0 21px 0;
+
+            p {
+              font-size: 12px;
+              font-weight: bold;
+            }
+
+            svg {
+              width: 12px;
+              height: 12px;
+            }
+          }
+
+          .SubText {
+            font-size: 14px;
+            color: #9999a6;
+          }
+
+          .UserContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .UserBox {
+              width: calc(40% - 10px);
+              height: 44px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-radius: 40px;
+              background-color: #f4f4f4;
+              padding: 0 32px 0 8px;
+
+              img {
+                width: 36px;
+                height: 36px;
+              }
+
+              p {
+                font-size: 13px;
+                color: #303030;
+              }
+
+              svg {
+                width: 13px;
+                height: 13px;
+              }
+            }
+          }
+        }
+        .RightBox {
+          display: none;
+
+          .Section {
+            width: 85%;
+            height: 2px;
+            background-color: #5e4f42;
+          }
+
+          .MainImg {
+            width: 80%;
+            height: 400px;
+          }
+
+          .First {
+            width: 80%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 32px;
+            border-radius: 20px;
+            background-color: #5e4f42;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+          }
+
+          .Second {
+            width: 80%;
+            font-size: 16px;
+            padding: 16px 0 8px 32px;
+            border-bottom: solid 1px #e4e4e4;
+            font-weight: 600;
+            color: #202020;
+          }
+
+          .Third {
+            width: 80%;
+            font-size: 16px;
+            padding: 16px 0 8px 32px;
+            border-bottom: solid 1px #e4e4e4;
+            font-weight: 600;
+            color: #ccc;
+          }
+
+          .Media {
+            width: 80%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 32px;
+            margin: 16px 0 12px 0;
+            border-radius: 20px;
+            background-color: #f4f4f4;
+
+            :nth-child(1) {
+              font-size: 16px;
+              font-weight: bold;
+              font-family: Pretendard;
+              color: black;
+            }
+
+            :nth-child(2) {
+              width: 16px;
+              height: 16px;
+              padding: 0 0 0 45%;
+            }
+
+            :nth-child(3) {
+              font-size: 16px;
+              font-weight: 300;
+              font-family: Pretendard;
+              padding: 0 0 0 7px;
+              color: #202020;
+            }
+          }
+
+          .AppliButton {
+            width: 85%;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #ffc032;
+            font-family: Pretendard;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #202020;
+          }
+
+          .AfterBox {
+            width: 85%;
+            height: 80px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+          }
+
+          .AfterButtonBox {
+            width: 85%;
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+
+            .Cancle {
+              width: 30%;
+              height: 56px;
+              border-radius: 8px;
+              font-family: Pretendard;
+              border: solid 1.5px #e4e4e4;
+              font-weight: 600;
+              color: #979797;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .View {
+              width: 70%;
+              height: 56px;
+              border-radius: 8px;
+              font-family: Pretendard;
+              background-color: #ffc032;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 18px;
+              font-weight: bold;
+              color: #000;
+            }
+          }
+
+          .ViewButton {
+            width: 85%;
+            height: 56px;
+            margin-top: 16px;
+            border-radius: 8px;
+            font-family: Pretendard;
+            background-color: #ffc032;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+          }
         }
       }
     }

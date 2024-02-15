@@ -15,26 +15,49 @@ const SubmitComplete = () => {
   return (
     <Container className="SubmitComplete">
       <components.Header />
-      <Box className="CompleteBox">
-        <Box className="CenterBox">
-          <T className="MainText">캠페인 신청 완료</T>
-          <Box className="Presentation">
-            <T>인플루언서 발표</T>
-            <T>12.13</T>
-          </Box>
-          <img src={images.complete} />
+      <Box className="Display">
+        <Box className="CompleteBox">
+          <Box className="CenterBox">
+            <T className="MainText">캠페인 신청 완료</T>
+            <Box className="Presentation">
+              <T>인플루언서 발표</T>
+              <T>12.13</T>
+            </Box>
+            <img src={images.complete} />
 
-          <Box className="MainBox">
-            <T>자연을 담은 Coverage Foundation</T>
+            <Box className="MainBox">
+              <T>자연을 담은 Coverage Foundation</T>
+            </Box>
+            <Box className="ButtonBox">
+              <Button className="Main" onClick={goToMain}>
+                메인으로
+              </Button>
+              <Button className="List">신청 리스트</Button>
+            </Box>
           </Box>
-          <Box className="ButtonBox">
-            <Button className="Main" onClick={goToMain}>
-              메인으로
-            </Button>
-            <Button className="List">신청 리스트</Button>
+        </Box>
+        <Box className="MobileBox">
+          <Box className="CenterBox">
+            <T className="MainText">캠페인 신청 완료</T>
+            <Box className="Presentation">
+              <T>인플루언서 발표</T>
+              <T>12.13</T>
+            </Box>
+            <img src={images.complete} />
+
+            <Box className="MainBox">
+              <T>자연을 담은 Coverage Foundation</T>
+            </Box>
+            <Box className="ButtonBox">
+              <Button className="Main" onClick={goToMain}>
+                메인으로
+              </Button>
+              <Button className="List">신청 리스트</Button>
+            </Box>
           </Box>
         </Box>
       </Box>
+
       <components.Footer />
     </Container>
   )

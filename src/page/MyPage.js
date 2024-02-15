@@ -1530,6 +1530,16 @@ function CustomTabPanel(props) {
             </T>
             <ArrowForwardIcon className="ArrowIco" />
           </Box>
+          <Box className="MobileTopContent">
+            <Box>
+              <NotificationsActiveIcon className="AlarmIco" />
+              <T className="TopText">오늘! 잊지않으셨죠?</T>
+              <ArrowForwardIcon className="ArrowIco" />
+            </Box>
+            <T className="BotText">
+              오늘 콘텐츠 마감일이에요! 잘 업로드 됐는지 확인해보는게 어떨까요?
+            </T>
+          </Box>
           <Box className="MiddleBox">
             <img className="userPictuer" src={images.userPictuer} />
             <Box className="MiddleBoxContent">

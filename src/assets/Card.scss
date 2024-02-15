@@ -1,49 +1,98 @@
 @import 'common';
 
-.MainCard {
-  display: flex;
-  flex-direction: column;
-  // width: 240px;
-  // height: 400px;
-  // margin-right: -100px;
-  font-family: Pretendard;
-  box-shadow: none !important;
-
-  .Title {
-    color: #202020;
-    font-family: Pretendard;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .Tag {
-    font-size: 14px;
-    font-family: Pretendard;
-    color: #9999a6;
-  }
-
-  .SnsText {
+@media (min-width: 769px) {
+  .MainCard {
     display: flex;
-    align-items: center;
-    :nth-child(1) {
-      width: 24px;
-      height: 24px;
-      margin-right: 6px;
-    }
-    :nth-child(2) {
+    flex-direction: column;
+    font-family: Pretendard;
+    box-shadow: none !important;
+
+    .Title {
+      color: #202020;
       font-family: Pretendard;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .Tag {
       font-size: 14px;
-    }
-    :nth-child(3) {
-      width: 0.1px;
-      height: 13px;
-      border: solid 1px #9999a6;
-      margin: 0 3px 0 3px;
-    }
-    :nth-child(4) {
       font-family: Pretendard;
       color: #9999a6;
+    }
+
+    .SnsText {
+      display: flex;
+      align-items: center;
+      :nth-child(1) {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+      }
+      :nth-child(2) {
+        font-family: Pretendard;
+        font-size: 14px;
+      }
+      :nth-child(3) {
+        width: 0.1px;
+        height: 13px;
+        border: solid 1px #9999a6;
+        margin: 0 3px 0 3px;
+      }
+      :nth-child(4) {
+        font-family: Pretendard;
+        color: #9999a6;
+        font-size: 14px;
+      }
+    }
+  }
+}
+// 모바일
+@media (max-width: 768px) {
+  .MainCard {
+    display: flex;
+    box-shadow: none !important;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .Title {
+      color: #202020;
+      font-family: Pretendard;
       font-size: 14px;
+      font-weight: bold;
+    }
+
+    .Tag {
+      font-size: 12px;
+      font-family: Pretendard;
+      color: #9999a6;
+    }
+
+    .SnsText {
+      display: flex;
+      align-items: center;
+      :nth-child(1) {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+      }
+      :nth-child(2) {
+        font-family: Pretendard;
+        font-size: 14px;
+      }
+      :nth-child(3) {
+        width: 0.1px;
+        height: 13px;
+        border: solid 1px #9999a6;
+        margin: 0 3px 0 3px;
+      }
+      :nth-child(4) {
+        font-family: Pretendard;
+        color: #9999a6;
+        font-size: 14px;
+      }
     }
   }
 }

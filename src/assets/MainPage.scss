@@ -10,7 +10,8 @@
   width: 100%;
   p,
   span,
-  div {
+  div,
+  button {
     font-family: Pretendard;
   }
 
@@ -20,230 +21,472 @@
     justify-content: center;
     align-items: center;
 
-    .MainBox {
-      width: 100%;
-      padding: 10% 10% 10% 10%;
-      display: flex;
-      flex-direction: column;
-
-      .CarouselBox {
+    @media (min-width: 769px) {
+      .MainBox {
         width: 100%;
-        padding: 0 10% 0 10%;
-      }
-
-      .MuiFormControl-root {
-        width: 20%;
-        height: 90px;
-      }
-
-      .MuiInputBase-root {
-        border-radius: 50px;
-      }
-
-      .MuiSelect-select {
-        font-size: 20px;
-        font-weight: bold;
+        padding: 10% 10% 10% 10%;
         display: flex;
-        align-items: center;
-        padding-left: 20%;
-      }
+        flex-direction: column;
 
-      .MuiPaper-root {
-        border-radius: 20px !important;
-      }
+        .CarouselBox {
+          width: 100%;
+          padding: 0 10% 0 10%;
+        }
 
-      // 셀렉박스 section
-      .MainText {
-        font-size: 40px;
-        font-weight: bold;
-        font-stretch: normal;
-        line-height: 1.4;
-        letter-spacing: -1px;
-      }
+        .MuiFormControl-root {
+          width: 20%;
+          height: 90px;
+        }
 
-      .CategoryBox {
-        padding: 46px 0 300px 0;
-        display: flex;
-        gap: 30px;
+        .MuiInputBase-root {
+          border-radius: 50px;
+        }
 
-        .SmallCategory {
+        .MuiSelect-select {
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          padding-left: 20%;
+        }
+
+        .MuiPaper-root {
+          border-radius: 20px !important;
+        }
+
+        // 셀렉박스 section
+        .MainText {
+          font-size: 40px;
+          font-weight: bold;
+          font-stretch: normal;
+          line-height: 1.4;
+          letter-spacing: -1px;
+        }
+
+        .CategoryBox {
+          padding: 46px 0 300px 0;
+          display: flex;
+          gap: 30px;
+
+          .SmallCategory {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            div {
+              height: 90px;
+              margin: 0 15px 10px 0;
+              padding: 10px;
+              flex-basis: calc(13% - 10px);
+              background-color: #f4f4f4;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 45px;
+              font-weight: bold;
+            }
+
+            img {
+              width: 60px;
+              height: 60px;
+              object-fit: contain;
+              padding: 0 5% 0 0;
+            }
+          }
+        }
+        // 인기있는 section
+        .MiddleCategory {
+          width: 100%;
+          display: flex;
+          margin-bottom: 100px;
+
+          .MiddleBox {
+            width: 25%;
+            .MiddleText {
+              font-size: 40px;
+              font-weight: bold;
+              margin-bottom: 22px;
+            }
+
+            .Text {
+              margin-bottom: 32px;
+              margin-right: 92px;
+              font-size: 16px;
+              line-height: 1.5;
+              color: #202020;
+            }
+
+            .MoreText {
+              margin-bottom: 40px;
+              font-size: 17px;
+              font-weight: bold;
+              font-family: Pretendard;
+              line-height: 1.88;
+              display: flex;
+              align-items: center;
+
+              svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            div {
+              width: 112px;
+              height: 32px;
+              border-radius: 16px;
+              border: solid 1.5px #e4e4e4;
+              font-size: 14px;
+              font-weight: 600;
+              text-align: left;
+              color: #9999a6;
+              display: flex;
+              align-items: center;
+              padding-left: 5px;
+              margin-bottom: 8px;
+            }
+          }
+          .CardPage {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .CardBox {
+              flex-basis: calc(25% - 10px);
+            }
+          }
+        }
+        // 겨울 section
+        .LastCategory {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          .LastBox {
+            width: 25%;
+            .LastText {
+              font-size: 40px;
+              font-weight: bold;
+              margin-bottom: 22px;
+            }
+            .Text {
+              margin-bottom: 32px;
+              margin-right: 92px;
+              font-size: 16px;
+              line-height: 1.5;
+              color: #202020;
+            }
+
+            .MoreText {
+              margin-bottom: 40px;
+              font-size: 17px;
+              font-weight: bold;
+              line-height: 1.88;
+              display: flex;
+              align-items: center;
+
+              svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            div {
+              width: 112px;
+              height: 32px;
+              border-radius: 16px;
+              border: solid 1.5px #e4e4e4;
+              font-size: 14px;
+              font-weight: 600;
+              color: #9999a6;
+              display: flex;
+              align-items: center;
+              justify-content: left;
+              padding-left: 5px;
+              margin-bottom: 8px;
+            }
+          }
+          .CardPage {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .CardBox {
+              flex-basis: calc(25% - 10px);
+            }
+          }
+        }
+        // 경계선
+        .Section {
+          width: 100%;
+          height: 1px;
+          border: solid 1px #e4e4e4;
+          background-color: #e4e4e4;
+          margin: 60px 0 80px 0;
+        }
+        // 하단 리스트
+        .BottomCard {
           width: 100%;
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
 
-          div {
-            height: 90px;
-            margin: 0 15px 10px 0;
-            padding: 10px;
-            flex-basis: calc(13% - 10px);
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 45px;
-            font-weight: bold;
-          }
-
-          img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            padding: 0 5% 0 0;
+          .CardBox {
+            flex-basis: calc(18.8% - 10px);
+            margin-right: 20px;
+            width: 186px;
           }
         }
+        .BottomImg {
+          width: 100%;
+          height: 200px;
+          background-color: #303030;
+          border-radius: 12px;
+          margin-top: 100px;
+        }
       }
-      // 인기있는 section
-      .MiddleCategory {
+      .MobileBox {
+        display: none;
+      }
+    }
+    // 모바일
+    @media (max-width: 768px) {
+      .MainBox {
+        display: none;
+      }
+
+      .MobileBox {
         width: 100%;
+        padding: 20% 5% 10% 5%;
         display: flex;
-        margin-bottom: 100px;
+        flex-direction: column;
 
-        .MiddleBox {
-          width: 25%;
-          .MiddleText {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 22px;
-          }
+        .CarouselBox {
+          width: 100%;
+          padding: 0 10% 0 10%;
+        }
 
-          .Text {
-            margin-bottom: 32px;
-            margin-right: 92px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #202020;
-          }
+        .MuiFormControl-root {
+          display: none;
+        }
 
-          .MoreText {
-            margin-bottom: 40px;
-            font-size: 17px;
-            font-weight: bold;
-            font-family: Pretendard;
-            line-height: 1.88;
+        .MuiInputBase-root {
+          border-radius: 50px;
+        }
+
+        .MuiSelect-select {
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          padding-left: 20%;
+        }
+
+        .MuiPaper-root {
+          border-radius: 20px !important;
+        }
+
+        // 셀렉박스 section
+        .MainText {
+          font-size: 26px;
+          font-weight: bold;
+          letter-spacing: -1px;
+        }
+
+        .CategoryBox {
+          padding: 20px 0 80px 0;
+          display: flex;
+
+          .SmallCategory {
+            width: 100%;
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 13px;
 
-            svg {
-              width: 16px;
-              height: 16px;
+            div {
+              height: 100px;
+              width: calc(18% - 10px);
+              background-color: #f4f4f4;
+              display: flex;
+              gap: 10px;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border-radius: 45px;
+              font-weight: bold;
+
+              img {
+                width: 35px;
+                height: 35px;
+                object-fit: contain;
+              }
+
+              p {
+                font-size: 12px;
+                font-weight: 500;
+                color: #313131;
+              }
+            }
+          }
+        }
+        // 인기있는 section
+        .MiddleCategory {
+          width: 100%;
+          margin-bottom: 100px;
+
+          .MiddleBox {
+            width: 100%;
+
+            .MiddleText {
+              font-size: 26px;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+
+            .Text {
+              margin-bottom: 32px;
+              margin-right: 92px;
+              font-size: 14px;
+              line-height: 1.5;
+              color: #202020;
+            }
+
+            .MoreText {
+              margin-bottom: 20px;
+              font-size: 17px;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+
+              svg {
+                width: 13px;
+                height: 13px;
+              }
+            }
+
+            .TagBox {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 5px;
+
+              div {
+                width: calc(30% - 10px);
+                height: 30px;
+                border-radius: 16px;
+                border: solid 1.5px #e4e4e4;
+                font-size: 13px;
+                font-weight: 600;
+                color: #9999a6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
             }
           }
 
-          div {
-            width: 112px;
-            height: 32px;
-            border-radius: 16px;
-            border: solid 1.5px #e4e4e4;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: left;
-            color: #9999a6;
+          .CardPage {
+            width: 100%;
             display: flex;
-            align-items: center;
-            padding-left: 5px;
-            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+
+            .CardBox {
+            }
           }
         }
-        .CardPage {
-          width: 75%;
+        // 겨울 section
+        .LastCategory {
+          width: 100%;
           display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
+          flex-direction: column;
 
-          .CardBox {
-            flex-basis: calc(25% - 10px);
-          }
-        }
-      }
-      // 겨울 section
-      .LastCategory {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
+          .LastBox {
+            width: 100%;
 
-        .LastBox {
-          width: 25%;
-          .LastText {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 22px;
-          }
-          .Text {
-            margin-bottom: 32px;
-            margin-right: 92px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #202020;
-          }
+            .LastText {
+              font-size: 25px;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
 
-          .MoreText {
-            margin-bottom: 40px;
-            font-size: 17px;
-            font-weight: bold;
-            line-height: 1.88;
-            display: flex;
-            align-items: center;
+            .Text {
+              margin-bottom: 26px;
+              font-size: 14px;
+              line-height: 1.5;
+              color: #202020;
+            }
 
-            svg {
-              width: 16px;
-              height: 16px;
+            .MoreText {
+              margin-bottom: 20px;
+              font-size: 14px;
+              font-weight: bold;
+              line-height: 1.88;
+              display: flex;
+              align-items: center;
+
+              svg {
+                width: 13px;
+                height: 13px;
+              }
+            }
+
+            .TagBox {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 5px;
+
+              div {
+                width: calc(30% - 10px);
+                height: 30px;
+                border-radius: 16px;
+                border: solid 1.5px #e4e4e4;
+                font-size: 13px;
+                font-weight: 600;
+                color: #9999a6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
             }
           }
 
-          div {
-            width: 112px;
-            height: 32px;
-            border-radius: 16px;
-            border: solid 1.5px #e4e4e4;
-            font-size: 14px;
-            font-weight: 600;
-            color: #9999a6;
+          .CardPage {
+            width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: left;
-            padding-left: 5px;
-            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
           }
         }
-        .CardPage {
-          width: 75%;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
+        // 경계선
+        .Section {
+          width: 100%;
+          height: 1px;
+          border: solid 1px #e4e4e4;
+          background-color: #e4e4e4;
+          margin: 60px 0 80px 0;
+        }
+        // 하단 리스트
+        .BottomCard {
+          display: none;
 
           .CardBox {
-            flex-basis: calc(25% - 10px);
+            flex-basis: calc(18.8% - 10px);
+            margin-right: 20px;
+            width: 186px;
           }
         }
-      }
-      // 경계선
-      .Section {
-        width: 100%;
-        height: 1px;
-        border: solid 1px #e4e4e4;
-        background-color: #e4e4e4;
-        margin: 60px 0 80px 0;
-      }
-      // 하단 리스트
-      .BottomCard {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        .CardBox {
-          flex-basis: calc(18.8% - 10px);
-          margin-right: 20px;
-          width: 186px;
+        .BottomImg {
+          width: 100%;
+          height: 90px;
+          background-color: #303030;
+          border-radius: 12px;
+          margin-top: 40px;
         }
-      }
-      .BottomImg {
-        width: 100%;
-        height: 200px;
-        background-color: #303030;
-        border-radius: 12px;
-        margin-top: 100px;
       }
     }
   }

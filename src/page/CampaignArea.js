@@ -208,6 +208,75 @@ const CampaginArea = () => {
             <Pagination count={5} />
           </Stack>
         </Box>
+        {/* 모바일 */}
+        <Box className="MobileBox">
+          <MapDiv className="MapBox">
+            <NaverMap
+              defaultCenter={new navermaps.LatLng(37.3595704, 127.105399)}
+              defaultZoom={10}
+            >
+              <Marker
+                defaultPosition={new navermaps.LatLng(37.3595704, 127.105399)}
+              />
+            </NaverMap>
+          </MapDiv>
+          <Box className="TopBox">
+            <FormControl>
+              <Select
+                className="SelectBox"
+                value={type}
+                onChange={handleChange}
+              >
+                <MenuItem value={0}>전체</MenuItem>
+                <MenuItem value={1}>지역캠페인</MenuItem>
+                <MenuItem value={2}>제품캠페인</MenuItem>
+                <MenuItem value={3}>기자단캠페인</MenuItem>
+                <MenuItem value={4}>프리미어</MenuItem>
+              </Select>
+            </FormControl>
+            <Box className="SmallCategory">
+              {items.map((item, index) => (
+                <Box className="Category" key={index}>
+                  {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
+                  <img src={imageItem[`item${index + 1}`]} alt={item} />
+                  <T>{item}</T>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box className="SectionBox">
+            <Box className="SnsBox">
+              <Box>all</Box>
+              <img src={images.naver} />
+              <img src={images.insta} />
+              <img src={images.youtube} />
+            </Box>
+            <Box className="DetailBox">
+              <T>최신순</T>
+              <Box className="Section" />
+              <T>마감순</T>
+              <Box className="Section" />
+              <T>인원순</T>
+            </Box>
+          </Box>
+          <Box className="CardPage">
+            {cardData.map((card) => (
+              <Box className="CardBox" key={card.id}>
+                <components.MainCard
+                  imageSrc={card.imageSrc}
+                  title={card.title}
+                  description={card.description}
+                  snsImage={card.snsImage}
+                  person={card.person}
+                  dday={card.dday}
+                />
+              </Box>
+            ))}
+          </Box>
+          <Stack spacing={2} className="Paginations">
+            <Pagination count={5} />
+          </Stack>
+        </Box>
       </Box>
       <components.Footer />
     </Container>

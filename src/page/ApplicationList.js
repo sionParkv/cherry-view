@@ -161,6 +161,88 @@ const ApplicationList = () => {
             <Button className="ViewButton">내 신청 보기</Button> */}
           </Box>
         </Box>
+        <Box className="MobileBox">
+          <Box className="LeftBox">
+            <Box className="TextBox">
+              <T className="CampText">캠페인 정보</T>
+              <IconButton>
+                <OpenInNewIcon />
+              </IconButton>
+              <Box></Box>
+            </Box>
+            <Box className="HashBox">
+              {hashInfo.map((item, index) => (
+                <Box className="HashInfo" key={index}>
+                  # {item}
+                </Box>
+              ))}
+            </Box>
+            <Box className="Section" />
+            {/* 상품 정보 */}
+            <Box className="TitleLeft">
+              <T className="Text">자연을 담은 Coverage Foundation</T>
+              <IconButton onClick={handleLikeClick}>
+                {liked ? <Favorite color="error" /> : <FavoriteBorder />}
+              </IconButton>
+            </Box>
+            <T className="SubText">The Orcinary</T>
+
+            <Box className="TitleRight">
+              <T>캠페인정보</T>
+              <ArrowForwardIosIcon />
+            </Box>
+            <Box className="UserContainer">
+              {influencers.map((influencer) => (
+                <Box
+                  onClick={handleOpen}
+                  key={influencer.id}
+                  className="UserBox"
+                >
+                  <img src={influencer.picture} alt={influencer.name} />
+                  <T>{influencer.name}</T>
+                  <ArrowForwardIosIcon />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box className="RightBox">
+            <img className="MainImg" src={images.mainImg} />
+            <Box className="First">
+              캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12
+            </Box>
+            <Box className="Second">
+              캠페인 신청기간 &nbsp;&nbsp;11.27 ~ 12.12
+            </Box>
+            <Box className="Third">인플루언서 발표 &nbsp;&nbsp;12.13</Box>
+            <Box className="Third">
+              콘텐츠 등록기간 &nbsp;&nbsp;12.14 ~ 12.24
+            </Box>
+            <Box className="Third">캠페인 결과발표 &nbsp;&nbsp;12.29</Box>
+            <Box className="Section" />
+            <Box className="Media">
+              <T>모집 미디어</T>
+              <img src={images.naver}></img>
+              <T>네이버 블로그</T>
+            </Box>
+            <Button className="AppliButton">캠페인 신청하기</Button>
+            {/* 캠페인 신청 후 */}
+            {/* <Box className="AfterBox">
+              캠페인에 신청하셨습니다.
+              <br />
+              인플루언서 선정 발표일을 기다려주세요.
+            </Box>
+            <Box className="AfterButtonBox">
+              <Button className="Cancle">신청취소</Button>
+              <Button className="View">내 신청 보기</Button>
+            </Box> */}
+            {/* 발표 후 */}
+            {/* <Box className="AfterBox">
+              인플루언서로 선정되지 않았습니다. <br />
+              다른 캠페인에서 활약을 기대할게요! 😊
+            </Box>
+            <Button className="ViewButton">내 신청 보기</Button> */}
+          </Box>
+        </Box>
       </Box>
       <components.Footer />
       <Modal open={open} onClose={handleClose}>
