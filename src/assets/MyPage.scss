@@ -74,23 +74,134 @@
 
         .TabPanel {
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
 
-          .MyTopContent,
-          .MiddleBox,
-          .BottomBox {
+          .WebBox {
             display: none;
           }
           // 마이
-          .MobileTopContent {
+          .MobileBox {
             width: 100%;
-            height: 97px;
-            border-radius: 20px;
-            background-color: #f5f5f5;
-            margin: 15px 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .MyTopContent {
+              width: 80%;
+              height: 100px;
+              display: flex;
+              gap: 13px;
+              flex-direction: column;
+              justify-content: center;
+              padding: 0 15px 0 21px;
+
+              .TopFirst {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                .TopText {
+                  width: 100%;
+                  font-size: 16px;
+                  font-weight: 600;
+                }
+              }
+
+              .BotText {
+                font-size: 13px;
+                font-weight: 300;
+              }
+            }
+
+            .MiddleBox {
+              width: 90%;
+              display: flex;
+              flex-direction: column;
+
+              .MiddleTop {
+                display: flex;
+                gap: 20px;
+
+                .userPictuer {
+                  width: 86px;
+                  height: 86px;
+                }
+
+                .UserNameBox {
+                  .UserName {
+                    font-size: 24px;
+                    font-weight: bold;
+                  }
+
+                  .Name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #a4a4a4;
+                  }
+
+                  .ChangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    p {
+                      font-size: 14px;
+                      font-weight: 500;
+                    }
+
+                    div {
+                      width: 4px;
+                      height: 14px;
+                      background-color: #000;
+                    }
+                  }
+                }
+              }
+
+              .MiddleBottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .SnsBox {
+                  display: flex;
+                  gap: 4px;
+                  img {
+                    width: 30px;
+                    height: 30px;
+                  }
+                }
+
+                .SnsBoxText {
+                  display: flex;
+                  gap: 5px;
+                  align-items: center;
+                  justify-content: center;
+                  width: 113px;
+                  height: 30px;
+                  border-radius: 15px;
+                  background-color: #f5f5f5;
+
+                  p {
+                    font-size: 14px;
+                    font-weight: 500;
+                  }
+
+                  svg {
+                    width: 13px;
+                    height: 13px;
+                  }
+                }
+              }
+
+              .CampaignBox {
+                display: flex;
+              }
+            }
+
+            .BottomBox {
+              width: 100%;
+            }
           }
         }
       }
@@ -134,6 +245,10 @@
         .NewButton,
         .PCTextBox,
         .TellBox {
+          display: none;
+        }
+
+        .MobileBox {
           display: none;
         }
       }
@@ -229,6 +344,10 @@
         }
       }
     }
+
+    .MobileBox {
+      display: none;
+    }
   }
 
   .ProfileText {
@@ -245,6 +364,7 @@
     margin: 0 0 0 0;
     display: flex;
   }
+
   // 마이
   .MyTopContent {
     height: 60px;

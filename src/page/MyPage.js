@@ -1522,44 +1522,124 @@ function CustomTabPanel(props) {
     >
       {value === 0 && (
         <Box>
-          <Box className="MyTopContent">
-            <NotificationsActiveIcon className="AlarmIco" />
-            <T className="TopText">오늘! 잊지않으셨죠?</T>
-            <T className="BotText">
-              오늘 콘텐츠 마감일이에요! 잘 업로드 됐는지 확인해보는게 어떨까요?
-            </T>
-            <ArrowForwardIcon className="ArrowIco" />
-          </Box>
-          <Box className="MobileTopContent">
-            <Box>
+          <Box className="WebBox">
+            <Box className="MyTopContent">
               <NotificationsActiveIcon className="AlarmIco" />
               <T className="TopText">오늘! 잊지않으셨죠?</T>
+              <T className="BotText">
+                오늘 콘텐츠 마감일이에요! 잘 업로드 됐는지 확인해보는게
+                어떨까요?
+              </T>
               <ArrowForwardIcon className="ArrowIco" />
             </Box>
-            <T className="BotText">
-              오늘 콘텐츠 마감일이에요! 잘 업로드 됐는지 확인해보는게 어떨까요?
-            </T>
+
+            <Box className="MiddleBox">
+              <img className="userPictuer" src={images.userPictuer} />
+              <Box className="MiddleBoxContent">
+                <Box className="UserNameBox">
+                  <T className="UserName">인플루언서 명</T>
+                  <Box className="SnsBox">
+                    <img src={images.naver} />
+                    <img src={images.youtube} />
+                    <img src={images.insta} />
+                    <Box className="SnsBoxText">
+                      <T>미디어 연결</T>
+                      <ArrowForwardIosIcon />
+                    </Box>
+                  </Box>
+                </Box>
+                <T className="Name">김체리</T>
+                <Box className="ChangePremier">
+                  <T>회원 정보 변경</T>
+                  <Box />
+                  <T>프리미어</T>
+                </Box>
+
+                <Box className="CampaignBox">
+                  <Box className="Campaign">
+                    <img src={images.mypage1} />
+                    <Box>
+                      <T>신청한 캠페인</T>
+                      <T>45</T>
+                    </Box>
+                  </Box>
+                  <Box className="Campaign">
+                    <img src={images.mypage1} />
+                    <Box>
+                      <T>선정된 캠페인</T>
+                      <T>4</T>
+                    </Box>
+                  </Box>
+                  <Box className="Campaign">
+                    <img src={images.mypage3} />
+                    <Box>
+                      <T>보유 포인트</T>
+                      <T>20k</T>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box className="BottomBox">
+              <Box className="MyCampaign">
+                <FavoriteIcon />
+                <T>나의 관심 캠페인 64</T>
+                <T>더보기</T>
+              </Box>
+              <Box className="CardBox">
+                {cardData.map((card) => (
+                  <Box className="Card" key={card.id}>
+                    <MainCard
+                      imageSrc={card.imageSrc}
+                      title={card.title}
+                      description={card.description}
+                      snsImage={card.snsImage}
+                      person={card.person}
+                      dday={card.dday}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            </Box>
           </Box>
-          <Box className="MiddleBox">
-            <img className="userPictuer" src={images.userPictuer} />
-            <Box className="MiddleBoxContent">
-              <Box className="UserNameBox">
-                <T className="UserName">인플루언서 명</T>
+
+          <Box className="MobileBox">
+            <Box className="MyTopContent">
+              <Box className="TopFirst">
+                <NotificationsActiveIcon className="AlarmIco" />
+                <T className="TopText">오늘! 잊지않으셨죠?</T>
+                <ArrowForwardIcon className="ArrowIco" />
+              </Box>
+              <T className="BotText">
+                오늘 콘텐츠 마감일이에요! 잘 업로드 됐는지 확인해보는게
+                어떨까요?
+              </T>
+            </Box>
+
+            <Box className="MiddleBox">
+              <Box className="MiddleTop">
+                <img className="userPictuer" src={images.userPictuer} />
+                <Box className="UserNameBox">
+                  <T className="UserName">인플루언서 명</T>
+                  <T className="Name">김체리</T>
+                  <Box className="ChangeBox">
+                    <T>회원 정보 변경</T>
+                    <Box />
+                    <T>프리미어</T>
+                  </Box>
+                </Box>
+              </Box>
+
+              <Box className="MiddleBottom">
                 <Box className="SnsBox">
                   <img src={images.naver} />
                   <img src={images.youtube} />
                   <img src={images.insta} />
-                  <Box className="SnsBoxText">
-                    <T>미디어 연결</T>
-                    <ArrowForwardIosIcon />
-                  </Box>
                 </Box>
-              </Box>
-              <T className="Name">김체리</T>
-              <Box className="ChangePremier">
-                <T>회원 정보 변경</T>
-                <Box />
-                <T>프리미어</T>
+                <Box className="SnsBoxText">
+                  <T>미디어 연결</T>
+                  <ArrowForwardIosIcon />
+                </Box>
               </Box>
 
               <Box className="CampaignBox">
@@ -1586,26 +1666,26 @@ function CustomTabPanel(props) {
                 </Box>
               </Box>
             </Box>
-          </Box>
-          <Box className="BottomBox">
-            <Box className="MyCampaign">
-              <FavoriteIcon />
-              <T>나의 관심 캠페인 64</T>
-              <T>더보기</T>
-            </Box>
-            <Box className="CardBox">
-              {cardData.map((card) => (
-                <Box className="Card" key={card.id}>
-                  <MainCard
-                    imageSrc={card.imageSrc}
-                    title={card.title}
-                    description={card.description}
-                    snsImage={card.snsImage}
-                    person={card.person}
-                    dday={card.dday}
-                  />
-                </Box>
-              ))}
+            <Box className="BottomBox">
+              <Box className="MyCampaign">
+                <FavoriteIcon />
+                <T>나의 관심 캠페인 64</T>
+                <T>더보기</T>
+              </Box>
+              <Box className="CardBox">
+                {cardData.map((card) => (
+                  <Box className="Card" key={card.id}>
+                    <MainCard
+                      imageSrc={card.imageSrc}
+                      title={card.title}
+                      description={card.description}
+                      snsImage={card.snsImage}
+                      person={card.person}
+                      dday={card.dday}
+                    />
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Box>
         </Box>
