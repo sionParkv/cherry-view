@@ -1,17 +1,22 @@
 @import 'common';
 
 .SubmitContents {
-  width: max-content !important;
+  width: 100% !important;
+
+  .Display {
+    width: 100&;
+    justify-content: center;
+    align-items: center;
+  }
 
   .ContentsPage {
-    width: max-content;
+    width: 100%;
+    padding: 10% 0 10% 0;
     display: flex;
-    padding: 0 0 10% 15%;
+    gap: 20px;
 
     //왼쪽 컨텐츠
     .LeftContent {
-      width: 1200px;
-      padding: 10% 0 0 0;
       margin-left: 19%;
 
       .TitleBox {
@@ -227,9 +232,6 @@
 
     // 오른쪽 컨텐츠
     .RightContent {
-      width: 30%;
-      padding: 10% 0 0 10%;
-
       .MainImage {
         width: 400px;
         height: 400px;

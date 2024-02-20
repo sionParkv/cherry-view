@@ -548,231 +548,328 @@ function CustomTabPanel(props) {
     // 신청한 캠페인
     applied: (
       <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">인플루언서 발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                        <T>| 마감임박</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="CancleBox">신청 취소</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
+        <Box className="WebBox">
+          <Box className="CampaignSection" />
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">캠페인 정보</TableCell>
+                  <TableCell align="center">인플루언서 발표</TableCell>
+                  <TableCell align="center">상태</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
+              </TableHead>
+              <TableBody>
+                {rows4.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell className="CellBox" component="th" scope="row">
+                      <img className="CellBoxImg" src={row.img}></img>
+                      <Box className="RightBox">
+                        <T className="RowTitle">{row.title}</T>
+                        <T className="RowTag">{row.tag}</T>
+                        <Box className="BottomContent">
+                          <img src={row.sns}></img>
+                          <T>{row.person}</T>
+                          <T>| 마감임박</T>
+                        </Box>
+                      </Box>
+                    </TableCell>
+                    <TableCell align="center">{row.announce}</TableCell>
+                    <TableCell className="StatusCell" align="center">
+                      <Box className="StatusCellBox">
+                        <T className="CancleBox">신청 취소</T>
+                        {row.status}
+                      </Box>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
+        </Box>
+        <Box className="MobileBox">
+          {rows4.map((row) => (
+            <Box className="CampCard" key={row.id}>
+              <Box className="CardTop">
+                <Box className="DetailTop">
+                  <T>신청 일자</T>
+                  <T>{row.status}</T>
+                </Box>
+                <CloseIcon />
+              </Box>
+              <Box className="CardBottom">
+                <Box className="TextBox">
+                  <T className="MainText">{row.title}</T>
+                  <T className="SubText">{row.tag}</T>
+                  <Box className="SnsBox">
+                    <img src={row.sns} />
+                    <T>{row.person}</T>
+                    <T>| 마감임박</T>
+                  </Box>
+                  <Box className="AnnounceBox">
+                    <T>인플루언서 발표</T>
+                    <T>{row.announce}</T>
+                  </Box>
+                </Box>
+                <img className="MainImg" src={row.img} />
+              </Box>
+            </Box>
+          ))}
+        </Box>
       </Box>
     ),
     // 선정된 캠페인
     selected: (
       <Box className="AppliedContainer">
-        <Box className="BannerInfoBox">
-          <Box className="BannerRight">
+        <Box className="WebBox">
+          <Box className="BannerInfoBox">
+            <Box className="BannerRight">
+              <T>캠페인 선정을 축하합니다.</T>
+              <T>콘텐츠 등록 시 스폰서 배너를 꼭 넣어주세요!</T>
+            </Box>
+            <Box className="BannerLeft">스폰서 배너 알아보기</Box>
+          </Box>
+          <Box className="CampaignSection" />
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">캠페인 정보</TableCell>
+                  <TableCell align="center">콘텐츠 등록기간</TableCell>
+                  <TableCell align="center">배송정보</TableCell>
+                  <TableCell align="center">상태</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody className="SelectedTable">
+                {rows5.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell className="CellBox" component="th" scope="row">
+                      <img className="CellBoxImg" src={row.img}></img>
+                      <Box className="RightBox">
+                        <T className="RowTitle">{row.title}</T>
+                        <T className="RowTag">{row.tag}</T>
+                        <Box className="BottomContent">
+                          <img src={row.sns}></img>
+                          <T>{row.person}</T>
+                          <T>| 마감임박</T>
+                        </Box>
+                      </Box>
+                    </TableCell>
+                    <TableCell className="Registration" align="center">
+                      <T>{row.startDate}</T>
+                      <T>~</T>
+                      <T>{row.endDate}</T>
+                    </TableCell>
+                    <TableCell className="DeliveryCell" align="center">
+                      <T>롯데택배</T>
+                      <T>{row.delivery}</T>
+                    </TableCell>
+                    <TableCell align="center" className="StatusCell">
+                      <Box className="StatusCellBox">
+                        <T>스폰서 배너</T>
+                        <T>컨텐츠 등록</T>
+                        <T>신청일자 {row.status}</T>
+                      </Box>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
+        </Box>
+        <Box className="MobileBox">
+          <Box className="SecondBox">
             <T>캠페인 선정을 축하합니다.</T>
             <T>콘텐츠 등록 시 스폰서 배너를 꼭 넣어주세요!</T>
+            <Box>스폰서 배너 알아보기</Box>
           </Box>
-          <Box className="BannerLeft">스폰서 배너 알아보기</Box>
+
+          {rows4.map((row) => (
+            <Box className="CampCard" key={row.id}>
+              <Box className="CardTop">
+                <Box className="DetailTop">
+                  <T>신청 일자</T>
+                  <T>{row.status}</T>
+                </Box>
+                <CloseIcon />
+              </Box>
+              <Box className="CardBottom">
+                <Box className="TextBox">
+                  <T className="MainText">{row.title}</T>
+                  <T className="SubText">{row.tag}</T>
+                  <Box className="SnsBox">
+                    <img src={row.sns} />
+                    <T>{row.person}</T>
+                    <T>| 마감임박</T>
+                  </Box>
+                  <Box className="AnnounceBox">
+                    <T>인플루언서 발표</T>
+                    <T>{row.announce}</T>
+                  </Box>
+                </Box>
+                <img className="MainImg" src={row.img} />
+              </Box>
+            </Box>
+          ))}
         </Box>
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">콘텐츠 등록기간</TableCell>
-                <TableCell align="center">배송정보</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody className="SelectedTable">
-              {rows5.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                        <T>| 마감임박</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell className="Registration" align="center">
-                    <T>{row.startDate}</T>
-                    <T>~</T>
-                    <T>{row.endDate}</T>
-                  </TableCell>
-                  <TableCell className="DeliveryCell" align="center">
-                    <T>롯데택배</T>
-                    <T>{row.delivery}</T>
-                  </TableCell>
-                  <TableCell align="center" className="StatusCell">
-                    <Box className="StatusCellBox">
-                      <T>스폰서 배너</T>
-                      <T>컨텐츠 등록</T>
-                      <T>신청일자 {row.status}</T>
-                    </Box>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
       </Box>
     ),
     // 등록한 캠페인
     registered: (
       <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">캠페인 결과발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="CancleBox">캠페인 평가</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
+        <Box className="WebBox">
+          <Box className="CampaignSection" />
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">캠페인 정보</TableCell>
+                  <TableCell align="center">캠페인 결과발표</TableCell>
+                  <TableCell align="center">상태</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
+              </TableHead>
+              <TableBody>
+                {rows4.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell className="CellBox" component="th" scope="row">
+                      <img className="CellBoxImg" src={row.img}></img>
+                      <Box className="RightBox">
+                        <T className="RowTitle">{row.title}</T>
+                        <T className="RowTag">{row.tag}</T>
+                        <Box className="BottomContent">
+                          <img src={row.sns}></img>
+                          <T>{row.person}</T>
+                        </Box>
+                      </Box>
+                    </TableCell>
+                    <TableCell align="center">{row.announce}</TableCell>
+                    <TableCell className="StatusCell" align="center">
+                      <Box className="StatusCellBox">
+                        <T className="CancleBox">캠페인 평가</T>
+                        {row.status}
+                      </Box>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
+        </Box>
+        <Box></Box>
       </Box>
     ),
     // 종료된 캠페인
     closed: (
       <Box className="AppliedContainer">
-        <Box className="CampaignSection" />
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">캠페인 정보</TableCell>
-                <TableCell align="center">캠페인 결과발표</TableCell>
-                <TableCell align="center">상태</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows4.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell className="CellBox" component="th" scope="row">
-                    <img className="CellBoxImg" src={row.img}></img>
-                    <Box className="RightBox">
-                      <T className="RowTitle">{row.title}</T>
-                      <T className="RowTag">{row.tag}</T>
-                      <Box className="BottomContent">
-                        <img src={row.sns}></img>
-                        <T>{row.person}</T>
-                      </Box>
-                    </Box>
-                  </TableCell>
-                  <TableCell align="center">{row.announce}</TableCell>
-                  <TableCell className="StatusCell" align="center">
-                    <Box className="StatusCellBox">
-                      <T className="EndBox">작성완료</T>
-                      {row.status}
-                    </Box>
-                  </TableCell>
+        <Box className="WebBox">
+          <Box className="CampaignSection" />
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">캠페인 정보</TableCell>
+                  <TableCell align="center">캠페인 결과발표</TableCell>
+                  <TableCell align="center">상태</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
+              </TableHead>
+              <TableBody>
+                {rows4.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell className="CellBox" component="th" scope="row">
+                      <img className="CellBoxImg" src={row.img}></img>
+                      <Box className="RightBox">
+                        <T className="RowTitle">{row.title}</T>
+                        <T className="RowTag">{row.tag}</T>
+                        <Box className="BottomContent">
+                          <img src={row.sns}></img>
+                          <T>{row.person}</T>
+                        </Box>
+                      </Box>
+                    </TableCell>
+                    <TableCell align="center">{row.announce}</TableCell>
+                    <TableCell className="StatusCell" align="center">
+                      <Box className="StatusCellBox">
+                        <T className="EndBox">작성완료</T>
+                        {row.status}
+                      </Box>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
+        </Box>
       </Box>
     ),
+    // 등록 콘텐츠
     content: (
       <Box className="ContentContainer">
-        <Box className="CampaignSection" />
-        <T className="MainText">등록 콘텐츠 4</T>
-        <Box className="CardBox">
-          <Box className="Card">
-            <img className="MainImg" src={images.tea} />
-            <T className="MainImgText">
-              {' '}
-              겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
-            </T>
-            <T className="MainImgdate">2023.12.20</T>
-            <Box className="SubImgBox">
-              <img src={images.tea} />
-              <T>수제한방 모란꽃차</T>
+        <Box className="WebBox">
+          <Box className="CampaignSection" />
+          <T className="MainText">등록 콘텐츠 4</T>
+          <Box className="CardBox">
+            <Box className="Card">
+              <img className="MainImg" src={images.tea} />
+              <T className="MainImgText">
+                {' '}
+                겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
+              </T>
+              <T className="MainImgdate">2023.12.20</T>
+              <Box className="SubImgBox">
+                <img src={images.tea} />
+                <T>수제한방 모란꽃차</T>
+              </Box>
             </Box>
           </Box>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
         </Box>
-        <Stack spacing={2}>
-          <Pagination count={5} />
-        </Stack>
+        <Box className="MobileBox">
+          <T className="ContentText">등록 콘텐츠 4</T>
+          <Box className="ContentCardBox">
+            <Box className="ContentCard">
+              <img className="MainImg" src={images.tea} />
+              <Box>
+                <T className="MainImgText">
+                  겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
+                </T>
+                <T className="MainImgdate">2023.12.20</T>
+                <Box className="SubImgBox">
+                  <img src={images.tea} />
+                  <T>수제한방 모란꽃차</T>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Stack spacing={2}>
+            <Pagination count={5} />
+          </Stack>
+        </Box>
       </Box>
     ),
   }
@@ -1646,22 +1743,22 @@ function CustomTabPanel(props) {
                 <Box className="Campaign">
                   <img src={images.mypage1} />
                   <Box>
-                    <T>신청한 캠페인</T>
                     <T>45</T>
+                    <T>신청한 캠페인</T>
                   </Box>
                 </Box>
                 <Box className="Campaign">
                   <img src={images.mypage1} />
                   <Box>
-                    <T>선정된 캠페인</T>
                     <T>4</T>
+                    <T>선정된 캠페인</T>
                   </Box>
                 </Box>
                 <Box className="Campaign">
                   <img src={images.mypage3} />
                   <Box>
-                    <T>보유 포인트</T>
                     <T>20k</T>
+                    <T>보유 포인트</T>
                   </Box>
                 </Box>
               </Box>
@@ -1670,19 +1767,14 @@ function CustomTabPanel(props) {
               <Box className="MyCampaign">
                 <FavoriteIcon />
                 <T>나의 관심 캠페인 64</T>
-                <T>더보기</T>
+                <ArrowForwardIosIcon />
               </Box>
               <Box className="CardBox">
                 {cardData.map((card) => (
                   <Box className="Card" key={card.id}>
-                    <MainCard
-                      imageSrc={card.imageSrc}
-                      title={card.title}
-                      description={card.description}
-                      snsImage={card.snsImage}
-                      person={card.person}
-                      dday={card.dday}
-                    />
+                    <img src={card.imageSrc} />
+                    <T>{card.title}</T>
+                    <T>{card.description}</T>
                   </Box>
                 ))}
               </Box>
@@ -1691,7 +1783,7 @@ function CustomTabPanel(props) {
         </Box>
       )}
       {value === 1 && (
-        <Box>
+        <Box className="AllContainer">
           <Box className="CampaignList">
             <Box
               className={`tab ${

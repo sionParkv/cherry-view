@@ -80,8 +80,11 @@ const Header = () => {
   const goToMain = () => {
     navigate('/')
   }
-  const goToContents = () => {
-    navigate('/submitcontents')
+  const goToArea = () => {
+    navigate('/area')
+  }
+  const goToProduct = () => {
+    navigate('/product')
   }
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -112,8 +115,8 @@ const Header = () => {
                     </IconButton>
                   </Box>
                   <Box className="Menu">
-                    <T onClick={goToContents}>지역 캠페인</T>
-                    <T>제품 캠페인</T>
+                    <T onClick={goToArea}>지역 캠페인</T>
+                    <T onClick={goToProduct}>제품 캠페인</T>
                     <T>기자단 캠페인</T>
                     <T onClick={goToPremier}>프리미어</T>
                     <T onClick={goToNotice}>공지사항</T>

@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    // 웹
     @media (min-width: 769px) {
       .MainBox {
         width: 100%;
@@ -30,7 +30,12 @@
 
         .CarouselBox {
           width: 100%;
-          padding: 0 10% 0 10%;
+          .alice-carousel {
+            width: 100%;
+            .alice-carousel__wrapper {
+              width: 100%;
+            }
+          }
         }
 
         .MuiFormControl-root {
