@@ -254,6 +254,7 @@ const CampDetail = () => {
               <IconButton>
                 <OpenInNewIcon />
               </IconButton>
+              <Box></Box>
             </Box>
             <Box className="HashBox">
               {hashInfo.map((item, index) => (

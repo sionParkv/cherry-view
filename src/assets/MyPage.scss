@@ -14,6 +14,26 @@
   justify-content: center;
   align-items: center;
 
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #ededed !important;
+  }
+
+  @media (min-width: 600px) {
+    .css-1qsxih2 {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  .css-1qsxih2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .css-13xy2my {
+    box-shadow: none;
+  }
+
   p,
   span,
   div,
@@ -502,7 +522,7 @@
   // PC styles
   @media only screen and (min-width: 1024px) {
     .MyPageBox {
-      margin: 10% 0 0 0;
+      margin: 7% 0 0 0 !important;
       display: flex;
       gap: 80px;
 
@@ -826,7 +846,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f5f5f5;
+      background-color: white !important;
       font-size: 16px;
       font-weight: 500;
       color: #000;
@@ -2057,6 +2077,7 @@
         width: calc(20% - 10px);
 
         .MainImg {
+          border-radius: 8px;
           width: 176px;
           height: 173px;
         }

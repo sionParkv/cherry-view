@@ -59,8 +59,15 @@ const items2 = [
 const Header = () => {
   const navigate = useNavigate()
 
+  const goToBack = () => {
+    navigate(-1)
+  }
+
   const goToNotice = () => {
     navigate('/notice')
+  }
+  const goToCampaign = () => {
+    navigate('/campaign')
   }
   const goToPremier = () => {
     navigate('/premier')
@@ -117,7 +124,7 @@ const Header = () => {
                   <Box className="Menu">
                     <T onClick={goToArea}>지역 캠페인</T>
                     <T onClick={goToProduct}>제품 캠페인</T>
-                    <T>기자단 캠페인</T>
+                    <T onClick={goToProduct}>기자단 캠페인</T>
                     <T onClick={goToPremier}>프리미어</T>
                     <T onClick={goToNotice}>공지사항</T>
                     <T onClick={goToFAQ}>FAQ</T>
@@ -132,6 +139,7 @@ const Header = () => {
                     </IconButton>
                     <T>검색</T>
                   </Box>
+
                   <Box onClick={goToLogin}>
                     <IconButton>
                       <LoginRoundedIcon />
@@ -147,10 +155,10 @@ const Header = () => {
                 </Box>
               </Box>
               <Box className="MobileBox">
-                <IconButton>
+                <IconButton onClick={goToBack}>
                   <ArrowBackIosNewIcon />
                 </IconButton>
-                <img src={images.logo} />
+                <img onClick={goToMain} src={images.logo} />
                 <Box>
                   <IconButton>
                     <SearchRoundedIcon />
@@ -218,7 +226,7 @@ const Header = () => {
               </Box>
               <Box className="SmallCategory">
                 {items.map((item, index) => (
-                  <Box className="Item" key={index}>
+                  <Box onClick={goToCampaign} className="Item" key={index}>
                     {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
                     <img src={imageItem[`item${index + 1}`]} alt={item} />
                     <T>{item}</T>
@@ -231,7 +239,7 @@ const Header = () => {
               </Box>
               <Box className="SmallCategory">
                 {items2.map((item, index) => (
-                  <Box className="Item" key={index}>
+                  <Box onClick={goToCampaign} className="Item" key={index}>
                     {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
                     <img src={imageItem2[`item${index + 1}`]} alt={item} />
                     <T>{item}</T>
@@ -241,27 +249,27 @@ const Header = () => {
             </Box>
             <Box className="BottomBox">
               <Box className="LeftBox">
-                <Box className="Item">
+                <Box onClick={goToCampaign} className="Item">
                   <img src={images.mic} />
                   <T>기자단 캠페인</T>
                   <ArrowForwardIosIcon />
                 </Box>
-                <Box className="Item">
+                <Box onClick={goToPremier} className="Item">
                   <img src={images.premier} />
                   <T>프리미어</T>
                   <ArrowForwardIosIcon />
                 </Box>
               </Box>
               <Box className="RightBox">
-                <Box className="Item">
+                <Box onClick={goToCommunity} className="Item">
                   <T>공지사항</T>
                   <ArrowForwardIosIcon />
                 </Box>
-                <Box className="Item">
+                <Box onClick={goToFAQ} className="Item">
                   <T>FAQ</T>
                   <ArrowForwardIosIcon />
                 </Box>
-                <Box className="Item">
+                <Box onClick={goToCommunity} className="Item">
                   <T>커뮤니티</T>
                   <ArrowForwardIosIcon />
                 </Box>

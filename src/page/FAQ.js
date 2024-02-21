@@ -97,7 +97,7 @@ const FAQ = () => {
             <Box>
               {filteredInfoTexts.map((item) => (
                 <React.Fragment key={item.id}>
-                  <Box className="InfoTextBox">
+                  <Box className="InfoTextBox2">
                     <Box className="DateBox">Q</Box>
                     <T className="AlarmText">{item.text}</T>
                     {expandedItems.includes(item.id) ? (

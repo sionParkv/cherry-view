@@ -1,6 +1,21 @@
 @import 'common';
 
 .JoinContainer {
+  width: 100%;
+  max-width: 100%;
+
+  @media (min-width: 1536px) {
+    max-width: 100% !important;
+  }
+  @media (min-width: 600px) {
+    .css-19r6kue-MuiContainer-root {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+  .css-19r6kue-MuiContainer-root {
+    padding: 0 !important;
+  }
   // 탭
   .MuiTabs-indicator {
     background-color: #ffc043;
@@ -11,7 +26,7 @@
   }
 
   .BasicBox {
-    width: 150%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

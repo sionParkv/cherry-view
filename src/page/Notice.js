@@ -15,6 +15,7 @@ import SearchIcon from '@mui/icons-material/Search'
 
 import { components } from '../component/index'
 import '../assets/Notice.scss'
+import { useNavigate } from 'react-router-dom'
 
 const infoTexts = [
   {
@@ -52,6 +53,12 @@ const infoTexts = [
 const Notice = () => {
   const [searchTerm, setSearchTerm] = useState('')
 
+  const navigate = useNavigate()
+
+  const goToDetail = () => {
+    navigate('/noticedetail')
+  }
+
   // 검색어와 일치하는 항목 필터링
   const filteredInfoTexts = infoTexts.filter((item) => {
     return item.text.toLowerCase().includes(searchTerm.toLowerCase())
@@ -79,8 +86,8 @@ const Notice = () => {
             />
           </Box>
 
-          <Box className="InfoBox">
-            <Box className="TopAlarmBox">
+          <Box onClick={goToDetail} className="InfoBox">
+            <Box className="TopAlarmBox4">
               <IconButton className="AlarmButton">
                 <NotificationsIcon />
               </IconButton>

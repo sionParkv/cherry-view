@@ -71,7 +71,7 @@
           border-top: solid 2px #000;
         }
 
-        .InfoTextBox {
+        .InfoTextBox2 {
           padding: 0 32px 0 24px;
           display: flex;
           justify-content: space-between;
@@ -90,6 +90,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+          }
+
+          .AlarmText {
+            width: 90%;
+            font-size: 20px;
+            font-weight: 300;
           }
 
           svg {

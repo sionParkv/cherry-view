@@ -34,8 +34,6 @@ const TopButton = () => {
           className="TopButton"
           onClick={scrollToTop}
           style={{
-            width: '90px',
-            height: '90px',
             backgroundColor: '#ffc043',
             position: 'fixed',
             bottom: '50%',

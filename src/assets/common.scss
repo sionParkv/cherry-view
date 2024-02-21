@@ -1,17 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 
-.TopButton {
-  width: 90px;
-  height: 90px;
-  background-color: #ffc043;
-  position: fixed;
-  bottom: 50%;
-  right: 20px;
-  z-index: 10000;
+@media (min-width: 769px) {
+  .TopButton {
+    width: 90px;
+    height: 90px;
+    background-color: #ffc043;
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    z-index: 10000;
 
-  svg {
-    width: 50px;
-    height: 50px;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .TopButton {
+    width: 40px;
+    height: 40px;
+    background-color: #ffc043;
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    z-index: 10000;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
@@ -19,6 +37,17 @@
   .css-1qsxih2 {
     max-width: 100% !important;
   }
+}
+@media (min-width: 600px) {
+  .css-1qsxih2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.css-1qsxih2 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 $font-family-code: Menlo, Monaco, Consolas, 'Courier New', monospace;

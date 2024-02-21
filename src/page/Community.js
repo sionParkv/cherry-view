@@ -15,6 +15,7 @@ import CreateIcon from '@mui/icons-material/Create'
 
 import { components } from '../component/index'
 import '../assets/Community.scss'
+import { useNavigate } from 'react-router-dom'
 
 const infoTexts = [
   {
@@ -50,7 +51,12 @@ const infoTexts = [
 ]
 
 const Community = () => {
+  const navigate = useNavigate()
   const [searchTerm, setSearchTerm] = useState('')
+
+  const goToDetail = () => {
+    navigate('/communitydetail')
+  }
 
   // 검색어와 일치하는 항목 필터링
   const filteredInfoTexts = infoTexts.filter((item) => {
@@ -84,8 +90,8 @@ const Community = () => {
             />
           </Box>
 
-          <Box className="InfoBox">
-            <Box className="TopAlarmBox">
+          <Box onClick={goToDetail} className="InfoBox">
+            <Box className="TopAlarmBox3">
               <Box className="DateBox1">
                 <T>01</T>
                 <T>23.05</T>

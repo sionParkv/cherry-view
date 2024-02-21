@@ -16,6 +16,9 @@ import cate11 from './cate11.png'
 import cate12 from './cate12.png'
 import cate13 from './cate13.png'
 import cate14 from './cate14.png'
+import cate15 from './cate15.png'
+import cate16 from './cate16.png'
+import cate17 from './cate17.png'
 import mainImg from './mainImg.png'
 import message from './message.png'
 import link from './link.png'
@@ -66,6 +69,13 @@ import carousel3 from './carousel3.png'
 import mainBottom from './mainBottom.png'
 import mobileInsta1 from './mobileInsta1.png'
 import mobileInsta2 from './mobileInsta2.png'
+import footer1 from './footer1.png'
+import footer3 from './footer3.png'
+import footer5 from './footer5.png'
+import mainImg1 from './mainImg1.png'
+import mainImg2 from './mainImg2.png'
+import mainImg3 from './mainImg3.png'
+import mainImg4 from './mainImg4.png'
 
 const images = {
   tea,
@@ -86,6 +96,9 @@ const images = {
   cate12,
   cate13,
   cate14,
+  cate15,
+  cate16,
+  cate17,
   mainImg,
   message,
   link,
@@ -136,6 +149,13 @@ const images = {
   mainBottom,
   mobileInsta1,
   mobileInsta2,
+  footer1,
+  footer3,
+  footer5,
+  mainImg1,
+  mainImg2,
+  mainImg3,
+  mainImg4,
 }
 
 export { images }

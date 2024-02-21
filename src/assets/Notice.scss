@@ -67,65 +67,74 @@
 
         .InfoBox {
           border-top: solid 2px #000;
-        }
 
-        .AlarmText {
-          font-size: 20px;
-          color: #202020;
-          margin-right: 50%;
-        }
+          .TopAlarmBox4 {
+            height: 100px;
+            padding: 0 24px 0 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fffaee;
+            border-bottom: solid 2px #e4e4e4;
 
-        .AddIcon {
-          width: 32px;
-          height: 32px;
-          color: #333;
-        }
-
-        .TopAlarmBox {
-          padding: 0 32px 0 24px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          height: 72px;
-          background-color: #fffaee;
-          border-bottom: solid 2px #e4e4e4;
-
-          .AlarmButton {
-            width: 40px;
-            height: 40px;
-            background-color: #ffc032;
-
-            svg {
-              width: 20px;
-              height: 20px;
+            .AlarmText {
+              font-size: 20px;
               color: #202020;
+              margin-right: 50%;
+            }
+
+            .AlarmButton {
+              margin-left: 1%;
+              width: 40px;
+              height: 40px;
+              background-color: #ffc032;
+
+              svg {
+                width: 20px;
+                height: 20px;
+                color: #202020;
+              }
+            }
+            .AddIcon {
+              width: 32px;
+              height: 32px;
+              color: #202020;
+              padding-right: 10px;
             }
           }
-        }
 
-        .InfoTextBox {
-          padding: 0 32px 0 24px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          height: 72px;
-          border-bottom: solid 2px #e4e4e4;
-
-          .DateBox {
+          .InfoTextBox {
+            padding: 0 32px 0 0;
             display: flex;
-            flex-direction: column;
-            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            border-bottom: solid 2px #e4e4e4;
 
-            :nth-child(1) {
-              font-size: 32px;
-              color: #a4a4a4;
-              margin-bottom: -10px;
+            .AlarmText {
+              font-size: 20px;
+              color: #202020;
+              margin-right: 50%;
             }
 
-            :nth-child(2) {
-              font-size: 14px;
-              font-weight: 300;
-              color: #a4a4a4;
+            .DateBox {
+              margin-left: 1%;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              background-color: white;
+
+              :nth-child(1) {
+                font-size: 32px;
+                color: #a4a4a4;
+                margin-bottom: -10px;
+              }
+
+              :nth-child(2) {
+                font-size: 14px;
+                font-weight: 300;
+                color: #a4a4a4;
+              }
             }
           }
         }

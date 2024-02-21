@@ -1,10 +1,37 @@
-import { Box, Container, Typography as T } from '@mui/material'
-import React from 'react'
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Container,
+  Typography as T,
+} from '@mui/material'
+import React, { useState } from 'react'
+import CollectionsBookmarkOutlinedIcon from '@mui/icons-material/CollectionsBookmarkOutlined'
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 
 import '../assets/Footer.scss'
 import { images } from '../images/index'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate = useNavigate()
+
+  const goToMy = () => {
+    navigate('/mypage')
+  }
+
+  const goToHome = () => {
+    navigate('/')
+  }
+
+  const goToCampaign = () => {
+    navigate('/campaign')
+  }
+
+  const [value, setValue] = useState(0)
   return (
     <Container className="Footer">
       <Box className="TopInfo">
@@ -65,6 +92,36 @@ const Footer = () => {
           <T className="TextFour">1577-0000</T>
           <T className="TextFive">평일 09:00 ~ 18:00</T>
         </Box>
+      </Box>
+      <Box className="MobileFooter" sx={{ width: 500 }}>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue)
+          }}
+        >
+          <BottomNavigationAction label="메뉴" icon={<MenuOutlinedIcon />} />
+          <BottomNavigationAction
+            onClick={goToCampaign}
+            label="캠페인"
+            icon={<CollectionsBookmarkOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            onClick={goToHome}
+            label="홈"
+            icon={<HomeOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            label="찜"
+            icon={<FavoriteBorderOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            onClick={goToMy}
+            label="마이"
+            icon={<PersonOutlineOutlinedIcon />}
+          />
+        </BottomNavigation>
       </Box>
     </Container>
   )

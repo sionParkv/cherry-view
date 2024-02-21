@@ -30,10 +30,62 @@
 
         .CarouselBox {
           width: 100%;
-          .alice-carousel {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .ImsiImg {
             width: 100%;
-            .alice-carousel__wrapper {
-              width: 100%;
+            display: flex;
+            gap: 30px;
+
+            img {
+              width: calc(33% - 10px);
+            }
+          }
+
+          .ImsiBox {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+
+            .ImsiOne {
+              margin-left: 50%;
+              display: flex;
+              gap: 8px;
+              :nth-child(1) {
+                width: 6px;
+                height: 16px;
+                border-radius: 3px;
+                background-color: #ffc043;
+              }
+              div {
+                width: 6px;
+                height: 16px;
+                border-radius: 3px;
+                background-color: #5e4f42;
+              }
+            }
+
+            .ImsiTwo {
+              display: flex;
+              gap: 6px;
+
+              button {
+                width: 24px;
+                height: 24px;
+                border-radius: 12px;
+                background-color: #5e4f42;
+
+                svg {
+                  width: 12px;
+                  height: 12px;
+                  color: white;
+                }
+              }
             }
           }
         }
@@ -41,6 +93,10 @@
         .MuiFormControl-root {
           width: 20%;
           height: 90px;
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-color: #ffc043 !important;
         }
 
         .MuiInputBase-root {
@@ -56,7 +112,7 @@
         }
 
         .MuiPaper-root {
-          border-radius: 20px !important;
+          border-radius: 8px !important;
         }
 
         // 셀렉박스 section
@@ -66,6 +122,7 @@
           font-stretch: normal;
           line-height: 1.4;
           letter-spacing: -1px;
+          margin-top: 120px;
         }
 
         .CategoryBox {
@@ -83,13 +140,17 @@
               height: 90px;
               margin: 0 15px 10px 0;
               padding: 10px;
-              flex-basis: calc(13% - 10px);
+              width: calc(14% - 10px);
               background-color: #f4f4f4;
               display: flex;
               justify-content: center;
               align-items: center;
               border-radius: 45px;
               font-weight: bold;
+
+              &:hover {
+                background-color: #ffc043;
+              }
             }
 
             img {
@@ -99,6 +160,9 @@
               padding: 0 5% 0 0;
             }
           }
+        }
+        .css-46bh2p-MuiCardContent-root {
+          padding: 12px 0 12px 0 !important;
         }
         // 인기있는 section
         .MiddleCategory {
@@ -126,7 +190,6 @@
               margin-bottom: 40px;
               font-size: 17px;
               font-weight: bold;
-              font-family: Pretendard;
               line-height: 1.88;
               display: flex;
               align-items: center;
@@ -147,8 +210,8 @@
               text-align: left;
               color: #9999a6;
               display: flex;
+              justify-content: center;
               align-items: center;
-              padding-left: 5px;
               margin-bottom: 8px;
             }
           }
@@ -208,8 +271,7 @@
               color: #9999a6;
               display: flex;
               align-items: center;
-              justify-content: left;
-              padding-left: 5px;
+              justify-content: center;
               margin-bottom: 8px;
             }
           }
@@ -247,7 +309,6 @@
         }
         .BottomImg {
           width: 100%;
-          height: 200px;
           background-color: #303030;
           border-radius: 12px;
           margin-top: 100px;
@@ -321,6 +382,7 @@
               justify-content: center;
               align-items: center;
               border-radius: 45px;
+              font-size: 10px;
               font-weight: bold;
 
               img {

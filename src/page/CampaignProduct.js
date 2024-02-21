@@ -49,7 +49,7 @@ const items = [
 const cardData = [
   {
     id: 1,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg1,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -58,7 +58,7 @@ const cardData = [
   },
   {
     id: 2,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,
@@ -67,7 +67,7 @@ const cardData = [
   },
   {
     id: 3,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg3,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.insta,
@@ -76,7 +76,7 @@ const cardData = [
   },
   {
     id: 4,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg4,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -85,7 +85,7 @@ const cardData = [
   },
   {
     id: 5,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg1,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,
@@ -94,7 +94,7 @@ const cardData = [
   },
   {
     id: 6,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.insta,
@@ -103,7 +103,7 @@ const cardData = [
   },
   {
     id: 7,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg3,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -112,7 +112,25 @@ const cardData = [
   },
   {
     id: 8,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg4,
+    title: '수제한방 모란꽃차',
+    description: '#배송 #백설 #수제한방차',
+    snsImage: images.naver,
+    person: '모집 20명',
+    dday: 'd-4',
+  },
+  {
+    id: 9,
+    imageSrc: images.mainImg1,
+    title: '수제한방 모란꽃차',
+    description: '#배송 #백설 #수제한방차',
+    snsImage: images.naver,
+    person: '모집 20명',
+    dday: 'd-4',
+  },
+  {
+    id: 10,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,

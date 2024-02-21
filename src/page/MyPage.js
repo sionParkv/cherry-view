@@ -1975,7 +1975,7 @@ const MyPage = () => {
               <Tab label="포인트" {...a11yProps(3)} />
               <Tab label="고객센터" {...a11yProps(4)} />
             </Tabs>
-            <Button className="NewButton">새 캠페인 등록</Button>
+            {/* <Button className="NewButton">새 캠페인 등록</Button>
             <Box className="PCTextBox">
               <T>캠페인 등록이 처음이신가요?</T>
               <T>
@@ -1990,7 +1990,7 @@ const MyPage = () => {
               <T>1577-0000</T>
               <ArrowForwardIosIcon />
             </Box>
-            <Box className="Section" />
+            <Box className="Section" /> */}
           </Box>
           <Box className="ContentsBox">
             <CustomTabPanel value={value} index={0}></CustomTabPanel>

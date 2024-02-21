@@ -4,43 +4,21 @@ import {
   Box,
   Container,
   FormControl,
+  IconButton,
   MenuItem,
   Select,
   Typography as T,
 } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import AliceCarousel from 'react-alice-carousel'
+// import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
 import '../assets/MainPage.scss'
 import { images } from '../images/index'
 import { useState } from 'react'
 import { components } from '../component/index'
-
-const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
-  1024: { items: 3 },
-}
-
-const carouselItems = [
-  {
-    id: 1,
-    imageSrc: images.carousel1,
-  },
-  {
-    id: 2,
-    imageSrc: images.carousel2,
-  },
-  {
-    id: 3,
-    imageSrc: images.carousel3,
-  },
-]
-
-const itemsBox = carouselItems.map((item) => (
-  <img key={item.id} src={item.imageSrc} alt={`Image ${item.id}`} />
-))
+import { useNavigate } from 'react-router-dom'
 
 const imageItem = {
   item1: images.cate1,
@@ -50,35 +28,27 @@ const imageItem = {
   item5: images.cate5,
   item6: images.cate6,
   item7: images.cate7,
-  item8: images.cate8,
+  item8: images.cate5,
   item9: images.cate9,
   item10: images.cate10,
   item11: images.cate11,
   item12: images.cate12,
   item13: images.cate13,
   item14: images.cate14,
+  item15: images.cate15,
+  item16: images.cate16,
+  item17: images.cate17,
 }
-const items = [
-  '식품',
-  '뷰티',
-  '여행',
-  '문화',
-  '생활',
-  '디지털',
-  '반려동물',
-  '서비스',
-  '유아동',
-  '패션',
-  '스포츠',
-  '프리미어',
-  '도서',
-  '이용가이드',
+const itemsByType = [
+  ['생활', '서비스', '유아동', '디지털', '뷰티', '패션'], // 제품캠페인
+  ['맛집', '뷰티', '숙박', '문화', '배달', '테이크아웃'], // 지역캠페인
+  ['반려동물', '도서', '식품', '기타', '프리미어'], // 기타서비스
 ]
 
 const cardData = [
   {
     id: 1,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg1,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -87,7 +57,7 @@ const cardData = [
   },
   {
     id: 2,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,
@@ -96,7 +66,7 @@ const cardData = [
   },
   {
     id: 3,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg3,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.insta,
@@ -105,7 +75,7 @@ const cardData = [
   },
   {
     id: 4,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg4,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -114,7 +84,7 @@ const cardData = [
   },
   {
     id: 5,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg1,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,
@@ -123,7 +93,7 @@ const cardData = [
   },
   {
     id: 6,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.insta,
@@ -132,7 +102,7 @@ const cardData = [
   },
   {
     id: 7,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg3,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.youtube,
@@ -141,7 +111,25 @@ const cardData = [
   },
   {
     id: 8,
-    imageSrc: images.tea,
+    imageSrc: images.mainImg4,
+    title: '수제한방 모란꽃차',
+    description: '#배송 #백설 #수제한방차',
+    snsImage: images.naver,
+    person: '모집 20명',
+    dday: 'd-4',
+  },
+  {
+    id: 9,
+    imageSrc: images.mainImg1,
+    title: '수제한방 모란꽃차',
+    description: '#배송 #백설 #수제한방차',
+    snsImage: images.naver,
+    person: '모집 20명',
+    dday: 'd-4',
+  },
+  {
+    id: 10,
+    imageSrc: images.mainImg2,
     title: '수제한방 모란꽃차',
     description: '#배송 #백설 #수제한방차',
     snsImage: images.naver,
@@ -151,11 +139,64 @@ const cardData = [
 ]
 
 const MainPage = () => {
+  const navigate = useNavigate()
+
+  const goToCampaign = () => {
+    navigate('/campaign')
+  }
+  const goToProduct = () => {
+    navigate('/product')
+  }
+  const goToMy = () => {
+    navigate('/mypage')
+  }
+  const goToOwner = () => {
+    navigate('/ownerpage')
+  }
   const [type, setType] = useState(0)
 
   const handleChange = (event) => {
     setType(event.target.value)
   }
+
+  // const responsive = {
+  //   0: { items: 1 },
+  //   568: { items: 2 },
+  //   1024: { items: 3 },
+  // }
+
+  // const carouselItems = [
+  //   {
+  //     id: 1,
+  //     imageSrc: images.carousel3,
+  //   },
+  //   {
+  //     id: 2,
+  //     imageSrc: images.carousel1,
+  //   },
+  //   {
+  //     id: 3,
+  //     imageSrc: images.carousel2,
+  //   },
+  // ]
+
+  // const renderCarouselItems = () =>
+  //   carouselItems.map((item) => (
+  //     <div
+  //       key={item.id}
+  //       onClick={
+  //         item.id === 1
+  //           ? goToMy
+  //           : item.id === 2
+  //             ? goToOwner
+  //             : item.id === 3
+  //               ? goToCampaign
+  //               : undefined
+  //       }
+  //     >
+  //       <img src={item.imageSrc} alt={`Image ${item.id}`} />
+  //     </div>
+  //   ))
   return (
     <Container className="MainContainer">
       <components.TopButton />
@@ -163,12 +204,33 @@ const MainPage = () => {
       <Box className="Display">
         <Box className="MainBox">
           <Box className="CarouselBox">
-            <AliceCarousel
+            {/* <AliceCarousel
               mouseTracking
-              items={itemsBox}
+              items={renderCarouselItems()}
               responsive={responsive}
               controlsStrategy="alternate"
-            />
+            /> */}
+            <Box className="ImsiImg">
+              <img onClick={goToMy} src={images.carousel3} />
+              <img onClick={goToOwner} src={images.carousel1} />
+              <img src={images.carousel2} />
+            </Box>
+            <Box className="ImsiBox">
+              <Box className="ImsiOne">
+                <Box></Box>
+                <Box></Box>
+                <Box></Box>
+                <Box></Box>
+              </Box>
+              <Box className="ImsiTwo">
+                <IconButton>
+                  <ArrowBackIosNewIcon />
+                </IconButton>
+                <IconButton>
+                  <ArrowForwardIosIcon />
+                </IconButton>
+              </Box>
+            </Box>
           </Box>
           <T className="MainText">
             체리뷰에 찾으시는<br></br>캠페인이 있으신가요?
@@ -184,18 +246,18 @@ const MainPage = () => {
                 <MenuItem value={1}>지역캠페인</MenuItem>
                 <MenuItem value={2}>제품캠페인</MenuItem>
                 <MenuItem value={3}>기자단캠페인</MenuItem>
-                <MenuItem value={4}>프리미어</MenuItem>
               </Select>
             </FormControl>
 
             <Box className="SmallCategory">
-              {items.map((item, index) => (
-                <Box key={index}>
-                  {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
-                  <img src={imageItem[`item${index + 1}`]} alt={item} />
-                  {item}
-                </Box>
-              ))}
+              {(type === 0 ? itemsByType.flat() : itemsByType[type - 1])?.map(
+                (item, index) => (
+                  <Box onClick={goToProduct} key={index}>
+                    <img src={imageItem[`item${index + 1}`]} alt={item} />
+                    {item}
+                  </Box>
+                )
+              )}
             </Box>
           </Box>
           <Box className="MiddleCategory">
@@ -218,7 +280,7 @@ const MainPage = () => {
             </Box>
             <Box className="CardPage">
               {cardData.map((card) => (
-                <Box className="CardBox" key={card.id}>
+                <Box onClick={goToCampaign} className="CardBox" key={card.id}>
                   <components.MainCard
                     imageSrc={card.imageSrc}
                     title={card.title}
@@ -250,7 +312,7 @@ const MainPage = () => {
             </Box>
             <Box className="CardPage">
               {cardData.map((card) => (
-                <Box className="CardBox" key={card.id}>
+                <Box onClick={goToCampaign} className="CardBox" key={card.id}>
                   <components.MainCard
                     imageSrc={card.imageSrc}
                     title={card.title}
@@ -267,7 +329,7 @@ const MainPage = () => {
           {/* 하단 리스트 */}
           <Box className="BottomCard">
             {cardData.map((card) => (
-              <Box className="CardBox" key={card.id}>
+              <Box onClick={goToCampaign} className="CardBox" key={card.id}>
                 <components.MainCard
                   imageSrc={card.imageSrc}
                   title={card.title}
@@ -311,13 +373,14 @@ const MainPage = () => {
             </FormControl>
 
             <Box className="SmallCategory">
-              {items.map((item, index) => (
-                <Box key={index}>
-                  {/* 이미지 파일 객체를 가져와 이미지를 렌더링 */}
-                  <img src={imageItem[`item${index + 1}`]} alt={item} />
-                  <T>{item}</T>
-                </Box>
-              ))}
+              {(type === 0 ? itemsByType.flat() : itemsByType[type - 1])?.map(
+                (item, index) => (
+                  <Box onClick={goToCampaign} key={index}>
+                    <img src={imageItem[`item${index + 1}`]} alt={item} />
+                    {item}
+                  </Box>
+                )
+              )}
             </Box>
           </Box>
           <Box className="MiddleCategory">
@@ -342,7 +405,7 @@ const MainPage = () => {
             </Box>
             <Box className="CardPage">
               {cardData.map((card) => (
-                <Box className="CardBox" key={card.id}>
+                <Box onClick={goToProduct} className="CardBox" key={card.id}>
                   <components.MainCard
                     imageSrc={card.imageSrc}
                     title={card.title}
@@ -376,7 +439,7 @@ const MainPage = () => {
             </Box>
             <Box className="CardPage">
               {cardData.map((card) => (
-                <Box className="CardBox" key={card.id}>
+                <Box onClick={goToCampaign} className="CardBox" key={card.id}>
                   <components.MainCard
                     imageSrc={card.imageSrc}
                     title={card.title}

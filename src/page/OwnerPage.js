@@ -47,6 +47,7 @@ import {
 import '../assets/OwnerPage.scss'
 import { components } from '../component/index'
 import { images } from '../images/index'
+import { useNavigate } from 'react-router-dom'
 
 // 포인트 결제 화면
 function PaymentScreen() {
@@ -1742,6 +1743,12 @@ function a11yProps(index) {
 }
 
 const OwnerPage = () => {
+  const navigate = useNavigate()
+
+  const goToNew = () => {
+    navigate('/newcampaign')
+  }
+
   const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
@@ -1761,7 +1768,9 @@ const OwnerPage = () => {
               <Tab label="패널티" {...a11yProps(4)} />
               <Tab label="고객센터" {...a11yProps(5)} />
             </Tabs>
-            <Button className="NewButton">새 캠페인 등록</Button>
+            <Button onClick={goToNew} className="NewButton">
+              새 캠페인 등록
+            </Button>
             <Box className="PCTextBox">
               <T>캠페인 등록이 처음이신가요?</T>
               <T>

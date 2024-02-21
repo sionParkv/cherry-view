@@ -101,17 +101,43 @@
         }
       }
     }
-    .MobileBox {
+    .MobileBox,
+    .MobileFooter {
       display: none;
     }
   }
   // 모바일
   @media (max-width: 768px) {
-    .TopInfo {
-      display: none;
-    }
+    .TopInfo,
     .BottomInfo {
       display: none;
+    }
+
+    .MobileFooter {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+
+      .MuiButtonBase-root {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        span {
+          font-family: Pretendard;
+          font-size: 10px;
+          font-weight: 500;
+        }
+      }
     }
 
     .MobileBox {
