@@ -448,21 +448,62 @@
           .ContentContainer {
             width: 100%;
 
-            .ContentText {
-              font-size: 22px;
-              font-weight: 600;
-            }
+            .MobileBox {
+              .ContentText {
+                width: 90%;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 16px;
+              }
 
-            .ContentCardBox {
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              gap: 15px;
+              .ContentCardBox {
+                width: 90%;
+                display: flex;
+                gap: 15px;
 
-              .ContentCard {
-                img {
-                  width: 130px;
-                  height: 130px;
+                .ContentCard {
+                  display: flex;
+                  gap: 15px;
+
+                  .MainImg {
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 8px;
+                  }
+
+                  .BottomCard {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .MainImgText {
+                      font-size: 14px;
+                      line-height: 1.43;
+                      color: #222;
+                    }
+
+                    .MainImgdate {
+                      font-size: 14px;
+                      font-weight: 300;
+                      color: #9999a6;
+                    }
+                    .SubImgBox {
+                      display: flex;
+                      gap: 10px;
+                      align-items: center;
+
+                      img {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 12px;
+                        box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.06);
+                      }
+                      p {
+                        font-size: 14px;
+                        color: #222;
+                      }
+                    }
+                  }
                 }
               }
             }

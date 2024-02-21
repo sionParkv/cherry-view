@@ -854,11 +854,14 @@ function CustomTabPanel(props) {
           <Box className="ContentCardBox">
             <Box className="ContentCard">
               <img className="MainImg" src={images.tea} />
-              <Box>
-                <T className="MainImgText">
-                  겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
-                </T>
-                <T className="MainImgdate">2023.12.20</T>
+              <Box className="BottomCard">
+                <Box>
+                  <T className="MainImgText">
+                    겨울철 당기는 피부에도 알맞은 저자극 파운데이션 추천
+                  </T>
+                  <T className="MainImgdate">2023.12.20</T>
+                </Box>
+
                 <Box className="SubImgBox">
                   <img src={images.tea} />
                   <T>수제한방 모란꽃차</T>
