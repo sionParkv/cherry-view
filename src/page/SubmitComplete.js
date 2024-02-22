@@ -7,6 +7,7 @@ import { images } from '../images/index'
 import '../assets/SubmitComplete.scss'
 
 const SubmitComplete = () => {
+  // 페이지 이동
   const navigate = useNavigate()
 
   const goToMain = () => {

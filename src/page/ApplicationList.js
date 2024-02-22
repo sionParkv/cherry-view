@@ -17,7 +17,7 @@ import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined'
 import '../assets/ApplicationList.scss'
 import { components } from '../component/index'
 import { images } from '../images/index'
-
+// 자료
 const hashInfo = [
   '제품 캠페인',
   '뷰티',
